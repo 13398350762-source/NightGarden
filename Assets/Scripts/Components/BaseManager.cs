@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BaseManager<T> where T:new()
 {
-    private T instance;
-    public T Instance 
+    static private T instance;
+    static public T Instance 
     {
         get 
         {

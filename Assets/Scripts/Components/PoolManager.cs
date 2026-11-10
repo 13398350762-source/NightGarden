@@ -24,7 +24,7 @@ public class PoolData
         }
         else
         {
-            obj=Resources.Load<GameObject>(Parentobj.name);
+            obj=GameObject.Instantiate(Resources.Load<GameObject>(Parentobj.name));
         }
         return obj;
     }
@@ -37,8 +37,8 @@ public class PoolData
 
     public PoolData(string name,GameObject obj)
     {
-        Parentobj = new GameObject(obj.name);
-        PushObject(obj);
+        Parentobj = new GameObject(name);
+        Parentobj.transform.SetParent(obj.transform, false);
     }
 }
 public class PoolManager : BaseManager<PoolManager>
@@ -56,7 +56,7 @@ public class PoolManager : BaseManager<PoolManager>
             poolobj = new GameObject("pool");
         poolobj.SetActive(false);
         if (!poolDic.ContainsKey(name))
-            poolDic.Add(name, new PoolData(name,obj));
+            poolDic.Add(name, new PoolData(name,poolobj));
         poolDic[name].PushObject(obj);
     }
     public GameObject GetObj(string name)
@@ -68,7 +68,7 @@ public class PoolManager : BaseManager<PoolManager>
         }
         else
         {
-            obj = Resources.Load<GameObject>(name);
+            obj = GameObject.Instantiate(Resources.Load<GameObject>(name));
         }
         return obj;
     }

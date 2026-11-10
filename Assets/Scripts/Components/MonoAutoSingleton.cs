@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class MonoAutoSingleton<T> : MonoBehaviour where T: MonoBehaviour
 {
-    private GameObject obj;
-    private T instance;
-    public T Instance
+    static private T instance;
+    static public T Instance
     {
         get 
         {
             if (instance == null)
             {
-                obj = new GameObject(typeof(T).Name);
+                GameObject obj = new GameObject(typeof(T).Name);
                 instance = obj.AddComponent<T>();
                 DontDestroyOnLoad(obj);
             }

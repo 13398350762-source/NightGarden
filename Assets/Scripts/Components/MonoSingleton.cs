@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    private T instance;
-    public T Instance
+    static private T instance;
+    static public T Instance
     {
         get 
         {
