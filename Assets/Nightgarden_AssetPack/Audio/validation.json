@@ -1,0 +1,181 @@
+{
+  "file_count": 29,
+  "existing_wav_unchanged": true,
+  "checks": "PCM format, non-silent, no clipped samples, duration and manifest match; not an in-game listening test",
+  "files": [
+    {
+      "id": "music_01_moonlit_menu",
+      "frames": 3848727,
+      "peak_pcm": 28507,
+      "sha256": "94a7403d11cca05839619f588c563bb4f76de5386fd23148055a824897f658e2"
+    },
+    {
+      "id": "music_02_garden_patrol",
+      "frames": 2822400,
+      "peak_pcm": 28507,
+      "sha256": "23b16c3cc2a8e3148cb9d7a01de7a3cc24d84252d31a76108dabea8b31691342"
+    },
+    {
+      "id": "music_03_thorn_siege",
+      "frames": 2419200,
+      "peak_pcm": 28507,
+      "sha256": "c75d1cc4001d4010f77686aceb0f8669ab8e745fa44ae4cf00ba9f52c0988599"
+    },
+    {
+      "id": "music_04_seed_shop",
+      "frames": 3256615,
+      "peak_pcm": 28507,
+      "sha256": "9d1f47bea8fbcab1d730daa298731bb3fbde1c6733c0daa193286996bca071c6"
+    },
+    {
+      "id": "01_pickup",
+      "frames": 18522,
+      "peak_pcm": 28507,
+      "sha256": "a8540f5b48a109e46c1e15e7fe0ccfd263cc08e36e21e4e5c986218f34ede3ca"
+    },
+    {
+      "id": "02_coin",
+      "frames": 22050,
+      "peak_pcm": 28507,
+      "sha256": "1c2f48b4158bbf530d6620da264ec2fb4c0153a55a9093657a4f8efece7d6b1e"
+    },
+    {
+      "id": "03_heal",
+      "frames": 36603,
+      "peak_pcm": 28507,
+      "sha256": "62b13c5182c4a8dc0f82b5fd493e5ef261cc8f695e9bc0954af3a066462c3a3d"
+    },
+    {
+      "id": "04_level",
+      "frames": 60857,
+      "peak_pcm": 28507,
+      "sha256": "e77f61d71ce6da508a9a658721d431ab038a77e31b042686820532dff9cdf10a"
+    },
+    {
+      "id": "05_click",
+      "frames": 12348,
+      "peak_pcm": 28507,
+      "sha256": "9dab5598173d53b688e415a693f716ab3bc2f227dad588593a6a258b63a2b820"
+    },
+    {
+      "id": "06_hover",
+      "frames": 11025,
+      "peak_pcm": 28507,
+      "sha256": "3c0c19c07f84f5f833aecab3925c240438cff1bc73a9d1870c4dc4535da82b1f"
+    },
+    {
+      "id": "07_deny",
+      "frames": 18963,
+      "peak_pcm": 28507,
+      "sha256": "7da3b543adf90efe2ed449e839234327077ad1e870baacb03bb33b72f4454c22"
+    },
+    {
+      "id": "08_shot",
+      "frames": 15876,
+      "peak_pcm": 28507,
+      "sha256": "e48ab3c36960cd3e5eff4810082500e696c1dad1fc89dc532924b463f7836e88"
+    },
+    {
+      "id": "09_slash",
+      "frames": 18522,
+      "peak_pcm": 28507,
+      "sha256": "11f82a05b43bdf5e4ddf4f555d96f912f22e3c56d135d43d42265996257b1973"
+    },
+    {
+      "id": "10_hit",
+      "frames": 15876,
+      "peak_pcm": 28507,
+      "sha256": "13028a7621e6fe56cb8c1e5673c056098a21a6324470991d124d79280a21f899"
+    },
+    {
+      "id": "11_hurt",
+      "frames": 22050,
+      "peak_pcm": 28507,
+      "sha256": "914b19dd694a1ef1ba375cfa085e7f60a59930253c9344d19545f40d7c25d297"
+    },
+    {
+      "id": "12_death",
+      "frames": 29987,
+      "peak_pcm": 28507,
+      "sha256": "934847bc34190b0f0f88b76a8028fadbfc53620cf7422f1f95346007a7ae4894"
+    },
+    {
+      "id": "13_explosion",
+      "frames": 41013,
+      "peak_pcm": 28507,
+      "sha256": "dadbc9df4ed2b0d342459230c98b129ca7c55f8e2901ce3f4f0bde50b60fed6f"
+    },
+    {
+      "id": "14_magic",
+      "frames": 29987,
+      "peak_pcm": 28507,
+      "sha256": "7bdf177df4aab9f2594c00cbcb6cd83a6d59234f5cc2e3fb581a09c3ab1f394b"
+    },
+    {
+      "id": "15_dash",
+      "frames": 20286,
+      "peak_pcm": 28507,
+      "sha256": "e7dcff996acac41dbe3e1a047852b0106430929200d0757959efd690a63d27e2"
+    },
+    {
+      "id": "16_chest",
+      "frames": 74088,
+      "peak_pcm": 28507,
+      "sha256": "c8bdc55cd90208adf1468eea6ee979739dfa46104e103d27845c9bae84e49731"
+    },
+    {
+      "id": "17_boss",
+      "frames": 82908,
+      "peak_pcm": 28507,
+      "sha256": "f681e8c4993962b44fc255214a2317fcf8e77efcb8d03f909c561f6034a7f666"
+    },
+    {
+      "id": "18_wave",
+      "frames": 60857,
+      "peak_pcm": 28507,
+      "sha256": "56f9c82be53c6401a0be1352d1fff4d36a5ca9026d35604897fcd300b4d1498c"
+    },
+    {
+      "id": "19_win",
+      "frames": 184338,
+      "peak_pcm": 28507,
+      "sha256": "8d8a7f0c09490e7adbf20e56a5607bcd4a09597c88163cc974a848d5b9c769a4"
+    },
+    {
+      "id": "20_lose",
+      "frames": 140238,
+      "peak_pcm": 28507,
+      "sha256": "b306160eab88ab9d14241c43ed9245e370e8d60175d137131e9cb401fabe78fc"
+    },
+    {
+      "id": "21_heavy_strike",
+      "frames": 14994,
+      "peak_pcm": 20643,
+      "sha256": "4fc99d3112456ca548892874a770689aa5248498f87a1ecb46baa5026510f787"
+    },
+    {
+      "id": "22_bow_release",
+      "frames": 10143,
+      "peak_pcm": 20643,
+      "sha256": "1dbebd1027fc89b2ba5b260d07347c44de6c6954ef1213a57ae098993ad1ecda"
+    },
+    {
+      "id": "23_arrow_impact",
+      "frames": 7938,
+      "peak_pcm": 20643,
+      "sha256": "84859abe038057230192f27b7f5141738fd627a925eb87e09ab26565dd3e0572"
+    },
+    {
+      "id": "24_bullet_ricochet",
+      "frames": 9702,
+      "peak_pcm": 20643,
+      "sha256": "8f19880de5df32e2958483ff3668c6cf8f4d017ed1a1bf7e1256bc0cb8f54195"
+    },
+    {
+      "id": "25_projectile_whizz",
+      "frames": 8820,
+      "peak_pcm": 20643,
+      "sha256": "6a36836073933d84a32ec407e290ac7d7bf646b2aedd04a6680fbe9004bb3086"
+    }
+  ]
+}

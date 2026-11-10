@@ -1,0 +1,635 @@
+{
+  "coordinates": "top-left pixels",
+  "sprites": {
+    "dagger": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        0,
+        0,
+        313,
+        313
+      ]
+    },
+    "fork": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        313,
+        0,
+        313,
+        313
+      ]
+    },
+    "club": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        626,
+        0,
+        313,
+        313
+      ]
+    },
+    "sickle": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        939,
+        0,
+        313,
+        313
+      ]
+    },
+    "whip": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        0,
+        313,
+        313,
+        313
+      ]
+    },
+    "mallet": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        313,
+        313,
+        313,
+        313
+      ]
+    },
+    "pistol": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        626,
+        313,
+        313,
+        313
+      ]
+    },
+    "pea_gun": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        939,
+        313,
+        313,
+        313
+      ]
+    },
+    "chili_gun": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        0,
+        626,
+        313,
+        313
+      ]
+    },
+    "water_cannon": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        313,
+        626,
+        313,
+        313
+      ]
+    },
+    "bow": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        626,
+        626,
+        313,
+        313
+      ]
+    },
+    "crossbow": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        939,
+        626,
+        313,
+        313
+      ]
+    },
+    "honey_wand": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        0,
+        939,
+        313,
+        313
+      ]
+    },
+    "spore_staff": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        313,
+        939,
+        313,
+        313
+      ]
+    },
+    "bomb": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        626,
+        939,
+        313,
+        313
+      ]
+    },
+    "crystal": {
+      "texture": "Textures/weapons_v3.png",
+      "rect": [
+        939,
+        939,
+        313,
+        313
+      ]
+    },
+    "projectile_00": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        0,
+        0,
+        362,
+        362
+      ]
+    },
+    "projectile_01": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        362,
+        0,
+        362,
+        362
+      ]
+    },
+    "projectile_02": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        724,
+        0,
+        362,
+        362
+      ]
+    },
+    "projectile_03": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        1086,
+        0,
+        362,
+        362
+      ]
+    },
+    "projectile_04": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        0,
+        362,
+        362,
+        362
+      ]
+    },
+    "projectile_05": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        362,
+        362,
+        362,
+        362
+      ]
+    },
+    "projectile_06": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        724,
+        362,
+        362,
+        362
+      ]
+    },
+    "projectile_07": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        1086,
+        362,
+        362,
+        362
+      ]
+    },
+    "projectile_08": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        0,
+        724,
+        362,
+        362
+      ]
+    },
+    "projectile_09": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        362,
+        724,
+        362,
+        362
+      ]
+    },
+    "projectile_10": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        724,
+        724,
+        362,
+        362
+      ]
+    },
+    "projectile_11": {
+      "texture": "Textures/projectiles_v3.png",
+      "rect": [
+        1086,
+        724,
+        362,
+        362
+      ]
+    },
+    "muzzle_00": {
+      "texture": "Textures/muzzles_v3.png",
+      "rect": [
+        0,
+        0,
+        443,
+        443
+      ]
+    },
+    "muzzle_01": {
+      "texture": "Textures/muzzles_v3.png",
+      "rect": [
+        443,
+        0,
+        443,
+        443
+      ]
+    },
+    "muzzle_02": {
+      "texture": "Textures/muzzles_v3.png",
+      "rect": [
+        886,
+        0,
+        443,
+        443
+      ]
+    },
+    "muzzle_03": {
+      "texture": "Textures/muzzles_v3.png",
+      "rect": [
+        1329,
+        0,
+        443,
+        443
+      ]
+    },
+    "muzzle_04": {
+      "texture": "Textures/muzzles_v3.png",
+      "rect": [
+        0,
+        443,
+        443,
+        443
+      ]
+    },
+    "muzzle_05": {
+      "texture": "Textures/muzzles_v3.png",
+      "rect": [
+        443,
+        443,
+        443,
+        443
+      ]
+    },
+    "muzzle_06": {
+      "texture": "Textures/muzzles_v3.png",
+      "rect": [
+        886,
+        443,
+        443,
+        443
+      ]
+    },
+    "muzzle_07": {
+      "texture": "Textures/muzzles_v3.png",
+      "rect": [
+        1329,
+        443,
+        443,
+        443
+      ]
+    },
+    "impact_00": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        0,
+        0,
+        313,
+        313
+      ]
+    },
+    "impact_01": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        313,
+        0,
+        313,
+        313
+      ]
+    },
+    "impact_02": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        626,
+        0,
+        313,
+        313
+      ]
+    },
+    "impact_03": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        939,
+        0,
+        313,
+        313
+      ]
+    },
+    "impact_04": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        0,
+        313,
+        313,
+        313
+      ]
+    },
+    "impact_05": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        313,
+        313,
+        313,
+        313
+      ]
+    },
+    "impact_06": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        626,
+        313,
+        313,
+        313
+      ]
+    },
+    "impact_07": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        939,
+        313,
+        313,
+        313
+      ]
+    },
+    "impact_08": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        0,
+        626,
+        313,
+        313
+      ]
+    },
+    "impact_09": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        313,
+        626,
+        313,
+        313
+      ]
+    },
+    "impact_10": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        626,
+        626,
+        313,
+        313
+      ]
+    },
+    "impact_11": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        939,
+        626,
+        313,
+        313
+      ]
+    },
+    "impact_12": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        0,
+        939,
+        313,
+        313
+      ]
+    },
+    "impact_13": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        313,
+        939,
+        313,
+        313
+      ]
+    },
+    "impact_14": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        626,
+        939,
+        313,
+        313
+      ]
+    },
+    "impact_15": {
+      "texture": "Textures/impacts_v3.png",
+      "rect": [
+        939,
+        939,
+        313,
+        313
+      ]
+    }
+  },
+  "weapons": [
+    {
+      "id": "dagger",
+      "type": "melee",
+      "sprite": "dagger",
+      "projectile": null,
+      "muzzle": null,
+      "impact": "impact_00",
+      "attack_audio": "09_slash",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "fork",
+      "type": "melee",
+      "sprite": "fork",
+      "projectile": null,
+      "muzzle": null,
+      "impact": "impact_01",
+      "attack_audio": "09_slash",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "club",
+      "type": "melee",
+      "sprite": "club",
+      "projectile": null,
+      "muzzle": null,
+      "impact": "impact_02",
+      "attack_audio": "09_slash",
+      "impact_audio": "21_heavy_strike"
+    },
+    {
+      "id": "sickle",
+      "type": "melee",
+      "sprite": "sickle",
+      "projectile": null,
+      "muzzle": null,
+      "impact": "impact_03",
+      "attack_audio": "09_slash",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "whip",
+      "type": "melee",
+      "sprite": "whip",
+      "projectile": null,
+      "muzzle": null,
+      "impact": "impact_04",
+      "attack_audio": "09_slash",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "mallet",
+      "type": "melee",
+      "sprite": "mallet",
+      "projectile": null,
+      "muzzle": null,
+      "impact": "impact_05",
+      "attack_audio": "09_slash",
+      "impact_audio": "21_heavy_strike"
+    },
+    {
+      "id": "pistol",
+      "type": "ranged",
+      "sprite": "pistol",
+      "projectile": "projectile_00",
+      "muzzle": "muzzle_00",
+      "impact": "impact_06",
+      "attack_audio": "08_shot",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "pea_gun",
+      "type": "ranged",
+      "sprite": "pea_gun",
+      "projectile": "projectile_01",
+      "muzzle": "muzzle_01",
+      "impact": "impact_07",
+      "attack_audio": "08_shot",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "chili_gun",
+      "type": "ranged",
+      "sprite": "chili_gun",
+      "projectile": "projectile_02",
+      "muzzle": "muzzle_02",
+      "impact": "impact_08",
+      "attack_audio": "08_shot",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "water_cannon",
+      "type": "ranged",
+      "sprite": "water_cannon",
+      "projectile": "projectile_03",
+      "muzzle": "muzzle_03",
+      "impact": "impact_09",
+      "attack_audio": "08_shot",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "bow",
+      "type": "ranged",
+      "sprite": "bow",
+      "projectile": "projectile_04",
+      "muzzle": null,
+      "impact": "impact_10",
+      "attack_audio": "22_bow_release",
+      "impact_audio": "23_arrow_impact"
+    },
+    {
+      "id": "crossbow",
+      "type": "ranged",
+      "sprite": "crossbow",
+      "projectile": "projectile_05",
+      "muzzle": null,
+      "impact": "impact_11",
+      "attack_audio": "22_bow_release",
+      "impact_audio": "23_arrow_impact"
+    },
+    {
+      "id": "honey_wand",
+      "type": "ranged",
+      "sprite": "honey_wand",
+      "projectile": "projectile_06",
+      "muzzle": "muzzle_04",
+      "impact": "impact_12",
+      "attack_audio": "14_magic",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "spore_staff",
+      "type": "ranged",
+      "sprite": "spore_staff",
+      "projectile": "projectile_07",
+      "muzzle": "muzzle_05",
+      "impact": "impact_13",
+      "attack_audio": "14_magic",
+      "impact_audio": "10_hit"
+    },
+    {
+      "id": "bomb",
+      "type": "ranged",
+      "sprite": "bomb",
+      "projectile": "projectile_08",
+      "muzzle": "muzzle_06",
+      "impact": "impact_14",
+      "attack_audio": "08_shot",
+      "impact_audio": "13_explosion"
+    },
+    {
+      "id": "crystal",
+      "type": "ranged",
+      "sprite": "crystal",
+      "projectile": "projectile_09",
+      "muzzle": "muzzle_07",
+      "impact": "impact_15",
+      "attack_audio": "14_magic",
+      "impact_audio": "10_hit"
+    }
+  ]
+}

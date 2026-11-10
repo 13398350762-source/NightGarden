@@ -1,0 +1,57 @@
+{
+  "scope": "local_demo",
+  "sort": "score_desc",
+  "placeholder_data": true,
+  "entries": [
+    {
+      "name": "薄荷旅人",
+      "hero": "pea",
+      "score": 18650,
+      "wave": 20,
+      "seconds": 1248
+    },
+    {
+      "name": "月下园丁",
+      "hero": "mushroom",
+      "score": 17280,
+      "wave": 20,
+      "seconds": 1215
+    },
+    {
+      "name": "南瓜先生",
+      "hero": "pumpkin",
+      "score": 15460,
+      "wave": 19,
+      "seconds": 1132
+    },
+    {
+      "name": "你",
+      "hero": "radish",
+      "score": 12840,
+      "wave": 17,
+      "seconds": 1026,
+      "is_player": true
+    },
+    {
+      "name": "辣椒小队",
+      "hero": "chili",
+      "score": 11620,
+      "wave": 16,
+      "seconds": 945
+    },
+    {
+      "name": "晨露",
+      "hero": "pea",
+      "score": 9840,
+      "wave": 14,
+      "seconds": 832
+    },
+    {
+      "name": "种子收藏家",
+      "hero": "radish",
+      "score": 8320,
+      "wave": 12,
+      "seconds": 721
+    }
+  ]
+}

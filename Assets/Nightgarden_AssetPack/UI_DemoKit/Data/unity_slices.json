@@ -1,0 +1,876 @@
+{
+  "sheets": [
+    {
+      "file": "Art/stats.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "attack_speed",
+          "x": 0,
+          "y": 0,
+          "width": 418,
+          "height": 418
+        },
+        {
+          "id": "life_steal",
+          "x": 418,
+          "y": 0,
+          "width": 418,
+          "height": 418
+        },
+        {
+          "id": "regen_speed",
+          "x": 836,
+          "y": 0,
+          "width": 418,
+          "height": 418
+        },
+        {
+          "id": "move_speed",
+          "x": 0,
+          "y": 418,
+          "width": 418,
+          "height": 418
+        },
+        {
+          "id": "physical_damage",
+          "x": 418,
+          "y": 418,
+          "width": 418,
+          "height": 418
+        },
+        {
+          "id": "magic_damage",
+          "x": 836,
+          "y": 418,
+          "width": 418,
+          "height": 418
+        },
+        {
+          "id": "armor",
+          "x": 0,
+          "y": 836,
+          "width": 418,
+          "height": 418
+        },
+        {
+          "id": "luck",
+          "x": 418,
+          "y": 836,
+          "width": 418,
+          "height": 418
+        },
+        {
+          "id": "max_health",
+          "x": 836,
+          "y": 836,
+          "width": 418,
+          "height": 418
+        }
+      ]
+    },
+    {
+      "file": "Art/currency.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "currency",
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "id": "seed_1",
+          "x": 627,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "id": "seed_5",
+          "x": 0,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "id": "seed_10",
+          "x": 627,
+          "y": 627,
+          "width": 627,
+          "height": 627
+        }
+      ]
+    },
+    {
+      "file": "Art/hit.png",
+      "height": 1024,
+      "sprites": [
+        {
+          "id": "hit_0",
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        },
+        {
+          "id": "hit_1",
+          "x": 768,
+          "y": 0,
+          "width": 768,
+          "height": 512
+        },
+        {
+          "id": "hit_2",
+          "x": 0,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        },
+        {
+          "id": "hit_3",
+          "x": 768,
+          "y": 512,
+          "width": 768,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "file": "Art/hero_radish.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "hero_radish",
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "id": "portrait_radish",
+          "x": 112,
+          "y": 31,
+          "width": 426,
+          "height": 401
+        }
+      ]
+    },
+    {
+      "file": "Art/hero_pumpkin.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "hero_pumpkin",
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "id": "portrait_pumpkin",
+          "x": 112,
+          "y": 31,
+          "width": 426,
+          "height": 401
+        }
+      ]
+    },
+    {
+      "file": "Art/hero_mushroom.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "hero_mushroom",
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "id": "portrait_mushroom",
+          "x": 112,
+          "y": 31,
+          "width": 426,
+          "height": 401
+        }
+      ]
+    },
+    {
+      "file": "Art/hero_chili.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "hero_chili",
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "id": "portrait_chili",
+          "x": 112,
+          "y": 31,
+          "width": 426,
+          "height": 401
+        }
+      ]
+    },
+    {
+      "file": "Art/hero_pea.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "hero_pea",
+          "x": 0,
+          "y": 0,
+          "width": 627,
+          "height": 627
+        },
+        {
+          "id": "portrait_pea",
+          "x": 112,
+          "y": 31,
+          "width": 426,
+          "height": 401
+        }
+      ]
+    },
+    {
+      "file": "Art/weapons.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "dagger",
+          "x": 0,
+          "y": 0,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "fork",
+          "x": 313,
+          "y": 0,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "club",
+          "x": 626,
+          "y": 0,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "sickle",
+          "x": 939,
+          "y": 0,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "whip",
+          "x": 0,
+          "y": 313,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "mallet",
+          "x": 313,
+          "y": 313,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "pistol",
+          "x": 626,
+          "y": 313,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "pea_gun",
+          "x": 939,
+          "y": 313,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "chili_gun",
+          "x": 0,
+          "y": 626,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "water_cannon",
+          "x": 313,
+          "y": 626,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "bow",
+          "x": 626,
+          "y": 626,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "crossbow",
+          "x": 939,
+          "y": 626,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "honey_wand",
+          "x": 0,
+          "y": 939,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "spore_staff",
+          "x": 313,
+          "y": 939,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "bomb",
+          "x": 626,
+          "y": 939,
+          "width": 313,
+          "height": 313
+        },
+        {
+          "id": "crystal",
+          "x": 939,
+          "y": 939,
+          "width": 313,
+          "height": 313
+        }
+      ]
+    },
+    {
+      "file": "Art/accessories.png",
+      "height": 1024,
+      "sprites": [
+        {
+          "id": "ring",
+          "x": 0,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "moon",
+          "x": 512,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "clover",
+          "x": 1024,
+          "y": 0,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "earrings",
+          "x": 0,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "bracelet",
+          "x": 512,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        },
+        {
+          "id": "charm",
+          "x": 1024,
+          "y": 512,
+          "width": 512,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "file": "Art/normal_enemies.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "normal_enemies_grub",
+          "x": 41,
+          "y": 82,
+          "width": 239,
+          "height": 195
+        },
+        {
+          "id": "normal_enemies_beetle",
+          "x": 961,
+          "y": 72,
+          "width": 267,
+          "height": 204
+        },
+        {
+          "id": "normal_enemies_slime",
+          "x": 338,
+          "y": 388,
+          "width": 266,
+          "height": 207
+        }
+      ]
+    },
+    {
+      "file": "Art/loot.png",
+      "height": 1254,
+      "sprites": [
+        {
+          "id": "loot_xp_green",
+          "x": 62,
+          "y": 75,
+          "width": 203,
+          "height": 205
+        },
+        {
+          "id": "loot_xp_violet",
+          "x": 354,
+          "y": 53,
+          "width": 235,
+          "height": 233
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "button_normal",
+      "file": "Components/button_normal.png",
+      "size": [
+        320,
+        82
+      ],
+      "border": [
+        22,
+        22,
+        22,
+        22
+      ]
+    },
+    {
+      "id": "button_hover",
+      "file": "Components/button_hover.png",
+      "size": [
+        320,
+        82
+      ],
+      "border": [
+        22,
+        22,
+        22,
+        22
+      ]
+    },
+    {
+      "id": "button_pressed",
+      "file": "Components/button_pressed.png",
+      "size": [
+        320,
+        82
+      ],
+      "border": [
+        22,
+        22,
+        22,
+        22
+      ]
+    },
+    {
+      "id": "button_disabled",
+      "file": "Components/button_disabled.png",
+      "size": [
+        320,
+        82
+      ],
+      "border": [
+        22,
+        22,
+        22,
+        22
+      ]
+    },
+    {
+      "id": "weapon_frame_1",
+      "file": "Components/weapon_frame_1.png",
+      "size": [
+        160,
+        160
+      ],
+      "border": [
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "id": "shop_card_weapon_1",
+      "file": "Components/shop_card_weapon_1.png",
+      "size": [
+        320,
+        450
+      ],
+      "border": [
+        30,
+        30,
+        30,
+        84
+      ]
+    },
+    {
+      "id": "weapon_frame_2",
+      "file": "Components/weapon_frame_2.png",
+      "size": [
+        160,
+        160
+      ],
+      "border": [
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "id": "shop_card_weapon_2",
+      "file": "Components/shop_card_weapon_2.png",
+      "size": [
+        320,
+        450
+      ],
+      "border": [
+        30,
+        30,
+        30,
+        84
+      ]
+    },
+    {
+      "id": "weapon_frame_3",
+      "file": "Components/weapon_frame_3.png",
+      "size": [
+        160,
+        160
+      ],
+      "border": [
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "id": "shop_card_weapon_3",
+      "file": "Components/shop_card_weapon_3.png",
+      "size": [
+        320,
+        450
+      ],
+      "border": [
+        30,
+        30,
+        30,
+        84
+      ]
+    },
+    {
+      "id": "accessory_frame_common",
+      "file": "Components/accessory_frame_common.png",
+      "size": [
+        160,
+        160
+      ],
+      "border": [
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "id": "shop_card_accessory_common",
+      "file": "Components/shop_card_accessory_common.png",
+      "size": [
+        320,
+        450
+      ],
+      "border": [
+        30,
+        30,
+        30,
+        84
+      ]
+    },
+    {
+      "id": "accessory_frame_rare",
+      "file": "Components/accessory_frame_rare.png",
+      "size": [
+        160,
+        160
+      ],
+      "border": [
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "id": "shop_card_accessory_rare",
+      "file": "Components/shop_card_accessory_rare.png",
+      "size": [
+        320,
+        450
+      ],
+      "border": [
+        30,
+        30,
+        30,
+        84
+      ]
+    },
+    {
+      "id": "accessory_frame_epic",
+      "file": "Components/accessory_frame_epic.png",
+      "size": [
+        160,
+        160
+      ],
+      "border": [
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "id": "shop_card_accessory_epic",
+      "file": "Components/shop_card_accessory_epic.png",
+      "size": [
+        320,
+        450
+      ],
+      "border": [
+        30,
+        30,
+        30,
+        84
+      ]
+    },
+    {
+      "id": "panel",
+      "file": "Components/panel.png",
+      "size": [
+        640,
+        360
+      ],
+      "border": [
+        32,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "id": "portrait_frame",
+      "file": "Components/portrait_frame.png",
+      "size": [
+        192,
+        192
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "selection_outline",
+      "file": "Components/selection_outline.png",
+      "size": [
+        160,
+        160
+      ],
+      "border": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "id": "lock",
+      "file": "Components/lock.png",
+      "size": [
+        64,
+        64
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "refresh",
+      "file": "Components/refresh.png",
+      "size": [
+        64,
+        64
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "combine",
+      "file": "Components/combine.png",
+      "size": [
+        64,
+        64
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "close",
+      "file": "Components/close.png",
+      "size": [
+        64,
+        64
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "input_normal",
+      "file": "Components/input_normal.png",
+      "size": [
+        480,
+        76
+      ],
+      "border": [
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "id": "input_focused",
+      "file": "Components/input_focused.png",
+      "size": [
+        480,
+        76
+      ],
+      "border": [
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "id": "input_error",
+      "file": "Components/input_error.png",
+      "size": [
+        480,
+        76
+      ],
+      "border": [
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "id": "bar_frame",
+      "file": "Components/bar_frame.png",
+      "size": [
+        400,
+        48
+      ],
+      "border": [
+        14,
+        14,
+        14,
+        14
+      ]
+    },
+    {
+      "id": "health_fill",
+      "file": "Components/health_fill.png",
+      "size": [
+        384,
+        32
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "xp_fill",
+      "file": "Components/xp_fill.png",
+      "size": [
+        384,
+        32
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pause_icon",
+      "file": "Components/pause_icon.png",
+      "size": [
+        64,
+        64
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

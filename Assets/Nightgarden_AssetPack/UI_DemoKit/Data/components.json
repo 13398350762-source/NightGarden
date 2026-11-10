@@ -1,0 +1,422 @@
+[
+  {
+    "id": "button_normal",
+    "file": "Components/button_normal.png",
+    "size": [
+      320,
+      82
+    ],
+    "border": [
+      22,
+      22,
+      22,
+      22
+    ]
+  },
+  {
+    "id": "button_hover",
+    "file": "Components/button_hover.png",
+    "size": [
+      320,
+      82
+    ],
+    "border": [
+      22,
+      22,
+      22,
+      22
+    ]
+  },
+  {
+    "id": "button_pressed",
+    "file": "Components/button_pressed.png",
+    "size": [
+      320,
+      82
+    ],
+    "border": [
+      22,
+      22,
+      22,
+      22
+    ]
+  },
+  {
+    "id": "button_disabled",
+    "file": "Components/button_disabled.png",
+    "size": [
+      320,
+      82
+    ],
+    "border": [
+      22,
+      22,
+      22,
+      22
+    ]
+  },
+  {
+    "id": "weapon_frame_1",
+    "file": "Components/weapon_frame_1.png",
+    "size": [
+      160,
+      160
+    ],
+    "border": [
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  {
+    "id": "shop_card_weapon_1",
+    "file": "Components/shop_card_weapon_1.png",
+    "size": [
+      320,
+      450
+    ],
+    "border": [
+      30,
+      30,
+      30,
+      84
+    ]
+  },
+  {
+    "id": "weapon_frame_2",
+    "file": "Components/weapon_frame_2.png",
+    "size": [
+      160,
+      160
+    ],
+    "border": [
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  {
+    "id": "shop_card_weapon_2",
+    "file": "Components/shop_card_weapon_2.png",
+    "size": [
+      320,
+      450
+    ],
+    "border": [
+      30,
+      30,
+      30,
+      84
+    ]
+  },
+  {
+    "id": "weapon_frame_3",
+    "file": "Components/weapon_frame_3.png",
+    "size": [
+      160,
+      160
+    ],
+    "border": [
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  {
+    "id": "shop_card_weapon_3",
+    "file": "Components/shop_card_weapon_3.png",
+    "size": [
+      320,
+      450
+    ],
+    "border": [
+      30,
+      30,
+      30,
+      84
+    ]
+  },
+  {
+    "id": "accessory_frame_common",
+    "file": "Components/accessory_frame_common.png",
+    "size": [
+      160,
+      160
+    ],
+    "border": [
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  {
+    "id": "shop_card_accessory_common",
+    "file": "Components/shop_card_accessory_common.png",
+    "size": [
+      320,
+      450
+    ],
+    "border": [
+      30,
+      30,
+      30,
+      84
+    ]
+  },
+  {
+    "id": "accessory_frame_rare",
+    "file": "Components/accessory_frame_rare.png",
+    "size": [
+      160,
+      160
+    ],
+    "border": [
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  {
+    "id": "shop_card_accessory_rare",
+    "file": "Components/shop_card_accessory_rare.png",
+    "size": [
+      320,
+      450
+    ],
+    "border": [
+      30,
+      30,
+      30,
+      84
+    ]
+  },
+  {
+    "id": "accessory_frame_epic",
+    "file": "Components/accessory_frame_epic.png",
+    "size": [
+      160,
+      160
+    ],
+    "border": [
+      25,
+      25,
+      25,
+      25
+    ]
+  },
+  {
+    "id": "shop_card_accessory_epic",
+    "file": "Components/shop_card_accessory_epic.png",
+    "size": [
+      320,
+      450
+    ],
+    "border": [
+      30,
+      30,
+      30,
+      84
+    ]
+  },
+  {
+    "id": "panel",
+    "file": "Components/panel.png",
+    "size": [
+      640,
+      360
+    ],
+    "border": [
+      32,
+      32,
+      32,
+      32
+    ]
+  },
+  {
+    "id": "portrait_frame",
+    "file": "Components/portrait_frame.png",
+    "size": [
+      192,
+      192
+    ],
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "selection_outline",
+    "file": "Components/selection_outline.png",
+    "size": [
+      160,
+      160
+    ],
+    "border": [
+      24,
+      24,
+      24,
+      24
+    ]
+  },
+  {
+    "id": "lock",
+    "file": "Components/lock.png",
+    "size": [
+      64,
+      64
+    ],
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "refresh",
+    "file": "Components/refresh.png",
+    "size": [
+      64,
+      64
+    ],
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "combine",
+    "file": "Components/combine.png",
+    "size": [
+      64,
+      64
+    ],
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "close",
+    "file": "Components/close.png",
+    "size": [
+      64,
+      64
+    ],
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "input_normal",
+    "file": "Components/input_normal.png",
+    "size": [
+      480,
+      76
+    ],
+    "border": [
+      20,
+      20,
+      20,
+      20
+    ]
+  },
+  {
+    "id": "input_focused",
+    "file": "Components/input_focused.png",
+    "size": [
+      480,
+      76
+    ],
+    "border": [
+      20,
+      20,
+      20,
+      20
+    ]
+  },
+  {
+    "id": "input_error",
+    "file": "Components/input_error.png",
+    "size": [
+      480,
+      76
+    ],
+    "border": [
+      20,
+      20,
+      20,
+      20
+    ]
+  },
+  {
+    "id": "bar_frame",
+    "file": "Components/bar_frame.png",
+    "size": [
+      400,
+      48
+    ],
+    "border": [
+      14,
+      14,
+      14,
+      14
+    ]
+  },
+  {
+    "id": "health_fill",
+    "file": "Components/health_fill.png",
+    "size": [
+      384,
+      32
+    ],
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "xp_fill",
+    "file": "Components/xp_fill.png",
+    "size": [
+      384,
+      32
+    ],
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "id": "pause_icon",
+    "file": "Components/pause_icon.png",
+    "size": [
+      64,
+      64
+    ],
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+]

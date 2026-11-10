@@ -1,0 +1,460 @@
+{
+  "count": 20,
+  "atlases": [
+    {
+      "file": "accessories_01.png",
+      "width": 1536,
+      "height": 1024,
+      "columns": 3,
+      "rows": 2,
+      "cell_size": [
+        512,
+        512
+      ]
+    },
+    {
+      "file": "accessories_02.png",
+      "width": 1536,
+      "height": 1024,
+      "columns": 4,
+      "rows": 2,
+      "cell_size": [
+        384,
+        512
+      ]
+    },
+    {
+      "file": "accessories_03.png",
+      "width": 1536,
+      "height": 1024,
+      "columns": 3,
+      "rows": 2,
+      "cell_size": [
+        512,
+        512
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "acorn_locket",
+      "name": "橡果吊坠",
+      "texture": "accessories_01.png",
+      "rect_top_left": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "dewdrop_vial",
+      "name": "露珠瓶挂饰",
+      "texture": "accessories_01.png",
+      "rect_top_left": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "snail_brooch",
+      "name": "蜗壳胸针",
+      "texture": "accessories_01.png",
+      "rect_top_left": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "sunflower_medal",
+      "name": "向日葵勋章",
+      "texture": "accessories_01.png",
+      "rect_top_left": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "leaf_hairclip",
+      "name": "绿叶发夹",
+      "texture": "accessories_01.png",
+      "rect_top_left": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "bell_anklet",
+      "name": "铃铛脚链",
+      "texture": "accessories_01.png",
+      "rect_top_left": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "beetle_brooch",
+      "name": "甲虫翼胸针",
+      "texture": "accessories_02.png",
+      "rect_top_left": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 0,
+        "y": 512,
+        "width": 384,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "strawberry_pendant",
+      "name": "草莓心吊坠",
+      "texture": "accessories_02.png",
+      "rect_top_left": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 384,
+        "y": 512,
+        "width": 384,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "dandelion_comb",
+      "name": "蒲公英发梳",
+      "texture": "accessories_02.png",
+      "rect_top_left": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 768,
+        "y": 512,
+        "width": 384,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "silk_bowtie",
+      "name": "蛛丝领结",
+      "texture": "accessories_02.png",
+      "rect_top_left": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 1152,
+        "y": 512,
+        "width": 384,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "firefly_charm",
+      "name": "萤火灯挂饰",
+      "texture": "accessories_02.png",
+      "rect_top_left": {
+        "x": 0,
+        "y": 512,
+        "width": 384,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "walnut_watch",
+      "name": "核桃怀表",
+      "texture": "accessories_02.png",
+      "rect_top_left": {
+        "x": 384,
+        "y": 512,
+        "width": 384,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "dragonfly_hairpin",
+      "name": "蜻蜓发簪",
+      "texture": "accessories_02.png",
+      "rect_top_left": {
+        "x": 768,
+        "y": 512,
+        "width": 384,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "seed_cufflinks",
+      "name": "南瓜籽袖扣",
+      "texture": "accessories_02.png",
+      "rect_top_left": {
+        "x": 1152,
+        "y": 512,
+        "width": 384,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "rose_ring",
+      "name": "玫瑰晶戒指",
+      "texture": "accessories_03.png",
+      "rect_top_left": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "maple_clasp",
+      "name": "枫叶围巾扣",
+      "texture": "accessories_03.png",
+      "rect_top_left": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "butterfly_choker",
+      "name": "蝴蝶颈饰",
+      "texture": "accessories_03.png",
+      "rect_top_left": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "berry_bracelet",
+      "name": "浆果手链",
+      "texture": "accessories_03.png",
+      "rect_top_left": {
+        "x": 0,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 0,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "thimble_talisman",
+      "name": "顶针护符",
+      "texture": "accessories_03.png",
+      "rect_top_left": {
+        "x": 512,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 512,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "id": "lily_earrings",
+      "name": "铃兰耳饰",
+      "texture": "accessories_03.png",
+      "rect_top_left": {
+        "x": 1024,
+        "y": 512,
+        "width": 512,
+        "height": 512
+      },
+      "rect_unity": {
+        "x": 1024,
+        "y": 0,
+        "width": 512,
+        "height": 512
+      },
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    }
+  ]
+}

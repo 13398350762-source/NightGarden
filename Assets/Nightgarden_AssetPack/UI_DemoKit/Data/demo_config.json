@@ -1,0 +1,291 @@
+{
+  "note": "示例数据；不是已接入的游戏系统",
+  "weapon_tiers": [
+    {
+      "level": 1,
+      "frame": "weapon_frame_1",
+      "color": "#93aa69"
+    },
+    {
+      "level": 2,
+      "frame": "weapon_frame_2",
+      "color": "#71b6c5"
+    },
+    {
+      "level": 3,
+      "frame": "weapon_frame_3",
+      "color": "#ad85c2"
+    }
+  ],
+  "accessory_rarities": [
+    "common",
+    "rare",
+    "epic"
+  ],
+  "max_equipped_weapons": 6,
+  "merge": {
+    "require_same_id": true,
+    "require_same_level": true,
+    "consume": 2,
+    "produce": 1,
+    "max_level": 3
+  },
+  "weapons": [
+    {
+      "id": "dagger",
+      "name": "修枝刀",
+      "allowed_levels": [
+        1,
+        2,
+        3
+      ],
+      "starting": true,
+      "damage": 8,
+      "attack_interval_seconds": 0.65
+    },
+    {
+      "id": "club",
+      "name": "橡果棒",
+      "allowed_levels": [
+        1,
+        2,
+        3
+      ],
+      "starting": true,
+      "damage": 8,
+      "attack_interval_seconds": 0.65
+    },
+    {
+      "id": "pistol",
+      "name": "种子手枪",
+      "allowed_levels": [
+        1,
+        2,
+        3
+      ],
+      "starting": true,
+      "damage": 8,
+      "attack_interval_seconds": 0.65
+    },
+    {
+      "id": "bow",
+      "name": "叶弓",
+      "allowed_levels": [
+        1,
+        2,
+        3
+      ],
+      "starting": true,
+      "damage": 8,
+      "attack_interval_seconds": 0.65
+    },
+    {
+      "id": "honey_wand",
+      "name": "蜂蜜法杖",
+      "allowed_levels": [
+        1,
+        2,
+        3
+      ],
+      "starting": true,
+      "damage": 8,
+      "attack_interval_seconds": 0.65
+    },
+    {
+      "id": "spore_staff",
+      "name": "孢子法杖",
+      "allowed_levels": [
+        1,
+        2,
+        3
+      ],
+      "starting": true,
+      "damage": 8,
+      "attack_interval_seconds": 0.65
+    },
+    {
+      "id": "crossbow",
+      "name": "树枝弩",
+      "allowed_levels": [
+        2,
+        3
+      ],
+      "starting": false
+    },
+    {
+      "id": "crystal",
+      "name": "紫晶提灯",
+      "allowed_levels": [
+        3
+      ],
+      "starting": false
+    }
+  ],
+  "characters": [
+    {
+      "id": "radish",
+      "name": "萝卜骑士",
+      "unlocked": true,
+      "unlock_condition": null
+    },
+    {
+      "id": "pumpkin",
+      "name": "南瓜卫士",
+      "unlocked": true,
+      "unlock_condition": null
+    },
+    {
+      "id": "mushroom",
+      "name": "蘑菇巫师",
+      "unlocked": true,
+      "unlock_condition": null
+    },
+    {
+      "id": "chili",
+      "name": "辣椒游侠",
+      "unlocked": false,
+      "unlock_condition": "自定义解锁条件"
+    },
+    {
+      "id": "pea",
+      "name": "豌豆射手",
+      "unlocked": false,
+      "unlock_condition": "自定义解锁条件"
+    }
+  ],
+  "stats": [
+    {
+      "id": "attack_speed",
+      "name": "攻击速度",
+      "icon": "attack_speed"
+    },
+    {
+      "id": "life_steal",
+      "name": "吸血",
+      "icon": "life_steal"
+    },
+    {
+      "id": "regen_speed",
+      "name": "回复速度",
+      "icon": "regen_speed"
+    },
+    {
+      "id": "move_speed",
+      "name": "移动速度",
+      "icon": "move_speed"
+    },
+    {
+      "id": "physical_damage",
+      "name": "物理伤害",
+      "icon": "physical_damage"
+    },
+    {
+      "id": "magic_damage",
+      "name": "魔法伤害",
+      "icon": "magic_damage"
+    },
+    {
+      "id": "armor",
+      "name": "防御",
+      "icon": "armor"
+    },
+    {
+      "id": "luck",
+      "name": "幸运",
+      "icon": "luck"
+    },
+    {
+      "id": "max_health",
+      "name": "生命上限",
+      "icon": "max_health"
+    }
+  ],
+  "currency": {
+    "name": "琥珀种子",
+    "icon": "currency",
+    "drops": [
+      {
+        "value": 1,
+        "sprite": "seed_1"
+      },
+      {
+        "value": 5,
+        "sprite": "seed_5"
+      },
+      {
+        "value": 10,
+        "sprite": "seed_10"
+      }
+    ]
+  },
+  "hit_animation": {
+    "frames": [
+      "hit_0",
+      "hit_1",
+      "hit_2",
+      "hit_3"
+    ],
+    "fps": 12,
+    "loop": false
+  },
+  "shop": {
+    "offer_count": 4,
+    "refresh_price": 8,
+    "preserve_locked_on_refresh": true
+  },
+  "accessory_examples": [
+    {
+      "id": "ring",
+      "name": "蜜晶戒指",
+      "rarity": "common",
+      "max_health_bonus": 5,
+      "heal_amount": 1,
+      "heal_interval_seconds": 5
+    },
+    {
+      "id": "clover",
+      "name": "幸运胸针",
+      "rarity": "rare",
+      "luck_bonus": 8
+    }
+  ],
+  "audio": {
+    "click": "05_click",
+    "hover": "06_hover",
+    "denied": "07_deny",
+    "purchase": "02_coin",
+    "refresh": "05_click",
+    "combine": "04_level",
+    "level_up": "04_level",
+    "hurt": "11_hurt",
+    "hit": "10_hit"
+  },
+  "current_character_stats_example": {
+    "attack_speed_bonus_percent": 20,
+    "life_steal_percent": 3,
+    "heal_amount": 1,
+    "heal_interval_seconds": 5,
+    "move_speed_bonus_percent": 5,
+    "physical_damage_bonus": 6,
+    "magic_damage_bonus": 2,
+    "armor": 4,
+    "luck": 8,
+    "max_health": 25
+  },
+  "account_ui": {
+    "login_fields": [
+      "username",
+      "password"
+    ],
+    "register_fields": [
+      "username",
+      "password",
+      "confirm_password"
+    ],
+    "preview_only": true,
+    "navigation": {
+      "login": "01_main_menu",
+      "register": "10_login"
+    }
+  }
+}
