@@ -13,7 +13,7 @@ public class UIManager : BaseManager<UIManager>
         targetTrans = GameObject.Find("Canvas").transform;
         GameObject.DontDestroyOnLoad(targetTrans);
     }
-    public void ShowPanel<T>(UnityAction<T> callback)where T:BasePanel
+    public void ShowPanel<T>(UnityAction<T> callback=null)where T:BasePanel
     {
         string panelName=typeof(T).Name;
         if (panelDic.ContainsKey(panelName))
@@ -22,7 +22,7 @@ public class UIManager : BaseManager<UIManager>
             return;
         }
         T panelScript = null;
-        PoolManager.Instance.GetObj(panelName, "Panel", (panel) => {
+        PoolManager.Instance.GetObj(panelName, "Panel", (panel) => { 
             (panel as GameObject).transform.SetParent(targetTrans);
             panelScript = (panel as GameObject).GetComponent<T>();
             panelScript.Show();
@@ -31,7 +31,7 @@ public class UIManager : BaseManager<UIManager>
         });
     }
 
-    public void HidePanel<T>() where T: BasePanel
+    public void HidePanel<T>(UnityAction callback = null) where T: BasePanel
     {
         string panelName=typeof(T).Name;
         if (panelDic.ContainsKey(panelName))
@@ -40,6 +40,7 @@ public class UIManager : BaseManager<UIManager>
             panelScript.Hide(() => {
                 panelDic.Remove(panelName);
                 PoolManager.Instance.PushObj(panelName, panelScript.gameObject);
+                callback?.Invoke();
             });
         }
     }
