@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class PoolData
@@ -14,19 +15,19 @@ public class PoolData
         obj.transform.SetParent(Parentobj.transform, false);
         objList.Add(obj);
     }
-    public GameObject GetObject()
+    public void GetObject(string abName,UnityAction<Object> action)
     {
-        GameObject obj = null;
         if (objList.Count != 0)
         {
-            obj= objList[0];
+            GameObject obj= objList[0];
             objList.RemoveAt(0);
+            obj.transform.SetParent(null, false);
+            action?.Invoke(obj);
         }
         else
         {
-            obj=GameObject.Instantiate(Resources.Load<GameObject>(Parentobj.name));
+            ResManager.Instance.LoadResAsync(abName,Parentobj.name,action);
         }
-        return obj;
     }
     public void Clear()
     {
@@ -59,18 +60,16 @@ public class PoolManager : BaseManager<PoolManager>
             poolDic.Add(name, new PoolData(name,poolobj));
         poolDic[name].PushObject(obj);
     }
-    public GameObject GetObj(string name)
+    public void GetObj(string resName,string abName,UnityAction<Object> action)
     {
-        GameObject obj = null;
-        if (poolDic.ContainsKey(name))
+        if (poolDic.ContainsKey(resName))
         {
-            obj = poolDic[name].GetObject();
+            poolDic[resName].GetObject(abName,action);
         }
         else
         {
-            obj = GameObject.Instantiate(Resources.Load<GameObject>(name));
+            ResManager.Instance.LoadResAsync(abName, resName, action);
         }
-        return obj;
     }
     public void Clear()
     {
