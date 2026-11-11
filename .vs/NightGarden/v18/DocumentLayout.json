@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "D:\\unity\\NightGarden\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|d:\\unity\\nightgarden\\assets\\scripts\\ui\\panel\\registerpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panel\\registerpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\ui\\panel\\loginpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panel\\loginpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\components\\poolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|d:\\unity\\nightgarden\\assets\\scripts\\components\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\components\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\components\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\components\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|d:\\unity\\nightgarden\\assets\\scripts\\components\\poolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\components\\poolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,8 +23,20 @@
       "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\components\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\ui\\panel\\loginpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panel\\loginpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\data\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\userdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\ui\\panel\\registerpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panel\\registerpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\ui\\panel\\tippanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panel\\tippanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\ui\\base\\basepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\base\\basepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,55 +58,115 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ScenesManager.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\ScenesManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Components\\ScenesManager.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\ScenesManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Components\\ScenesManager.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T04:21:06.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "RegisterPanel.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\RegisterPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\RegisterPanel.cs",
               "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\RegisterPanel.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\Panel\\RegisterPanel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAwwEMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T11:43:00.107Z",
+              "WhenOpened": "2026-11-11T03:21:22.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BasePanel.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Base\\BasePanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Base\\BasePanel.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Base\\BasePanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\Base\\BasePanel.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAwwDQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T04:20:55.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataManager.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\DataManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Components\\DataManager.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\DataManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Components\\DataManager.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T03:21:22.104Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "TipPanel.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\TipPanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\TipPanel.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\TipPanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\Panel\\TipPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T03:21:22.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserData.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Data\\UserData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\UserData.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Data\\UserData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\UserData.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwBAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T03:21:22.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "LoginPanel.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\LoginPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\LoginPanel.cs",
               "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\LoginPanel.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\Panel\\LoginPanel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswCAAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T11:42:59.818Z",
+              "WhenOpened": "2026-11-11T03:21:22.146Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "PoolManager.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\PoolManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Components\\PoolManager.cs",
               "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\PoolManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Components\\PoolManager.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAUwD4AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAiwD4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T10:16:33.338Z",
+              "WhenOpened": "2026-11-11T03:21:22.147Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UIManager.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\UIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Components\\UIManager.cs",
               "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\UIManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Components\\UIManager.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwDMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-10T08:49:14.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-11T03:21:22.147Z"
             }
           ]
         }

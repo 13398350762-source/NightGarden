@@ -43,14 +43,14 @@ public abstract class BasePanel : MonoBehaviour
         }
     }
 
-    public void Show()
+    virtual public void Show()
     {
         isShow = true;
         callback = null;
         Init();
     }
 
-    public void Hide(UnityAction action)
+    virtual public void Hide(UnityAction action)
     {
         isShow=false;
         callback = action;
