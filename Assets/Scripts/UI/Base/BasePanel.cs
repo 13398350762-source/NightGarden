@@ -8,7 +8,7 @@ public abstract class BasePanel : MonoBehaviour
 {
     private bool isShow;
     private CanvasGroup canvasGroup;
-    public float speed=1.0f;
+    public float speed=5.0f;
     private UnityAction callback;
     protected abstract void Init();
     // Start is called before the first frame update

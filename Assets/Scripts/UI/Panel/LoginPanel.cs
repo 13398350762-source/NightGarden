@@ -30,7 +30,10 @@ public class LoginPanel : BasePanel
             }
             if (DataManager.Instance.CheckLogin(inputUN.text, inputPW.text))
             {
-                ScenesManager.Instance.LoadSceneAsync("BeginScene");
+                ScenesManager.Instance.LoadSceneAsync("BeginScene", () => {
+                    UIManager.Instance.HidePanel<LoginPanel>();
+                    UIManager.Instance.ShowPanel<MainPanel>();
+                });
             }
             else
             {

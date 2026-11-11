@@ -871,6 +871,146 @@
         0,
         0
       ]
+    },
+    {
+      "id": "dropdown_background",
+      "file": "Components/dropdown_background.png",
+      "size": [
+        480,
+        76
+      ],
+      "border": [
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "id": "dropdown_arrow",
+      "file": "Components/dropdown_arrow.png",
+      "size": [
+        32,
+        32
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "toggle_track_off",
+      "file": "Components/toggle_track_off.png",
+      "size": [
+        88,
+        48
+      ],
+      "border": [
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "toggle_track_on",
+      "file": "Components/toggle_track_on.png",
+      "size": [
+        88,
+        48
+      ],
+      "border": [
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "toggle_handle",
+      "file": "Components/toggle_handle.png",
+      "size": [
+        36,
+        36
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "slider_track",
+      "file": "Components/slider_track.png",
+      "size": [
+        500,
+        24
+      ],
+      "border": [
+        10,
+        0,
+        10,
+        0
+      ]
+    },
+    {
+      "id": "slider_fill",
+      "file": "Components/slider_fill.png",
+      "size": [
+        500,
+        24
+      ],
+      "border": [
+        10,
+        0,
+        10,
+        0
+      ]
+    },
+    {
+      "id": "slider_handle",
+      "file": "Components/slider_handle.png",
+      "size": [
+        36,
+        36
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "toggle_off",
+      "file": "Components/toggle_off.png",
+      "size": [
+        88,
+        48
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "toggle_on",
+      "file": "Components/toggle_on.png",
+      "size": [
+        88,
+        48
+      ],
+      "border": [
+        0,
+        0,
+        0,
+        0
+      ]
     }
   ]
 }

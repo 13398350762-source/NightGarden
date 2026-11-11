@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static Unity.VisualScripting.Member;
 
 public class AudioManager : BaseManager<AudioManager>
 {
-    private bool isMusicMute;
-    private bool isSoundMute;
-    private float musicVolume=1.0f;
-    private float soundVolume=1.0f;
+    private float mainVolume;
+    private float musicVolume;
+    private float soundVolume;
     private AudioSource audioSource=null;
     private List<AudioSource> soundList=null;
     private GameObject Soundobj;
     private GameObject BGMobj;
+    private AudioData audioData;
     public AudioManager()
     {
+        LoadAudioData();
         soundList = new List<AudioSource>();
         MonoManager.Instance.AddUpdateEvent(Update);
     }
@@ -30,7 +32,6 @@ public class AudioManager : BaseManager<AudioManager>
             audioSource= BGMobj.GetComponent<AudioSource>();
         audioSource.clip = clip;
         audioSource.volume = musicVolume;
-        audioSource.mute = isMusicMute;
         audioSource.loop = true;
         audioSource.Play();
         action?.Invoke();
@@ -45,12 +46,6 @@ public class AudioManager : BaseManager<AudioManager>
         if (audioSource)
             audioSource.UnPause();
     }
-    public void SetMusicIsMute(bool mute)
-    {
-        isMusicMute = mute;
-        if (audioSource)
-            audioSource.mute = mute;
-    }
     public void PlaySound(AudioClip clip)
     {
         if (Soundobj == null)
@@ -61,25 +56,28 @@ public class AudioManager : BaseManager<AudioManager>
         AudioSource source= Soundobj.AddComponent<AudioSource>();
         source.clip = clip;
         source.loop= false;
-        source.mute= isSoundMute;
         source.volume= soundVolume;
         source.Play();
         soundList.Add(source);
     }
-    public void SetSoundIsMute(bool mute)
+    public void SetMainVolume(float volume)
     {
-        isSoundMute = mute;
+        mainVolume = volume;
+        if (audioSource)
+        {
+            audioSource.volume = volume * mainVolume;
+        }
         foreach (AudioSource source in soundList)
         {
             if (source)
-                source.mute = mute;
+                source.volume = volume * mainVolume;
         }
     }
     public void SetMusicVolume(float volume)
     {
         musicVolume = volume;
         if(audioSource)
-            audioSource.volume=volume;
+            audioSource.volume=volume*mainVolume;
     }
     public void SetSoundVolume(float volume)
     {
@@ -87,7 +85,7 @@ public class AudioManager : BaseManager<AudioManager>
         foreach (AudioSource source in soundList)
         {
             if (source)
-                source.volume = volume;
+                source.volume = volume*mainVolume;
         }
     }
     public void Update()
@@ -100,5 +98,28 @@ public class AudioManager : BaseManager<AudioManager>
                 soundList.RemoveAt(i);
             }
         }
+    }
+
+    public void LoadAudioData()
+    {
+        audioData = JsonManager.Instance.Load<AudioData>("AudioData");
+        if (audioData == null)
+            audioData = new AudioData();
+        SetMainVolume(audioData.volumeMain);
+        SetMusicVolume(audioData.volumeMusic);
+        SetSoundVolume(audioData.volumeSound);
+    }
+    public void SaveAudioData()
+    {
+        audioData.volumeMain = mainVolume;
+        audioData.volumeMusic = musicVolume;
+        audioData.volumeSound = soundVolume;
+        JsonManager.Instance.Save(audioData, "AudioData");
+    }
+    public void SetDefault()
+    {
+        SetMainVolume(1.0f);
+        SetMusicVolume(1.0f);
+        SetSoundVolume(1.0f);
     }
 }

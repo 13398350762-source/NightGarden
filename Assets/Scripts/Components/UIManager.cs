@@ -22,8 +22,8 @@ public class UIManager : BaseManager<UIManager>
             return;
         }
         T panelScript = null;
-        PoolManager.Instance.GetObj(panelName, "Panel", (panel) => { 
-            (panel as GameObject).transform.SetParent(targetTrans);
+        PoolManager.Instance.GetObj(panelName, "panel", (panel) => { 
+            (panel as GameObject).transform.SetParent(targetTrans,false);
             panelScript = (panel as GameObject).GetComponent<T>();
             panelScript.Show();
             panelDic.Add(panelName, panelScript);
