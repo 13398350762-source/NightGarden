@@ -1750,6 +1750,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  btnBack: {fileID: 8157197499929462624}
+  btnSure: {fileID: 608218056462918560}
+  btnDefault: {fileID: 1325492641495337232}
+  sliderMain: {fileID: 6705791057922277043}
+  sliderMusic: {fileID: 8068995194139462608}
+  sliderSound: {fileID: 7059331832787633225}
+  txtMain: {fileID: 308125610722178613}
+  txtMusic: {fileID: 2025208161151691203}
+  txtSound: {fileID: 7965883820416557304}
+  dropWindow: {fileID: 519499452850365440}
+  dropRate: {fileID: 3861926525259622405}
+  togDamage: {fileID: 1128917064376735249}
+  togShake: {fileID: 7533312582509830004}
 --- !u!1 &3377258766175330586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5510,7 +5523,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1920  x  1080
+  m_Text: Option A
 --- !u!1 &8770760671415776432
 GameObject:
   m_ObjectHideFlags: 0

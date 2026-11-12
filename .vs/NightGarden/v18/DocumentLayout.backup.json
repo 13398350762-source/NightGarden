@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\unity\\NightGarden\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|d:\\unity\\nightgarden\\assets\\scripts\\components\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\components\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\SettingPanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\UI\\Panel\\SettingPanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|d:\\unity\\nightgarden\\assets\\scripts\\components\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\components\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|d:\\unity\\nightgarden\\assets\\scripts\\data\\audiodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\audiodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\ui\\panel\\mainpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\components\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\components\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\SettingPanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\UI\\Panel\\SettingPanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\components\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,13 +74,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "AudioData.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Data\\AudioData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\AudioData.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Data\\AudioData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\AudioData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-11T12:28:04.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Components\\AudioManager.cs",
               "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\AudioManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Components\\AudioManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAwHoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-11T12:27:55.55Z",
               "EditorCaption": ""
@@ -91,23 +108,25 @@
               "RelativeToolTip": "Assets\\Scripts\\Main.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T09:49:59.608Z"
+              "WhenOpened": "2026-11-11T09:49:59.608Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "SettingPanel.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\SettingPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\SettingPanel.cs",
               "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\SettingPanel.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\Panel\\SettingPanel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwCgAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-11T09:49:59.595Z"
+              "WhenOpened": "2026-11-11T09:49:59.595Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "RankPanel.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\RankPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\RankPanel.cs",
@@ -119,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "MainPanel.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\MainPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\MainPanel.cs",
@@ -131,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ScenesManager.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\ScenesManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Components\\ScenesManager.cs",
@@ -143,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "RegisterPanel.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\RegisterPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\RegisterPanel.cs",
@@ -155,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BasePanel.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Base\\BasePanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Base\\BasePanel.cs",
@@ -167,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DataManager.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\DataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Components\\DataManager.cs",
@@ -179,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TipPanel.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\TipPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\TipPanel.cs",
@@ -191,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "UserData.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Data\\UserData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\UserData.cs",
@@ -203,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "PoolManager.cs",
               "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Components\\PoolManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Components\\PoolManager.cs",
