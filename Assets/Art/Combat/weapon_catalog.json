@@ -1,0 +1,842 @@
+{
+  "coordinates": "Unity bottom-left pixels",
+  "weapons": [
+    {
+      "id": "bomb",
+      "name": "爆裂南瓜",
+      "sprite": "bomb",
+      "bullet": "bullet8",
+      "effect": "impact_14",
+      "levels": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "bow",
+      "name": "叶弓",
+      "sprite": "bow",
+      "bullet": "bullet4",
+      "effect": "impact_10",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "gun",
+      "name": "赤椒喷火器",
+      "sprite": "chili_gun",
+      "bullet": null,
+      "effect": "flame_stream",
+      "levels": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "club",
+      "name": "橡果棒",
+      "sprite": "club",
+      "bullet": null,
+      "effect": "club_swing",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "crossbow",
+      "name": "穿林弩",
+      "sprite": "crossbow",
+      "bullet": "bullet5",
+      "effect": "impact_11",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "crystal",
+      "name": "水晶提灯",
+      "sprite": "crystal",
+      "bullet": null,
+      "effect": "lantern_fog",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "dagger",
+      "name": "修枝刀",
+      "sprite": "dagger",
+      "bullet": null,
+      "effect": "dagger_thrust",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "fork",
+      "name": "松土叉",
+      "sprite": "fork",
+      "bullet": null,
+      "effect": "fork_thrust",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "wand",
+      "name": "蜂蜜法杖",
+      "sprite": "honey_wand",
+      "bullet": "bullet6",
+      "effect": "impact_12",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "mallet",
+      "name": "栗壳重锤",
+      "sprite": "mallet",
+      "bullet": null,
+      "effect": "hammer_swing",
+      "levels": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "gun2",
+      "name": "豌豆连珠炮",
+      "sprite": "pea_gun",
+      "bullet": "bullet1",
+      "effect": "impact_07",
+      "levels": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "pistol",
+      "name": "种子手枪",
+      "sprite": "pistol",
+      "bullet": "bullet0",
+      "effect": "impact_06",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "sickle",
+      "name": "收露镰",
+      "sprite": "sickle",
+      "bullet": null,
+      "effect": "sickle_swing",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "staff",
+      "name": "孢子法杖",
+      "sprite": "spore_staff",
+      "bullet": "bullet7",
+      "effect": "impact_13",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "cannon",
+      "name": "晨露水炮",
+      "sprite": "water_cannon",
+      "bullet": "bullet3",
+      "effect": "impact_09",
+      "levels": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "whip",
+      "name": "荆棘长鞭",
+      "sprite": "whip",
+      "bullet": null,
+      "effect": "whip_swing",
+      "levels": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "bullet_aliases": {
+    "bullet0": "projectile_00",
+    "bullet1": "projectile_01",
+    "bullet2": "projectile_02",
+    "bullet3": "projectile_03",
+    "bullet4": "projectile_04",
+    "bullet5": "projectile_05",
+    "bullet6": "projectile_06",
+    "bullet7": "projectile_07",
+    "bullet8": "projectile_08",
+    "bullet9": "projectile_09",
+    "bullet10": "projectile_10",
+    "bullet11": "projectile_11"
+  },
+  "atlases": {
+    "projectiles.png": {
+      "guid": "7eb413c34305139499cd6b3fc503b566",
+      "sprites": [
+        {
+          "name": "projectile_00",
+          "rect": [
+            0,
+            724,
+            362,
+            362
+          ],
+          "fileID": -4116706020145157353
+        },
+        {
+          "name": "projectile_01",
+          "rect": [
+            362,
+            724,
+            362,
+            362
+          ],
+          "fileID": 4983135688023356199
+        },
+        {
+          "name": "projectile_02",
+          "rect": [
+            724,
+            724,
+            362,
+            362
+          ],
+          "fileID": 6024142589278408305
+        },
+        {
+          "name": "projectile_03",
+          "rect": [
+            1086,
+            724,
+            362,
+            362
+          ],
+          "fileID": -925806477076495558
+        },
+        {
+          "name": "projectile_04",
+          "rect": [
+            0,
+            362,
+            362,
+            362
+          ],
+          "fileID": -5445345928327991223
+        },
+        {
+          "name": "projectile_05",
+          "rect": [
+            362,
+            362,
+            362,
+            362
+          ],
+          "fileID": 4576879913693360933
+        },
+        {
+          "name": "projectile_06",
+          "rect": [
+            724,
+            362,
+            362,
+            362
+          ],
+          "fileID": 1551133512201745892
+        },
+        {
+          "name": "projectile_07",
+          "rect": [
+            1086,
+            362,
+            362,
+            362
+          ],
+          "fileID": -4961438938463037049
+        },
+        {
+          "name": "projectile_08",
+          "rect": [
+            0,
+            0,
+            362,
+            362
+          ],
+          "fileID": -5382512742998417176
+        },
+        {
+          "name": "projectile_09",
+          "rect": [
+            362,
+            0,
+            362,
+            362
+          ],
+          "fileID": -1106068823838324209
+        },
+        {
+          "name": "projectile_10",
+          "rect": [
+            724,
+            0,
+            362,
+            362
+          ],
+          "fileID": 2390629360428507955
+        },
+        {
+          "name": "projectile_11",
+          "rect": [
+            1086,
+            0,
+            362,
+            362
+          ],
+          "fileID": 24142593565541166
+        }
+      ]
+    },
+    "projectile_effects.png": {
+      "guid": "b5fe260ac8850bd4eb85317bb00b7c22",
+      "sprites": [
+        {
+          "name": "impact_00",
+          "rect": [
+            0,
+            941,
+            313,
+            313
+          ],
+          "fileID": -3198879493647779243
+        },
+        {
+          "name": "impact_01",
+          "rect": [
+            313,
+            941,
+            313,
+            313
+          ],
+          "fileID": -8043549083071953745
+        },
+        {
+          "name": "impact_02",
+          "rect": [
+            626,
+            941,
+            313,
+            313
+          ],
+          "fileID": 8817282027070769343
+        },
+        {
+          "name": "impact_03",
+          "rect": [
+            939,
+            941,
+            313,
+            313
+          ],
+          "fileID": -4170590049404950658
+        },
+        {
+          "name": "impact_04",
+          "rect": [
+            0,
+            628,
+            313,
+            313
+          ],
+          "fileID": -3783604244150655013
+        },
+        {
+          "name": "impact_05",
+          "rect": [
+            313,
+            628,
+            313,
+            313
+          ],
+          "fileID": -7922278286093650697
+        },
+        {
+          "name": "impact_06",
+          "rect": [
+            626,
+            628,
+            313,
+            313
+          ],
+          "fileID": -607235593614366729
+        },
+        {
+          "name": "impact_07",
+          "rect": [
+            939,
+            628,
+            313,
+            313
+          ],
+          "fileID": -6389141204280749098
+        },
+        {
+          "name": "impact_08",
+          "rect": [
+            0,
+            315,
+            313,
+            313
+          ],
+          "fileID": 6963871890954261157
+        },
+        {
+          "name": "impact_09",
+          "rect": [
+            313,
+            315,
+            313,
+            313
+          ],
+          "fileID": 254732042171644996
+        },
+        {
+          "name": "impact_10",
+          "rect": [
+            626,
+            315,
+            313,
+            313
+          ],
+          "fileID": 6488211180070142525
+        },
+        {
+          "name": "impact_11",
+          "rect": [
+            939,
+            315,
+            313,
+            313
+          ],
+          "fileID": -8159744635587141673
+        },
+        {
+          "name": "impact_12",
+          "rect": [
+            0,
+            2,
+            313,
+            313
+          ],
+          "fileID": -2019844964667244915
+        },
+        {
+          "name": "impact_13",
+          "rect": [
+            313,
+            2,
+            313,
+            313
+          ],
+          "fileID": -4323253982002273485
+        },
+        {
+          "name": "impact_14",
+          "rect": [
+            626,
+            2,
+            313,
+            313
+          ],
+          "fileID": 373265728796723338
+        },
+        {
+          "name": "impact_15",
+          "rect": [
+            939,
+            2,
+            313,
+            313
+          ],
+          "fileID": 1181998656720756281
+        }
+      ]
+    },
+    "weapons.png": {
+      "guid": "bb3dc797422e53a42b743f5d9d1410ae",
+      "sprites": [
+        {
+          "name": "dagger",
+          "rect": [
+            0,
+            941,
+            313,
+            313
+          ],
+          "fileID": -2629470278661546997
+        },
+        {
+          "name": "fork",
+          "rect": [
+            313,
+            941,
+            313,
+            313
+          ],
+          "fileID": -2698273708726929409
+        },
+        {
+          "name": "club",
+          "rect": [
+            626,
+            941,
+            313,
+            313
+          ],
+          "fileID": -7344002651581045793
+        },
+        {
+          "name": "sickle",
+          "rect": [
+            939,
+            941,
+            313,
+            313
+          ],
+          "fileID": 3917710494704374191
+        },
+        {
+          "name": "whip",
+          "rect": [
+            0,
+            628,
+            313,
+            313
+          ],
+          "fileID": -5989005130770324730
+        },
+        {
+          "name": "mallet",
+          "rect": [
+            313,
+            628,
+            313,
+            313
+          ],
+          "fileID": 7273720583937032582
+        },
+        {
+          "name": "pistol",
+          "rect": [
+            626,
+            628,
+            313,
+            313
+          ],
+          "fileID": -6041767625100187056
+        },
+        {
+          "name": "pea_gun",
+          "rect": [
+            939,
+            628,
+            313,
+            313
+          ],
+          "fileID": 9112133252704064855
+        },
+        {
+          "name": "chili_gun",
+          "rect": [
+            0,
+            315,
+            313,
+            313
+          ],
+          "fileID": 1448245245526937131
+        },
+        {
+          "name": "water_cannon",
+          "rect": [
+            313,
+            315,
+            313,
+            313
+          ],
+          "fileID": 6544574809716157563
+        },
+        {
+          "name": "bow",
+          "rect": [
+            626,
+            315,
+            313,
+            313
+          ],
+          "fileID": -9156558239948448363
+        },
+        {
+          "name": "crossbow",
+          "rect": [
+            939,
+            315,
+            313,
+            313
+          ],
+          "fileID": 5643795899131162751
+        },
+        {
+          "name": "honey_wand",
+          "rect": [
+            0,
+            2,
+            313,
+            313
+          ],
+          "fileID": -486551224225914172
+        },
+        {
+          "name": "spore_staff",
+          "rect": [
+            313,
+            2,
+            313,
+            313
+          ],
+          "fileID": -6058941317017733843
+        },
+        {
+          "name": "bomb",
+          "rect": [
+            626,
+            2,
+            313,
+            313
+          ],
+          "fileID": -2394863761650087865
+        },
+        {
+          "name": "crystal",
+          "rect": [
+            939,
+            2,
+            313,
+            313
+          ],
+          "fileID": -5198950269643109451
+        }
+      ]
+    },
+    "weapon_effects.png": {
+      "guid": "75968a9325824a04db867eb609b20cda",
+      "sprites": [
+        {
+          "name": "muzzle_00",
+          "rect": [
+            0,
+            1331,
+            443,
+            443
+          ],
+          "fileID": 6517937489779088697
+        },
+        {
+          "name": "muzzle_01",
+          "rect": [
+            443,
+            1331,
+            443,
+            443
+          ],
+          "fileID": -7416562736700713108
+        },
+        {
+          "name": "muzzle_02",
+          "rect": [
+            886,
+            1331,
+            443,
+            443
+          ],
+          "fileID": -3243758158134951661
+        },
+        {
+          "name": "muzzle_03",
+          "rect": [
+            1329,
+            1331,
+            443,
+            443
+          ],
+          "fileID": -3139467327470100450
+        },
+        {
+          "name": "muzzle_04",
+          "rect": [
+            0,
+            888,
+            443,
+            443
+          ],
+          "fileID": -7062986386772592647
+        },
+        {
+          "name": "muzzle_05",
+          "rect": [
+            443,
+            888,
+            443,
+            443
+          ],
+          "fileID": -5033258390397746616
+        },
+        {
+          "name": "muzzle_06",
+          "rect": [
+            886,
+            888,
+            443,
+            443
+          ],
+          "fileID": -8333408038379555423
+        },
+        {
+          "name": "muzzle_07",
+          "rect": [
+            1329,
+            888,
+            443,
+            443
+          ],
+          "fileID": 5868520847839869732
+        },
+        {
+          "name": "club_swing",
+          "rect": [
+            0,
+            443,
+            444,
+            444
+          ],
+          "fileID": 21310000
+        },
+        {
+          "name": "sickle_swing",
+          "rect": [
+            444,
+            443,
+            443,
+            444
+          ],
+          "fileID": 21310002
+        },
+        {
+          "name": "hammer_swing",
+          "rect": [
+            887,
+            443,
+            443,
+            444
+          ],
+          "fileID": 21310004
+        },
+        {
+          "name": "whip_swing",
+          "rect": [
+            1330,
+            443,
+            444,
+            444
+          ],
+          "fileID": 21310006
+        },
+        {
+          "name": "dagger_thrust",
+          "rect": [
+            0,
+            0,
+            444,
+            443
+          ],
+          "fileID": 21310008
+        },
+        {
+          "name": "fork_thrust",
+          "rect": [
+            444,
+            0,
+            443,
+            443
+          ],
+          "fileID": 21310010
+        },
+        {
+          "name": "flame_stream",
+          "rect": [
+            887,
+            0,
+            443,
+            443
+          ],
+          "fileID": 21310012
+        },
+        {
+          "name": "lantern_fog",
+          "rect": [
+            1330,
+            0,
+            444,
+            443
+          ],
+          "fileID": 21310014
+        }
+      ]
+    }
+  }
+}

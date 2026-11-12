@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 3555738307
+CRC: 1290814345
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: panel
+      Dependencies: {}
+    Info_1:
+      Name: atlas
       Dependencies: {}

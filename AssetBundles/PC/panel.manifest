@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1819540360
+CRC: 925286628
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b7b9b0d6f764abf1b6f38ad7f89dee45
+    Hash: e6f6823d916090d88ab20ec456ae31e3
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 460f581f19e191aef2bc3094efe6ce85
+    Hash: 6ccbb61ce906aee48dd9233d4c1f9e47
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: b7b9b0d6f764abf1b6f38ad7f89dee45
+    Hash: e6f6823d916090d88ab20ec456ae31e3
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -29,13 +29,21 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: b229ba919dfe0b041af348ab21b2d864, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5b0de8ea29f4c39499f0aeb2b8e25c12, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8df7a49b4e8363f4abefbf233ca30bb5, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 7e2bc3ed0c0af534d9a72f3aef2e1414, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 8df7a49b4e8363f4abefbf233ca30bb5, type: 3}
+  Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -45,6 +53,8 @@ ClassTypes:
 - Class: 222
   Script: {instanceID: 0}
 - Class: 224
+  Script: {instanceID: 0}
+- Class: 687078895
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.CoreModule
@@ -69,9 +79,12 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.UI.Navigation
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Toggle/ToggleEvent
 Assets:
 - Assets/Resources/UI/Panel/MainPanel.prefab
 - Assets/Resources/UI/Panel/RegisterPanel.prefab
 - Assets/Resources/UI/Panel/TipPanel.prefab
 - Assets/Resources/UI/Panel/LoginPanel.prefab
+- Assets/Resources/UI/Panel/WeaponSelectPanel.prefab
 Dependencies: []

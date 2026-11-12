@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
+  m_Name: gun2_2
+  m_EditorClassIdentifier: 
+  weaponID: gun2
+  Name: "\u8C4C\u8C46\u8FDE\u73E0\u70AE"
+  Tip: "\u8FDC\u7A0B \xB7 \u5F39\u5C04"
+  damageType: 0
+  Mode: "\u8FDC\u7A0B\u5F39\u5C04"
+  resEff: impact_07
+  resName: pea_gun
+  bullet: bullet1
+  level: 2
+  internalTime: 0.85
+  range: 25
+  atk: 5
+  repel: 1

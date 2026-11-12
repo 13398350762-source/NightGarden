@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
+  m_Name: sickle_4
+  m_EditorClassIdentifier: 
+  weaponID: sickle
+  Name: "\u6536\u9732\u9570"
+  Tip: "\u8FD1\u6218 \xB7 \u5FEB\u901F\u6325\u51FB"
+  damageType: 0
+  Mode: "\u8FD1\u6218\u8303\u56F4"
+  resEff: sickle_swing
+  resName: sickle
+  bullet: 
+  level: 4
+  internalTime: 0.53
+  range: 8
+  atk: 16
+  repel: 3

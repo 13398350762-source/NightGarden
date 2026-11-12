@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
+  m_Name: crossbow_4
+  m_EditorClassIdentifier: 
+  weaponID: crossbow
+  Name: "\u7A7F\u6797\u5F29"
+  Tip: "\u8FDC\u7A0B \xB7 \u9012\u51CF\u7A7F\u900F"
+  damageType: 0
+  Mode: "\u8FDC\u7A0B\u7A7F\u900F"
+  resEff: impact_11
+  resName: crossbow
+  bullet: bullet5
+  level: 4
+  internalTime: 0.98
+  range: 35
+  atk: 28
+  repel: 3

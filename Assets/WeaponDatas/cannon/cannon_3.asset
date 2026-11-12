@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
+  m_Name: cannon_3
+  m_EditorClassIdentifier: 
+  weaponID: cannon
+  Name: "\u6668\u9732\u6C34\u70AE"
+  Tip: "\u8FDC\u7A0B \xB7 \u7206\u70B8"
+  damageType: 1
+  Mode: "\u8FDC\u7A0B\u8303\u56F4"
+  resEff: impact_09
+  resName: water_cannon
+  bullet: bullet3
+  level: 3
+  internalTime: 1.58
+  range: 26
+  atk: 16
+  repel: 3

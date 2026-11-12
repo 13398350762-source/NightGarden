@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
+  m_Name: staff_2
+  m_EditorClassIdentifier: 
+  weaponID: staff
+  Name: "\u5B62\u5B50\u6CD5\u6756"
+  Tip: "\u8FDC\u7A0B \xB7 \u611F\u67D3"
+  damageType: 1
+  Mode: "\u8FDC\u7A0B\u5B62\u5B50"
+  resEff: impact_13
+  resName: spore_staff
+  bullet: bullet7
+  level: 2
+  internalTime: 1.03
+  range: 23
+  atk: 5
+  repel: 1

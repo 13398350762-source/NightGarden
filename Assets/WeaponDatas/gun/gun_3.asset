@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
+  m_Name: gun_3
+  m_EditorClassIdentifier: 
+  weaponID: gun
+  Name: "\u8D64\u6912\u55B7\u706B\u5668"
+  Tip: "\u8FDC\u7A0B \xB7 \u707C\u70E7"
+  damageType: 1
+  Mode: "\u8FDC\u7A0B\u8303\u56F4"
+  resEff: flame_stream
+  resName: chili_gun
+  bullet: 
+  level: 3
+  internalTime: 1.23
+  range: 14
+  atk: 3
+  repel: 1
