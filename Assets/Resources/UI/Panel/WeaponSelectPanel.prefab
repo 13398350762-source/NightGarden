@@ -2627,6 +2627,7 @@ MonoBehaviour:
   txtType: {fileID: 6831352633891270258}
   txtRange: {fileID: 4885154478245795539}
   imgWeapon: {fileID: 6444280698131056871}
+  toggleGroup: {fileID: 8445832664076019808}
 --- !u!1 &5642593486413945077
 GameObject:
   m_ObjectHideFlags: 0

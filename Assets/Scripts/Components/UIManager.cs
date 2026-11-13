@@ -50,4 +50,13 @@ public class UIManager : BaseManager<UIManager>
         if (panelDic.ContainsKey(typeof(T).Name))
             callback?.Invoke(panelDic[typeof(T).Name] as T);
     }
+
+    public void Clear()
+    {
+        foreach (var item in panelDic.Values)
+        {
+            GameObject.Destroy(item.gameObject);
+        }
+        panelDic.Clear();
+    }
 }

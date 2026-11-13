@@ -681,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e2bc3ed0c0af534d9a72f3aef2e1414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   inputUN: {fileID: 8854476579057395465}
   inputPW: {fileID: 5877247035799038047}
   btnLogin: {fileID: 1252962711403366865}

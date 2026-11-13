@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 925286628
+CRC: 778047401
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e6f6823d916090d88ab20ec456ae31e3
+    Hash: 58ca0bda970dec1665472b752cdb6225
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6ccbb61ce906aee48dd9233d4c1f9e47
+    Hash: e979f0f718b2eb7e72d25cfa0764c006
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: e6f6823d916090d88ab20ec456ae31e3
+    Hash: 58ca0bda970dec1665472b752cdb6225
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -20,20 +20,34 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8e60b5819483f5044ad6ea2269befd46, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 92338e37ba003684192f77dd87661283, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
+  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b229ba919dfe0b041af348ab21b2d864, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5b0de8ea29f4c39499f0aeb2b8e25c12, type: 3}
 - Class: 114
@@ -41,9 +55,19 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 7e2bc3ed0c0af534d9a72f3aef2e1414, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71ec2befdf820fd40b07d3603d415f1d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 143e9df829da9cc448b745d3856301c1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 73c78f1da6f77c942bc153a11e6f31d3, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -59,12 +83,20 @@ ClassTypes:
 SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.RectOffset
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.AnimationTriggers
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.Button/ButtonClickedEvent
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.ColorBlock
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Dropdown/DropdownEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Dropdown/OptionData
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Dropdown/OptionDataList
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.FontData
 - AssemblyName: UnityEngine.UI
@@ -78,13 +110,22 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.Navigation
 - AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.ScrollRect/ScrollRectEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Scrollbar/ScrollEvent
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.Slider/SliderEvent
+- AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.Toggle/ToggleEvent
 Assets:
 - Assets/Resources/UI/Panel/MainPanel.prefab
 - Assets/Resources/UI/Panel/RegisterPanel.prefab
+- Assets/Resources/UI/Panel/RoleSelectPanel.prefab
 - Assets/Resources/UI/Panel/TipPanel.prefab
 - Assets/Resources/UI/Panel/LoginPanel.prefab
+- Assets/Resources/UI/Panel/SettingPanel.prefab
 - Assets/Resources/UI/Panel/WeaponSelectPanel.prefab
+- Assets/Resources/UI/Panel/ShopPanel.prefab
 Dependencies: []

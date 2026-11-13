@@ -19,12 +19,14 @@ public class WeaponSelectPanel : BasePanel
     public Text txtType;
     public Text txtRange;
     public Image imgWeapon;
+    public ToggleGroup toggleGroup;
     private bool isInit=false;
 
     protected override void Init()
     {
         if (isInit)
             return;
+        toggleGroup.allowSwitchOff = true;
         ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "weapon", (atlas) =>{
             for (int i = 0; i < togWeaponList.Count; i++)
             {
@@ -37,9 +39,17 @@ public class WeaponSelectPanel : BasePanel
             UIManager.Instance.HidePanel<WeaponSelectPanel>();
             //显示选人界面
             UIManager.Instance.ShowPanel<RoleSelectPanel>();
+            PlayerInfoManager.Instance.SetWeapon(null);
         });
 
         btnStart.onClick.AddListener(() =>{
+            if (PlayerInfoManager.Instance.GetWeapon() == null)
+            {
+                UIManager.Instance.ShowPanel<TipPanel>((panel) => {
+                    panel.ChangeInfo("请选择武器");
+                });
+                return;
+            }
             UIManager.Instance.HidePanel<WeaponSelectPanel>();
             ScenesManager.Instance.LoadSceneAsync("GameScene", () =>{
                 //进入游戏场景后需要处理的事件
@@ -88,13 +98,7 @@ public class WeaponSelectPanel : BasePanel
             }
         });
         isInit = true;
-        txtAtk.text = string.Empty;
-        txtInternal.text = string.Empty;
-        txtMode.text = string.Empty;
-        txtRange.text = string.Empty;
-        txtType.text = string.Empty;
-        txtWeaponName.text = string.Empty;
-        imgWeapon.enabled = false;
+        toggleGroup.SetAllTogglesOff();
     }
 
     private void ChangeSelectWeapon(WeaponData data)
@@ -115,6 +119,7 @@ public class WeaponSelectPanel : BasePanel
         ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "weapon", (atlas) =>{
             imgWeapon.sprite = atlas.GetSprite(data.resName);
         });
+        PlayerInfoManager.Instance.SetWeapon(data);
     }
 
     public override void Hide(UnityAction action)
@@ -128,5 +133,18 @@ public class WeaponSelectPanel : BasePanel
         txtType.text = string.Empty;
         txtWeaponName.text = string.Empty;
         imgWeapon.sprite = null;
+        toggleGroup.SetAllTogglesOff();
+    }
+
+    public override void Show()
+    {
+        base.Show();
+        txtAtk.text = string.Empty;
+        txtInternal.text = string.Empty;
+        txtMode.text = string.Empty;
+        txtRange.text = string.Empty;
+        txtType.text = string.Empty;
+        txtWeaponName.text = string.Empty;
+        imgWeapon.enabled = false;
     }
 }

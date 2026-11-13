@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoleData
+public class RoleData:ScriptableObject
 {
     public string roleID;
     //初始护甲
@@ -27,6 +27,9 @@ public class RoleData
     public float atkSpeed;
     //初始金币
     public int money;
+    public string remark;
     //百分比加伤
     public float damage;
+    //被动
+    public string passive;
 }

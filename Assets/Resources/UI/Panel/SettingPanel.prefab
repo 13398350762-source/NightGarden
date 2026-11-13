@@ -1695,6 +1695,7 @@ GameObject:
   - component: {fileID: 6920480068763286589}
   - component: {fileID: 7347667448949833414}
   - component: {fileID: 5601632562115857724}
+  - component: {fileID: 8568778664637104252}
   m_Layer: 5
   m_Name: SettingPanel
   m_TagString: Untagged
@@ -1763,6 +1764,36 @@ MonoBehaviour:
   dropRate: {fileID: 3861926525259622405}
   togDamage: {fileID: 1128917064376735249}
   togShake: {fileID: 7533312582509830004}
+--- !u!114 &8568778664637104252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3206707839123151751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.17610055, g: 0.17000902, b: 0.17000902, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 07c03a7303738014abde3e4ccf25d788, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &3377258766175330586
 GameObject:
   m_ObjectHideFlags: 0

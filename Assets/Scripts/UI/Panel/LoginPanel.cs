@@ -33,6 +33,7 @@ public class LoginPanel : BasePanel
                 ScenesManager.Instance.LoadSceneAsync("BeginScene", () => {
                     UIManager.Instance.HidePanel<LoginPanel>();
                     UIManager.Instance.ShowPanel<MainPanel>();
+                    UserManager.Instance.SetNowUser(DataManager.Instance.GetUser(inputUN.text));
                 });
             }
             else

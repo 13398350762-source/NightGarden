@@ -36,5 +36,5 @@ public class WeaponData:ScriptableObject
     //武器伤害
     public int atk;
     //击退效果
-    public float repel;
+    public int repel;
 }

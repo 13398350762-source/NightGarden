@@ -19,6 +19,7 @@ public class SettingPanel : BasePanel
     public Toggle togDamage;
     public Toggle togShake;
     private bool isInit;
+    private BasePanel lastpanel;
     protected override void Init()
     {
         if (isInit)
@@ -26,7 +27,6 @@ public class SettingPanel : BasePanel
         btnBack.onClick.AddListener(() =>{
             AudioManager.Instance.LoadAudioData();
             UIManager.Instance.HidePanel<SettingPanel>();
-            UIManager.Instance.ShowPanel<MainPanel>();
         });
         btnDefault.onClick.AddListener(() =>{
             AudioManager.Instance.SetDefault();

@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df7a49b4e8363f4abefbf233ca30bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   btnEnter: {fileID: 8194755249815503392}
   btnExit: {fileID: 1835885501573346467}
   btnRank: {fileID: 4596136680456382398}

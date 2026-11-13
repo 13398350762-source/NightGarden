@@ -6,7 +6,6 @@ using UnityEngine;
 public class DataManager : BaseManager<DataManager>
 {
     private UserData userData;
-    private UserInfo currentUser;
     public DataManager()
     {
         if (userData == null)
@@ -31,8 +30,9 @@ public class DataManager : BaseManager<DataManager>
     {
         return userData.userDic.ContainsKey(name) ? (userData.userDic[name].password==password?true:false):false;
     }
-    public void SetCurrentUser(string name)
+
+    public UserInfo GetUser(string name)
     {
-        currentUser = userData.userDic[name];
+        return userData.userDic[name];
     }
 }

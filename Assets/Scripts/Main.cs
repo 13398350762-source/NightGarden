@@ -7,7 +7,7 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIManager.Instance.ShowPanel<WeaponSelectPanel>();
+        UIManager.Instance.ShowPanel<RoleSelectPanel>();
     }
 
     // Update is called once per frame

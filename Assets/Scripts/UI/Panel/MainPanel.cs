@@ -18,7 +18,6 @@ public class MainPanel : BasePanel
         btnEnter.onClick.AddListener(() =>{
             //进入选人面板
             UIManager.Instance.ShowPanel<RoleSelectPanel>(); 
-            UIManager.Instance.HidePanel<MainPanel>();
         });
         btnExit.onClick.AddListener(() =>{
             Application.Quit();

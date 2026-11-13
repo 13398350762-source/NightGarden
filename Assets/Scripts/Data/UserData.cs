@@ -32,6 +32,8 @@ public class UserInfo
 {
     public string name;
     public string password;
+    public bool isUnLockChili = false;
+    public bool isUnLockPea = false;
     public UserInfo(string name, string password)
     {
         this.name = name;

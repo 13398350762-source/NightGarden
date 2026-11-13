@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b229ba919dfe0b041af348ab21b2d864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   btnSure: {fileID: 788048135783327332}
   txtTip: {fileID: 3433531505274128121}
 --- !u!1 &7060237401188872338
