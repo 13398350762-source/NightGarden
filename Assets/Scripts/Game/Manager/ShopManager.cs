@@ -11,9 +11,16 @@ public class ShopManager : BaseManager<ShopManager>
     private List<AccessoryData>[] accessoryPools;
     private GameObject weaponPrefab;
     private GameObject accessoryPrefab;
-
+    public int refreshCount=0;
+    public int refreshPrice;
+    public int GetRefreshPrice()
+    {
+        refreshPrice=RandomManager.Instance.GetRefreshPrice(GameManager.Instance.Wave,refreshCount);
+        return refreshPrice;
+    }
     public void Refresh()
     {
+        GetRefreshPrice();
         GameObject[] objs=new GameObject[4];
         int cnt=0;
         for (int i = 0; i < 4; i++)
@@ -32,6 +39,11 @@ public class ShopManager : BaseManager<ShopManager>
         {
             if (objs[i] == null)
             {
+                if (items[i] != null)
+                {
+                    items[i].SetActive(false);
+                    GameObject.Destroy(items[i]);
+                }
                 objs[i] = list[pos];
                 list.RemoveAt(pos);
                 pos--;
@@ -117,62 +129,5 @@ public class ShopManager : BaseManager<ShopManager>
         accessoryPrefab = accessory;
         weaponPools = weapons;
         accessoryPools = accessories;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public bool CompositeWeapon(WeaponData[] weaponList,int index)
-    {
-        if (index == 4)
-            return false;
-        int next = -1;
-        for (int i = 0; i < 6; i++)
-        {
-            if (i != index && weaponList[i].weaponID == weaponList[index].weaponID && weaponList[i].level == weaponList[index].level)
-            {
-                next = i;
-            }
-        }
-        if (next == -1)
-            return false;
-        int nextlevel = weaponList[index].level + 1;
-        string id = weaponList[index].weaponID;
-        string path = $"ScriptableObjects/WeaponDatas/{id}/{id}_{nextlevel}";
-        WeaponData data = Resources.Load<WeaponData>(path);
-        WeaponData[] datas = new WeaponData[6];
-        int pos = 0;
-        for (int i = 0; i < 6; i++)
-        {
-            if (i != index && i != next && weaponList[i] != null)
-            {
-                datas[pos++] = weaponList[i];
-            }
-        }
-        datas[pos] = data;
-        weaponList = datas;
-        datas = null;
-        return true;
     }
 }

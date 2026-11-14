@@ -15,7 +15,7 @@ public class WeaponShopItem : BaseShopItem<WeaponData>
     {
         txtAtk.text = data.atk.ToString();
         txtInternal.text = data.internalTime.ToString();
-        txtName.text = data.name.ToString();
+        txtName.text = data.Name;
         switch (data.damageType)
         {
             case DamageType.AST:txtType.text = "魔法";
@@ -27,8 +27,8 @@ public class WeaponShopItem : BaseShopItem<WeaponData>
             imgIcon.sprite = atlas.GetSprite(data.resName); ;
         });
         int level = data.level;
-        txtTitle.text = "武器 · " + new string('I', level) + "级";
-        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Componets", (atlas) =>{
+        txtTitle.text = "武器 · " + (level == 4 ? "IV" : new string('I', level)) + "级";
+        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Components", (atlas) =>{
             switch (level)
             {
                 case 1:

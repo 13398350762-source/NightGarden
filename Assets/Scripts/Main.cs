@@ -5,14 +5,13 @@ using UnityEngine.U2D;
 
 public class Main : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        ResManager.Instance.LoadRes<SpriteAtlas>("atlas", "Componets");
-        UIManager.Instance.ShowPanel<RoleSelectPanel>();
+        ResManager.Instance.LoadRes<SpriteAtlas>("atlas", "Components");
+        PlayerInfoManager.Instance.SetRole(Resources.Load<RoleData>("ScriptableObjects/RoleDatas/萝卜骑士"));
+        UIManager.Instance.ShowPanel<ShopPanel>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         

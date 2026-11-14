@@ -169,7 +169,6 @@ public class RoleSelectPanel : BasePanel
         LockCondition.enabled = false;
         txtLockCondition.enabled = false;
         toggleGroup.SetAllTogglesOff();
-        PlayerInfoManager.Instance.SetRole(null);
         base.Hide(action);
     }
 

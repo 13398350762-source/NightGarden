@@ -38,19 +38,20 @@ public class AccessoryPassive : BaseManager<AccessoryPassive>
 
     private void Accessory1()
     {
-        
+        PlayerInfoManager.Instance.AddHp(3);
     }
 
     // 星露月坠
     private void Accessory2()
     {
-        
+        PlayerInfoManager.Instance.AddAST(2);
+        PlayerInfoManager.Instance.AddRange(0.05f);
     }
 
     // 幸运胸针
     private void Accessory3()
     {
-        
+        PlayerInfoManager.Instance.AddLucky(5);
     }
 
     // 伞语耳坠

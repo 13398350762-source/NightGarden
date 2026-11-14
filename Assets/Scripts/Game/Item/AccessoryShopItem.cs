@@ -10,13 +10,13 @@ public class AccessoryShopItem : BaseShopItem<AccessoryData>
     public override void Init(AccessoryData data,int money)
     {
         txtName.text = data.accessoryID;
-        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "weapon", (atlas) => {
+        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Accessory", (atlas) => {
             imgIcon.sprite = atlas.GetSprite(data.resIcon); ;
         });
         string level = data.level;
-        txtTitle.text = "武器 · " + level;
+        txtTitle.text = "饰品 · " + level;
         txtDescripiton.text = data.description;
-        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Componets", (atlas) => {
+        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Components", (atlas) => {
             switch (level)
             {
                 case "普通":
@@ -39,6 +39,11 @@ public class AccessoryShopItem : BaseShopItem<AccessoryData>
         });
         btnBuy.onClick.AddListener(() => {
             //花钱买商品
+            //增加属性或被动
+            //跟新面板
+            UIManager.Instance.GetPanel<ShopPanel>((panel) =>{
+                panel.updateTXTDic();
+            });
         });
         txtMoney.text = "购买 " + money.ToString();
         cost = money;

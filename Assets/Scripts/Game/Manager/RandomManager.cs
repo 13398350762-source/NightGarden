@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class RandomManager : BaseManager<RandomManager>
 {
+    public int GetRefreshPrice(int wave, int refreshCount)
+    {
+        wave = Mathf.Max(wave, 1);
+        refreshCount = Mathf.Max(refreshCount, 0);
+
+        int basePrice = 2 + (wave - 1) / 2; // 每两波基础价格增加1。
+        int priceIncrease = 1 + (wave - 1) / 5; // 每五波提高连续刷新的涨价幅度。
+        return basePrice + refreshCount * priceIncrease;
+    }
+
     //抽取商品等级
     public int RandomLevel(int lucky, int wave)
     {
@@ -21,6 +31,19 @@ public class RandomManager : BaseManager<RandomManager>
         if (value < p1 + p2) return 2;
         if (value < p1 + p2 + p3) return 3;
         return 4;
+    }
+
+    public int RandomSellPrice(int level, int wave)
+    {
+        if (level < 1 || level > 4)
+            throw new System.ArgumentOutOfRangeException(nameof(level));
+        int[] minPrices = { 3, 5, 9, 15 };
+        int[] maxPrices = { 4, 7, 12, 20 };
+
+        float scale = 1f + (Mathf.Max(wave, 1) - 1) * 0.08f;
+        int min = Mathf.RoundToInt(minPrices[level - 1] * scale);
+        int max = Mathf.RoundToInt(maxPrices[level - 1] * scale);
+        return Random.Range(min, max + 1);
     }
 
     //抽取商品价格

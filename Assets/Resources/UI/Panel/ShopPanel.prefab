@@ -1038,7 +1038,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 422.259, y: 318.1}
-  m_SizeDelta: {x: 104.9178, y: 30}
+  m_SizeDelta: {x: 104.9178, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9087504354922469397
 CanvasRenderer:
@@ -1235,6 +1235,7 @@ MonoBehaviour:
   txtParent: {fileID: 504899517270066980}
   svAccessories: {fileID: 8374565690963080551}
   svWeapons: {fileID: 248134374238143330}
+  svShop: {fileID: 2743631381471931801}
   btnRefresh: {fileID: 2431987311606439739}
   btnNext: {fileID: 5130243337058726018}
   imgRole: {fileID: 770473287086589669}

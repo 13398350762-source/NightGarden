@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 1713180503241286247}
   - component: {fileID: 8385869379176979018}
   - component: {fileID: 202051482938003364}
+  - component: {fileID: 826520705038787903}
   m_Layer: 5
   m_Name: ItemWeapon
   m_TagString: Untagged
@@ -201,6 +202,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &826520705038787903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533748689913679960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e33ea5561c3224ca2b4f04288bf195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnItem: {fileID: 202051482938003364}
+  imgbk: {fileID: 8385869379176979018}
+  imgIcon: {fileID: 3902304863205246656}
+  txtLevel: {fileID: 6950369440309485691}
 --- !u!1 &9032668872251113194
 GameObject:
   m_ObjectHideFlags: 0
