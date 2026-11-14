@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.U2D;
 
 public abstract class BasePanel : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public abstract class BasePanel : MonoBehaviour
     public float speed=5.0f;
     private UnityAction callback;
     protected abstract void Init();
-    // Start is called before the first frame update
+
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -19,7 +20,6 @@ public abstract class BasePanel : MonoBehaviour
             canvasGroup=this.AddComponent<CanvasGroup>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isShow)

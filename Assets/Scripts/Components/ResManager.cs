@@ -68,7 +68,14 @@ public class ResManager : MonoAutoSingleton<ResManager>
 
     }
 
-    public void LoadResAsync(string abName,string resName,UnityAction<Object> callback)
+    // 加载原始资源，不实例化；用于缓存商品预制体。
+    public T LoadAsset<T>(string abName, string resName) where T : Object
+    {
+        LoadAB(abName);
+        return abDic[abName].LoadAsset<T>(resName);
+    }
+
+    public void LoadResAsync(string abName,string resName,UnityAction<Object> callback = null)
     {
         StartCoroutine(ReallyLoadResAsync(abName, resName, callback));
     }
@@ -85,7 +92,7 @@ public class ResManager : MonoAutoSingleton<ResManager>
             callback?.Invoke(obj);
     }
 
-    public void LoadResAsync(string abName, string resName, System.Type type, UnityAction<Object> callback)
+    public void LoadResAsync(string abName, string resName, System.Type type, UnityAction<Object> callback=null)
     {
         StartCoroutine(ReallyLoadResAsync(abName, resName,type, callback));
     }
@@ -101,7 +108,7 @@ public class ResManager : MonoAutoSingleton<ResManager>
             callback?.Invoke(obj);
     }
 
-    public void LoadResAsync<T>(string abName, string resName, UnityAction<T> callback)where T:Object
+    public void LoadResAsync<T>(string abName, string resName, UnityAction<T> callback=null)where T:Object
     {
         StartCoroutine(ReallyLoadResAsync<T>(abName, resName, callback));
     }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfdb6b68c92bbe42aa19e8253988671, type: 3}
+  m_Name: "\u523B\u65F6\u6838\u8868"
+  m_EditorClassIdentifier: 
+  accessoryID: "\u523B\u65F6\u6838\u8868"
+  description: "\u653B\u51FB\u901F\u5EA6+20%\uFF1B\u6BCF\u7ECF\u8FC730\u79D2\uFF0C\u989D\u5916\u63D0\u9AD830%\u653B\u51FB\u901F\u5EA6\uFF0C\u6301\u7EED4\u79D2\uFF0C\u540C\u540D\u9970\u54C1\u5171\u4EAB\u89E6\u53D1\u65F6\u673A\u3002"
+  level: "\u4F20\u8BF4"
+  resIcon: walnut_watch

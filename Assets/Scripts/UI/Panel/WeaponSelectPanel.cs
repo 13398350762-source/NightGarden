@@ -21,7 +21,7 @@ public class WeaponSelectPanel : BasePanel
     public Image imgWeapon;
     public ToggleGroup toggleGroup;
     private bool isInit=false;
-
+    private bool isReady = false;
     protected override void Init()
     {
         if (isInit)
@@ -43,7 +43,7 @@ public class WeaponSelectPanel : BasePanel
         });
 
         btnStart.onClick.AddListener(() =>{
-            if (PlayerInfoManager.Instance.GetWeapon() == null)
+            if (!isReady)
             {
                 UIManager.Instance.ShowPanel<TipPanel>((panel) => {
                     panel.ChangeInfo("请选择武器");
@@ -103,6 +103,7 @@ public class WeaponSelectPanel : BasePanel
 
     private void ChangeSelectWeapon(WeaponData data)
     {
+        isReady = true;
         imgWeapon.enabled = true;
         txtAtk.text = data.atk.ToString();
         txtInternal.text=data.internalTime.ToString();
@@ -139,6 +140,7 @@ public class WeaponSelectPanel : BasePanel
     public override void Show()
     {
         base.Show();
+        isReady = false;
         txtAtk.text = string.Empty;
         txtInternal.text = string.Empty;
         txtMode.text = string.Empty;

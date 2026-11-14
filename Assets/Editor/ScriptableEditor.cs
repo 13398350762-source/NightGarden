@@ -120,6 +120,49 @@ public class ScriptableEditor
         AssetDatabase.Refresh();
     }
 
+    [MenuItem("Tools/GenerateAccessoryData")]
+
+    public static void GenerateAccessoryData()
+    {
+        JsonData datas = JsonManager.Instance.Load<JsonData>("AccessoryData.json");
+
+        // 确保父目录存在
+        if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects"))
+            AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
+
+        if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects/AccessoryData"))
+            AssetDatabase.CreateFolder("Assets/ScriptableObjects", "AccessoryData");
+
+        foreach (JsonData row in datas)
+        {
+            string accessoryID = (string)row["accessoryID"];
+
+            string folder = $"Assets/ScriptableObjects/AccessoryData";
+
+
+            string path = $"{folder}/{accessoryID}.asset";
+
+            AccessoryData data = AssetDatabase.LoadAssetAtPath<AccessoryData>(path);
+
+            bool isNew = data == null;
+
+            if (isNew)
+                data = ScriptableObject.CreateInstance<AccessoryData>();
+
+            data.accessoryID= accessoryID;
+            data.description = (string)row["description"];
+            data.level = (string)row["level"];
+            data.resIcon = (string)row["resIcon"];
+            if (isNew)
+                AssetDatabase.CreateAsset(data, path);
+            else
+                EditorUtility.SetDirty(data);
+        }
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+
     private static float ReadFloat(JsonData value)
     {
         if (value.IsString)

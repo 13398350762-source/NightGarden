@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 778047401
+CRC: 1855134055
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 58ca0bda970dec1665472b752cdb6225
+    Hash: 0f90b3aa0e8daa9f1fb67cf46a8a572e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: e979f0f718b2eb7e72d25cfa0764c006
+    Hash: 54585d1692ecb7691bc2436b667cd4f8
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 58ca0bda970dec1665472b752cdb6225
+    Hash: 0f90b3aa0e8daa9f1fb67cf46a8a572e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -25,11 +25,13 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
+  Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 8e60b5819483f5044ad6ea2269befd46, type: 3}
 - Class: 114
@@ -55,19 +57,19 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 2416b65989767ea4dbae6eaae190a98f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 73c78f1da6f77c942bc153a11e6f31d3, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 7e2bc3ed0c0af534d9a72f3aef2e1414, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 71ec2befdf820fd40b07d3603d415f1d, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 143e9df829da9cc448b745d3856301c1, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 73c78f1da6f77c942bc153a11e6f31d3, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -127,5 +129,6 @@ Assets:
 - Assets/Resources/UI/Panel/LoginPanel.prefab
 - Assets/Resources/UI/Panel/SettingPanel.prefab
 - Assets/Resources/UI/Panel/WeaponSelectPanel.prefab
+- Assets/Resources/UI/Panel/PausePanel.prefab
 - Assets/Resources/UI/Panel/ShopPanel.prefab
 Dependencies: []
