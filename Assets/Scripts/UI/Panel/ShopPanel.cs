@@ -21,6 +21,7 @@ public class ShopPanel : BasePanel
     public Text txtName;
     public Text txtLevel;
     private bool isInit = false;
+    private int weaponRefreshVersion;
     protected override void Init()
     {
         if (isInit)
@@ -71,18 +72,35 @@ public class ShopPanel : BasePanel
     }
     public void RefreshWeapons()
     {
+        int version = ++weaponRefreshVersion;
         Transform trans=svWeapons.content.transform;
         for (int i = trans.childCount - 1; i >= 0; i--)
         {
+            trans.GetChild(i).gameObject.SetActive(false);
             Destroy(trans.GetChild(i).gameObject);
         }
-        foreach (WeaponData data in PlayerInfoManager.Instance.weaponList)
+        WeaponData[] weapons = PlayerInfoManager.Instance.weaponList;
+        for (int i = 0; i < weapons.Length; i++)
         {
+            int index = i;
+            WeaponData data = weapons[i];
             if (data == null)
                 break;
             ResManager.Instance.LoadResAsync<GameObject>("item", "ItemWeapon", (obj) => {
-                obj.GetComponent<WeaponItem>().Init(data);
+                if (this == null || trans == null || version != weaponRefreshVersion)
+                {
+                    if (obj != null) Destroy(obj);
+                    return;
+                }
+                obj.GetComponent<WeaponItem>().Init(data, index);
                 obj.transform.SetParent(trans, false);
+                int sibling = 0;
+                foreach (Transform child in trans)
+                {
+                    WeaponItem item = child.GetComponent<WeaponItem>();
+                    if (child.gameObject.activeSelf && item != null && item.index < index) sibling++;
+                }
+                obj.transform.SetSiblingIndex(sibling);
             });
         }
     }

@@ -1,7 +1,52 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\unity\\NightGarden\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|d:\\unity\\nightgarden\\assets\\scripts\\game\\manager\\randommanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\manager\\randommanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\game\\manager\\playerinfomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\manager\\playerinfomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\game\\manager\\playerinfomanager.stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\manager\\playerinfomanager.stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\ui\\base\\basepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\base\\basepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\game\\manager\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\manager\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\game\\manager\\levelupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\manager\\levelupmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\ui\\panel\\rankpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panel\\rankpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\game\\item\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\item\\weaponitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\game\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\game\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\assets\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\WeaponItemPanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE6FFB61-BE80-58F6-4210-604B7D28E859}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\UI\\Panel\\WeaponItemPanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +63,140 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RandomManager.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\RandomManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\Manager\\RandomManager.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\RandomManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Game\\Manager\\RandomManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T10:26:23.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WeaponItem.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Item\\WeaponItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\Item\\WeaponItem.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Item\\WeaponItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Game\\Item\\WeaponItem.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwC8AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T10:26:23.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WeaponItemPanel.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\WeaponItemPanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\WeaponItemPanel.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\WeaponItemPanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\Panel\\WeaponItemPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T10:26:23.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RankPanel.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\RankPanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Panel\\RankPanel.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Panel\\RankPanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\Panel\\RankPanel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T08:11:55.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LevelUpManager.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\LevelUpManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\Manager\\LevelUpManager.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\LevelUpManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Game\\Manager\\LevelUpManager.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAIwAsAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T08:09:25.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LevelManager.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\LevelManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\Manager\\LevelManager.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\LevelManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Game\\Manager\\LevelManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T08:09:25.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BasePanel.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Base\\BasePanel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\Base\\BasePanel.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\UI\\Base\\BasePanel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\Base\\BasePanel.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswA8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T08:09:25.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\Manager\\GameManager.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Game\\Manager\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T08:09:25.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerInfoManager.Stats.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\PlayerInfoManager.Stats.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\Manager\\PlayerInfoManager.Stats.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\PlayerInfoManager.Stats.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Game\\Manager\\PlayerInfoManager.Stats.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAASwA8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T08:09:25.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerInfoManager.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\PlayerInfoManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Game\\Manager\\PlayerInfoManager.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Game\\Manager\\PlayerInfoManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Game\\Manager\\PlayerInfoManager.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA/wCcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T08:09:25.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Main.cs",
+              "DocumentMoniker": "D:\\unity\\NightGarden\\Assets\\Scripts\\Main.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Main.cs",
+              "ToolTip": "D:\\unity\\NightGarden\\Assets\\Scripts\\Main.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Main.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-15T08:09:25.452Z"
             }
           ]
         }
