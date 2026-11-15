@@ -100,10 +100,10 @@ TextureImporter:
       name: attack_speed
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1254
-        width: 418
-        height: 418
+        x: 45
+        y: 1250
+        width: 348
+        height: 348
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,10 +121,10 @@ TextureImporter:
       name: life_steal
       rect:
         serializedVersion: 2
-        x: 418
-        y: 1254
-        width: 418
-        height: 418
+        x: 454
+        y: 1253
+        width: 341
+        height: 341
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: regen_speed
       rect:
         serializedVersion: 2
-        x: 836
-        y: 1254
-        width: 418
-        height: 418
+        x: 842
+        y: 1253
+        width: 355
+        height: 355
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: move_speed
       rect:
         serializedVersion: 2
-        x: 0
-        y: 836
-        width: 418
-        height: 418
+        x: 35
+        y: 871
+        width: 375
+        height: 375
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: physical_damage
       rect:
         serializedVersion: 2
-        x: 418
-        y: 836
-        width: 418
-        height: 418
+        x: 454
+        y: 869
+        width: 347
+        height: 347
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: magic_damage
       rect:
         serializedVersion: 2
-        x: 836
-        y: 836
-        width: 418
-        height: 418
+        x: 835
+        y: 857
+        width: 379
+        height: 379
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +226,10 @@ TextureImporter:
       name: armor
       rect:
         serializedVersion: 2
-        x: 0
-        y: 418
-        width: 418
-        height: 418
+        x: 34
+        y: 453
+        width: 392
+        height: 392
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,10 +247,10 @@ TextureImporter:
       name: luck
       rect:
         serializedVersion: 2
-        x: 418
-        y: 418
-        width: 418
-        height: 418
+        x: 422
+        y: 458
+        width: 387
+        height: 387
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,10 +268,10 @@ TextureImporter:
       name: max_health
       rect:
         serializedVersion: 2
-        x: 836
-        y: 418
-        width: 418
-        height: 418
+        x: 831
+        y: 456
+        width: 378
+        height: 378
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: damage
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 418
-        height: 418
+        x: 24
+        y: 25
+        width: 360
+        height: 360
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +310,10 @@ TextureImporter:
       name: attack_range
       rect:
         serializedVersion: 2
-        x: 418
-        y: 0
-        width: 418
-        height: 418
+        x: 444
+        y: 27
+        width: 366
+        height: 366
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

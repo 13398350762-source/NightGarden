@@ -15,11 +15,14 @@ public class ScriptableEditor
         JsonData datas = JsonManager.Instance.Load<JsonData>("WeaponData.json");
 
         // 确保父目录存在
-        if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects"))
-            AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
+        if (!AssetDatabase.IsValidFolder("Assets/Resources"))
+            AssetDatabase.CreateFolder("Assets", "Resources");
 
-        if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects/WeaponDatas"))
-            AssetDatabase.CreateFolder("Assets/ScriptableObjects", "WeaponDatas");
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects"))
+            AssetDatabase.CreateFolder("Assets/Resources", "ScriptableObjects");
+
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects/WeaponDatas"))
+            AssetDatabase.CreateFolder("Assets/Resources/ScriptableObjects", "WeaponDatas");
 
         foreach (JsonData row in datas)
         {
@@ -27,10 +30,10 @@ public class ScriptableEditor
             int level = int.Parse(row["level"].ToString(), CultureInfo.InvariantCulture);
 
             // 为每种武器创建独立文件夹
-            string folder = $"Assets/ScriptableObjects/WeaponDatas/{weaponID}";
+            string folder = $"Assets/Resources/ScriptableObjects/WeaponDatas/{weaponID}";
 
             if (!AssetDatabase.IsValidFolder(folder))
-                AssetDatabase.CreateFolder("Assets/ScriptableObjects/WeaponDatas", weaponID);
+                AssetDatabase.CreateFolder("Assets/Resources/ScriptableObjects/WeaponDatas", weaponID);
 
             string path = $"{folder}/{weaponID}_{level}.asset";
 
@@ -73,17 +76,20 @@ public class ScriptableEditor
         JsonData datas = JsonManager.Instance.Load<JsonData>("RoleData.json");
 
         // 确保父目录存在
-        if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects"))
-            AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
+        if (!AssetDatabase.IsValidFolder("Assets/Resources"))
+            AssetDatabase.CreateFolder("Assets", "Resources");
 
-        if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects/RoleDatas"))
-            AssetDatabase.CreateFolder("Assets/ScriptableObjects", "RoleDatas");
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects"))
+            AssetDatabase.CreateFolder("Assets/Resources", "ScriptableObjects");
+
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects/RoleDatas"))
+            AssetDatabase.CreateFolder("Assets/Resources/ScriptableObjects", "RoleDatas");
 
         foreach (JsonData row in datas)
         {
             string roleID = (string)row["roleID"];
 
-            string folder = $"Assets/ScriptableObjects/RoleDatas";
+            string folder = $"Assets/Resources/ScriptableObjects/RoleDatas";
 
 
             string path = $"{folder}/{roleID}.asset";
@@ -127,17 +133,20 @@ public class ScriptableEditor
         JsonData datas = JsonManager.Instance.Load<JsonData>("AccessoryData.json");
 
         // 确保父目录存在
-        if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects"))
-            AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
+        if (!AssetDatabase.IsValidFolder("Assets/Resources"))
+            AssetDatabase.CreateFolder("Assets", "Resources");
 
-        if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects/AccessoryData"))
-            AssetDatabase.CreateFolder("Assets/ScriptableObjects", "AccessoryData");
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects"))
+            AssetDatabase.CreateFolder("Assets/Resources", "ScriptableObjects");
+
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects/AccessoryData"))
+            AssetDatabase.CreateFolder("Assets/Resources/ScriptableObjects", "AccessoryData");
 
         foreach (JsonData row in datas)
         {
             string accessoryID = (string)row["accessoryID"];
 
-            string folder = $"Assets/ScriptableObjects/AccessoryData";
+            string folder = $"Assets/Resources/ScriptableObjects/AccessoryData";
 
 
             string path = $"{folder}/{accessoryID}.asset";
@@ -153,6 +162,51 @@ public class ScriptableEditor
             data.description = (string)row["description"];
             data.level = (string)row["level"];
             data.resIcon = (string)row["resIcon"];
+            if (isNew)
+                AssetDatabase.CreateAsset(data, path);
+            else
+                EditorUtility.SetDirty(data);
+        }
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+    [MenuItem("Tools/GenerateStats")]
+
+    public static void GenerateStats()
+    {
+        JsonData datas = JsonManager.Instance.Load<JsonData>("LevelUpStats.json");
+
+        // 确保父目录存在
+        if (!AssetDatabase.IsValidFolder("Assets/Resources"))
+            AssetDatabase.CreateFolder("Assets", "Resources");
+
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects"))
+            AssetDatabase.CreateFolder("Assets/Resources", "ScriptableObjects");
+
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects/LevelUpStats"))
+            AssetDatabase.CreateFolder("Assets/Resources/ScriptableObjects", "LevelUpStats");
+
+        foreach (JsonData row in datas)
+        {
+            string statsName = (string)row["statsName"];
+
+            string folder = $"Assets/Resources/ScriptableObjects/LevelUpStats";
+
+            int level= int.Parse(row["level"].ToString(), CultureInfo.InvariantCulture);
+
+            string path = $"{folder}/{statsName}_{level}.asset";
+
+            LevelUpData data = AssetDatabase.LoadAssetAtPath<LevelUpData>(path);
+
+            bool isNew = data == null;
+
+            if (isNew)
+                data = ScriptableObject.CreateInstance<LevelUpData>();
+            data.statsName = statsName;
+            data.level = level;
+            data.num = int.Parse(row["num"].ToString(), CultureInfo.InvariantCulture);
+            data.resName= (string)row["resName"];
             if (isNew)
                 AssetDatabase.CreateAsset(data, path);
             else

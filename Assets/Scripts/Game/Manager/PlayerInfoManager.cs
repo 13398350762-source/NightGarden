@@ -6,7 +6,23 @@ public partial class PlayerInfoManager : BaseManager<PlayerInfoManager>
 {
     public  List<AccessoryData> accessoryList = new List<AccessoryData>();
     public WeaponData[] weaponList = new WeaponData[6];
+    public WeaponData initialWeapon;
+    public int nowHp;
+    public int nextLevelExp;
+    public int nowExp;
 
+    public void LevelUp()
+    {
+        nowExp -= nextLevelExp;
+        level++;
+        LevelUpManager.Instance.selectCount++;
+        nextLevelExp = LevelManager.Instance.GetNextLevelExp(level);
+    }
+    public void SetInitialWeapon(WeaponData data)
+    {
+        initialWeapon = data;
+        SetWeapon(data);
+    }
     public bool SetWeapon(WeaponData data)
     {
         if (data == null)
@@ -74,5 +90,11 @@ public partial class PlayerInfoManager : BaseManager<PlayerInfoManager>
         int level= weaponList[index].level;
         weaponList = newweaponList;
         AddMoney(RandomManager.Instance.RandomSellPrice(level, GameManager.Instance.Wave));
+    }
+    public void Clear()
+    {
+        System.Array.Clear(weaponList, 0, weaponList.Length);
+        accessoryList.Clear();
+        SetRole(null);
     }
 }

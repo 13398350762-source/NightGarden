@@ -6,6 +6,7 @@ public partial class PlayerInfoManager
     private RoleData role=null;
     // 固定数值通过 Get / Add 方法读写，避免外部绕过属性规则。
     private int armor;
+    //最大生命值
     private int hp;
     private int lucky;
     private int STR;
@@ -13,7 +14,6 @@ public partial class PlayerInfoManager
     private int recovery; // 每秒恢复的生命值。
     private int money;
     private float drain; // 概率：0.03 = 3%，上限70%。
-
     private float baseMoveSpeed;
     // 倍率：1 = 无加成，1.2 = +20%；Add 方法传入0.2表示增加20个百分点。
     private float moveSpeedMultiplier = 1f;
@@ -21,8 +21,6 @@ public partial class PlayerInfoManager
     private float atkSpeedMultiplier = 1f;
     private float damageMultiplier = 1f;
     private int level=0;
-    private int nextLevelExp;
-    private int nowExp;
 
     public void SetRole(RoleData data)
     {
@@ -117,6 +115,11 @@ public partial class PlayerInfoManager
     public int GetHp()
     {
         return hp;
+    }
+
+    public int GetLevel()
+    {
+        return level;
     }
 
     public float GetMoveSpeed()

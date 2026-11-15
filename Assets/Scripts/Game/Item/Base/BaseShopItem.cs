@@ -15,5 +15,15 @@ public abstract class BaseShopItem<T> : MonoBehaviour where T:ScriptableObject
     public Text txtMoney;
     public int cost;
 
+    protected void RemoveFromShop()
+    {
+        int index = System.Array.IndexOf(ShopManager.Instance.items, gameObject);
+        if (index >= 0)
+            ShopManager.Instance.items[index] = null;
+        btnBuy.interactable = false;
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
+
     public abstract void Init(T data,int money);
 }

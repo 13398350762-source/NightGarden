@@ -57,73 +57,86 @@ public class AccessoryPassive : BaseManager<AccessoryPassive>
     // 伞语耳坠
     private void Accessory4()
     {
-        
+        PlayerInfoManager.Instance.AddAST(1);
+        PlayerInfoManager.Instance.AddAtkSpeed(0.08f);
     }
 
     // 紫藤晶环
     private void Accessory5()
     {
-        
+        PlayerInfoManager.Instance.AddAST(3);
+        PlayerInfoManager.Instance.AddDamage(0.1f);
+        PlayerInfoManager.Instance.AddHp(-2);
     }
 
     // 丰穗香囊
     private void Accessory6()
     {
-        
+        PlayerInfoManager.Instance.AddLucky(8);
+        //每回合结束获得8金币
     }
 
     // 橡心护坠
     private void Accessory7()
     {
-        
+        PlayerInfoManager.Instance.AddArmor(1);
+        PlayerInfoManager.Instance.AddHp(2);
+        PlayerInfoManager.Instance.AddMoveSpeed(-0.03f);
     }
 
     // 晨露小瓶
     private void Accessory8()
     {
-        
+        PlayerInfoManager.Instance.AddHp(4);
     }
 
     // 慢语螺章
     private void Accessory9()
     {
-        
+        PlayerInfoManager.Instance.AddArmor(2);
+        PlayerInfoManager.Instance.AddMoveSpeed(-0.05f);
     }
 
     // 晴日勋章
     private void Accessory10()
     {
-        
+        PlayerInfoManager.Instance.AddDamage(0.15f);
+        PlayerInfoManager.Instance.AddRecovery(1);
     }
 
     // 风叶发夹
     private void Accessory11()
     {
-        
+        PlayerInfoManager.Instance.AddMoveSpeed(0.05f);
+        PlayerInfoManager.Instance.AddRange(0.05f);
     }
 
     // 风铃足链
     private void Accessory12()
     {
-        
+        PlayerInfoManager.Instance.AddAtkSpeed(0.08f);
+        PlayerInfoManager.Instance.AddMoveSpeed(0.05f);
     }
 
     // 翡翠甲章
     private void Accessory13()
     {
-        
+        PlayerInfoManager.Instance.AddArmor(3);
+        PlayerInfoManager.Instance.AddHp(4);
+        PlayerInfoManager.Instance.AddAtkSpeed(-0.05f);
     }
 
     // 甜莓心坠
     private void Accessory14()
     {
-        
+        PlayerInfoManager.Instance.AddHp(4);
     }
 
     // 蒲风梳
     private void Accessory15()
     {
-        
+        PlayerInfoManager.Instance.AddRange(0.15f);
+        PlayerInfoManager.Instance.AddSTR(1);
     }
 
     // 蛛绸领结
@@ -141,54 +154,62 @@ public class AccessoryPassive : BaseManager<AccessoryPassive>
     // 刻时核表
     private void Accessory18()
     {
-        
+        PlayerInfoManager.Instance.AddAtkSpeed(0.2f);
+        //
     }
 
     // 翩羽蜓簪
     private void Accessory19()
     {
-        
+        PlayerInfoManager.Instance.AddAtkSpeed(0.08f);
+        PlayerInfoManager.Instance.AddRange(0.1f);
     }
 
     // 金穗袖扣
     private void Accessory20()
     {
-        
+        PlayerInfoManager.Instance.AddSTR(1);
+        PlayerInfoManager.Instance.AddAST(1);
     }
 
     // 绯露蔷薇戒
     private void Accessory21()
     {
-        
+        PlayerInfoManager.Instance.AddDrain(0.03f);
+        PlayerInfoManager.Instance.AddDamage(0.1f);
     }
 
     // 秋焰枫扣
     private void Accessory22()
     {
-        
+        PlayerInfoManager.Instance.AddSTR(2);
+        PlayerInfoManager.Instance.AddHp(-1);
     }
 
     // 梦蝶颈环
     private void Accessory23()
     {
-        
+        //
     }
 
     // 紫莓珠链
     private void Accessory24()
     {
-        
+        PlayerInfoManager.Instance.AddHp(3);
+        PlayerInfoManager.Instance.AddLucky(3);
     }
 
     // 花匠顶针
     private void Accessory25()
     {
-        
+        PlayerInfoManager.Instance.AddArmor(1);
+        //
     }
 
     // 铃兰耳坠
     private void Accessory26()
     {
-        
+        PlayerInfoManager.Instance.AddRecovery(1);
+        PlayerInfoManager.Instance.AddAST(1);
     }
 }

@@ -32,7 +32,9 @@ public class PausePanel : BasePanel
             //时间恢复正常
             PoolManager.Instance.Clear();
             UIManager.Instance.Clear();
-            UIManager.Instance.ShowPanel<MainPanel>();
+            ScenesManager.Instance.LoadSceneAsync("BeginScene", () =>{
+                UIManager.Instance.ShowPanel<MainPanel>();
+            });
         });
         isInit = true;
     }

@@ -120,7 +120,7 @@ public class WeaponSelectPanel : BasePanel
         ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "weapon", (atlas) =>{
             imgWeapon.sprite = atlas.GetSprite(data.resName);
         });
-        PlayerInfoManager.Instance.SetWeapon(data);
+        PlayerInfoManager.Instance.SetInitialWeapon(data);
     }
 
     public override void Hide(UnityAction action)

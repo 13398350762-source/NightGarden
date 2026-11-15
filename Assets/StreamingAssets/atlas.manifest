@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 1190987654
+CRC: 1290784421
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: dc48fe2e8a39ae3187aa33d8478e67ec
+    Hash: 7a55298c1b3b0581cdaba7a975c032ac
   TypeTreeHash:
     serializedVersion: 2
     Hash: 033fafe2c9f6c610c3a734393882fd4c
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: dc48fe2e8a39ae3187aa33d8478e67ec
+    Hash: 7a55298c1b3b0581cdaba7a975c032ac
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -21,6 +21,8 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Resources/Atlas/Weapon.spriteatlasv2
-- Assets/Resources/Atlas/Componets.spriteatlasv2
+- Assets/Resources/Atlas/Components.spriteatlasv2
+- Assets/Resources/Atlas/Role.spriteatlasv2
 - Assets/Resources/Atlas/Accessory.spriteatlasv2
+- Assets/Resources/Atlas/Stats.spriteatlasv2
 Dependencies: []

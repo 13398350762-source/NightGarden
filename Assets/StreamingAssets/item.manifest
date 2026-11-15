@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 753317684
+CRC: 2261005603
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b2435ff341d1310f813ba0c4d6593493
+    Hash: 57871f1cfdc4b3a52baa6230eaf5dd7a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 82b60d29533c9a6cb955c9000fab0712
+    Hash: 6e69d0083fb4ee3a2b679c8238b93552
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: b2435ff341d1310f813ba0c4d6593493
+    Hash: 57871f1cfdc4b3a52baa6230eaf5dd7a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -25,6 +25,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f1e33ea5561c3224ca2b4f04288bf195, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 082d8587e07556f4b86fac799256b5ba, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 436ae2a1338676f4eb0aee04c4ac0bb4, type: 3}
@@ -32,6 +36,12 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e34b9d404dd5361489f7cef5c2fa528d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d7b6e3910d670ae49ad6a77695631e1a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4d632b5de7554ad290937bd2c6f056d7, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -45,6 +55,8 @@ ClassTypes:
 - Class: 687078895
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: RankData
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
 - AssemblyName: UnityEngine.UI
@@ -67,6 +79,8 @@ Assets:
 - Assets/Resources/UI/Item/ItemAccessory.prefab
 - Assets/Resources/UI/Item/ShopItemWeapon.prefab
 - Assets/Resources/UI/Item/ItemWeapon.prefab
+- Assets/Resources/UI/Item/RankItem.prefab
 - Assets/Resources/UI/Item/btnRefresh.prefab
 - Assets/Resources/UI/Item/ShopItemAccessory.prefab
+- Assets/Resources/UI/Item/LevelUpItem.prefab
 Dependencies: []

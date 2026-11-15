@@ -211,7 +211,7 @@ TextureImporter:
         height: 341
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 189, y: 140, z: 176, w: 196}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -226,13 +226,13 @@ TextureImporter:
       name: ui_health_frame
       rect:
         serializedVersion: 2
-        x: 25
+        x: 24
         y: 154
         width: 369
         height: 90
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 76, y: 45, z: 112, w: 45}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -253,7 +253,7 @@ TextureImporter:
         height: 85
       alignment: 9
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 126, y: 40, z: 164, w: 45}
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -285,10 +285,52 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ui_exp_frame
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 855
+        width: 736
+        height: 139
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 78, y: 32, z: 78, w: 32}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3336f84510144cf7d611d5b879b68c5c
+      internalID: 5533408709616852060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_exp_fill
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 696
+        width: 680
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 60, y: 20, z: 60, w: 20}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4930686babdbffaf6ba3a77296e7c460
+      internalID: 5934050288447858166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0ca73bafeffa04a419108479a4601953
     internalID: 0
     vertices: []
     indices: 
@@ -296,6 +338,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      ui_exp_fill: 5934050288447858166
+      ui_exp_frame: 5533408709616852060
       ui_button_hover: -751906358482112353
       ui_button_normal: 7976581790177278367
       ui_button_pressed: -7536052654171777873

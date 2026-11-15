@@ -13,14 +13,14 @@ public abstract class BasePanel : MonoBehaviour
     private UnityAction callback;
     protected abstract void Init();
 
-    void Start()
+    virtual protected void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
         if(canvasGroup==null)
             canvasGroup=this.AddComponent<CanvasGroup>();
     }
 
-    void Update()
+    virtual protected void Update()
     {
         if (isShow)
         {

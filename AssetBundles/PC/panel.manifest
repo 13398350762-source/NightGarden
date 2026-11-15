@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2257241586
+CRC: 1402055783
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b5c87358a96f01e6fad5e662acdba55f
+    Hash: 3783e3e3dc3bf106077a2e5f748f2cfc
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 93a5637e41d57c986a490b66dd21d940
+    Hash: 9769702da8f84642660ad8837efa6169
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: b5c87358a96f01e6fad5e662acdba55f
+    Hash: 3783e3e3dc3bf106077a2e5f748f2cfc
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -37,11 +37,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 92338e37ba003684192f77dd87661283, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: d199490a83bb2b844b9695cbf13b01ef, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b229ba919dfe0b041af348ab21b2d864, type: 3}
 - Class: 114
@@ -52,6 +56,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5b0de8ea29f4c39499f0aeb2b8e25c12, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: cf431218a7f67354196c5c3ed5926399, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 8df7a49b4e8363f4abefbf233ca30bb5, type: 3}
 - Class: 114
@@ -65,11 +71,19 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 7e2bc3ed0c0af534d9a72f3aef2e1414, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: dcb3153b6370c874d9e109e7cffd29b9, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 71ec2befdf820fd40b07d3603d415f1d, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 143e9df829da9cc448b745d3856301c1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 658f297169932844aa160da03a8b29d4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e2e407d3967000c40be80dd7cd84eb1c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d35f5374bbb47844280ed692fcd8e681, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -125,8 +139,12 @@ Assets:
 - Assets/Resources/UI/Panel/MainPanel.prefab
 - Assets/Resources/UI/Panel/RegisterPanel.prefab
 - Assets/Resources/UI/Panel/RoleSelectPanel.prefab
+- Assets/Resources/UI/Panel/LevelUpPanel.prefab
+- Assets/Resources/UI/Panel/RankPanel.prefab
+- Assets/Resources/UI/Panel/GameOverPanel.prefab
 - Assets/Resources/UI/Panel/TipPanel.prefab
 - Assets/Resources/UI/Panel/LoginPanel.prefab
+- Assets/Resources/UI/Panel/GamePanel.prefab
 - Assets/Resources/UI/Panel/SettingPanel.prefab
 - Assets/Resources/UI/Panel/WeaponSelectPanel.prefab
 - Assets/Resources/UI/Panel/PausePanel.prefab

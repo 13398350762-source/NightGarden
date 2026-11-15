@@ -16,8 +16,8 @@ public class AudioManager : BaseManager<AudioManager>
     private AudioData audioData;
     public AudioManager()
     {
-        LoadAudioData();
         soundList = new List<AudioSource>();
+        LoadAudioData();
         MonoManager.Instance.AddUpdateEvent(Update);
     }
     public void PlayMusic(AudioClip clip, UnityAction action = null)
@@ -60,6 +60,10 @@ public class AudioManager : BaseManager<AudioManager>
         source.Play();
         soundList.Add(source);
     }
+    public float GetMainVolume() => mainVolume;
+    public float GetMusicVolume() => musicVolume;
+    public float GetSoundVolume() => soundVolume;
+
     public void SetMainVolume(float volume)
     {
         mainVolume = volume;

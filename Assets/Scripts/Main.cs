@@ -9,7 +9,9 @@ public class Main : MonoBehaviour
     {
         ResManager.Instance.LoadRes<SpriteAtlas>("atlas", "Components");
         PlayerInfoManager.Instance.SetRole(Resources.Load<RoleData>("ScriptableObjects/RoleDatas/萝卜骑士"));
-        UIManager.Instance.ShowPanel<ShopPanel>();
+        //UIManager.Instance.ShowPanel<ShopPanel>();
+        LevelUpManager.Instance.selectCount = 2;
+        UIManager.Instance.ShowPanel<LevelUpPanel>();
     }
 
     void Update()

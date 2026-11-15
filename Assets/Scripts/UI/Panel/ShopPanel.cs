@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using Unity.VisualScripting;
@@ -56,43 +56,7 @@ public class ShopPanel : BasePanel
         base.Show();
         ShopManager.Instance.refreshCount = 0;
         Refresh();
-        foreach (Transform child in svAccessories.content)
-        {
-            child.gameObject.SetActive(false);
-            Destroy(child.gameObject);
-        }
-        foreach (Transform child in svWeapons.content)
-        {
-            child.gameObject.SetActive(false);
-            Destroy(child.gameObject);
-        }
-        foreach (AccessoryData data in PlayerInfoManager.Instance.accessoryList)
-        {
-            GameObject obj=ResManager.Instance.LoadRes<GameObject>("item", "ItemAccessory");
-            ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Accessory", (atlas) =>{
-                if (obj == null) return;
-                obj.GetComponent<Image>().sprite = atlas.GetSprite(data.resIcon);
-            });
-            obj.transform.SetParent(svAccessories.content, false);
-        }
-        foreach (WeaponData data in PlayerInfoManager.Instance.weaponList)
-        {
-            if (data == null)
-                break;
-            GameObject obj = ResManager.Instance.LoadRes<GameObject>("item", "ItemWeapon");
-            int level = data.level;
-            obj.transform.GetChild(0).GetComponent<Text>().text = level == 4 ? "IV" : new string('I', level);
-            ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Weapon", (atlas) => {
-                if (obj == null) return;
-                obj.transform.GetChild(1).GetComponent<Image>().sprite= atlas.GetSprite(data.resName);
-            });
-            ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Components", (atlas) => {
-                if (obj == null) return;
-                string name = "weapon_frame_" + level.ToString();
-                obj.GetComponent<Image>().sprite = atlas.GetSprite(name);
-            });
-            obj.transform.SetParent(svWeapons.content, false);
-        }
+        RefreshAccessory();
         //角色面板显示（未完成）
     }
     public void Refresh()
@@ -103,8 +67,42 @@ public class ShopPanel : BasePanel
             obj.transform.SetParent(svShop.content, false);
         }
         updateTXTDic();
+        RefreshWeapons();
     }
-
+    public void RefreshWeapons()
+    {
+        Transform trans=svWeapons.content.transform;
+        for (int i = trans.childCount - 1; i >= 0; i--)
+        {
+            Destroy(trans.GetChild(i).gameObject);
+        }
+        foreach (WeaponData data in PlayerInfoManager.Instance.weaponList)
+        {
+            if (data == null)
+                break;
+            ResManager.Instance.LoadResAsync<GameObject>("item", "ItemWeapon", (obj) => {
+                obj.GetComponent<WeaponItem>().Init(data);
+                obj.transform.SetParent(trans, false);
+            });
+        }
+    }
+    public void RefreshAccessory()
+    {
+        Transform trans = svAccessories.content.transform;
+        for (int i = trans.childCount - 1; i >= 0; i--)
+        {
+            Destroy(trans.GetChild(i).gameObject);
+        }
+        foreach (AccessoryData data in PlayerInfoManager.Instance.accessoryList)
+        {
+            if (data == null)
+                break;
+            ResManager.Instance.LoadResAsync<GameObject>("item", "ItemAccessory", (obj) => {
+                obj.GetComponent<AccessoryItem>().Init(data);
+                obj.transform.SetParent(trans, false);
+            });
+        }
+    }
     public void updateTXTDic()
     {
         PlayerInfoManager player = PlayerInfoManager.Instance;

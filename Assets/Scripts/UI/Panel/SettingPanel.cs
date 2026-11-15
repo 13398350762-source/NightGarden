@@ -30,9 +30,7 @@ public class SettingPanel : BasePanel
         });
         btnDefault.onClick.AddListener(() =>{
             AudioManager.Instance.SetDefault();
-            sliderMain.value = 1.0f;
-            sliderMusic.value = 1.0f;
-            sliderSound.value = 1.0f;
+            RefreshAudioUI();
         });
         btnSure.onClick.AddListener(() =>{
             AudioManager.Instance.SaveAudioData();
@@ -62,5 +60,25 @@ public class SettingPanel : BasePanel
         
         });
         isInit = true;
+    }
+
+    public override void Show()
+    {
+        base.Show();
+        RefreshAudioUI();
+    }
+
+    private void RefreshAudioUI()
+    {
+        AudioManager audio = AudioManager.Instance;
+        float main = audio.GetMainVolume();
+        float music = audio.GetMusicVolume();
+        float sound = audio.GetSoundVolume();
+        sliderMain.SetValueWithoutNotify(main);
+        sliderMusic.SetValueWithoutNotify(music);
+        sliderSound.SetValueWithoutNotify(sound);
+        txtMain.text = (main * 100).ToString("F2") + "%";
+        txtMusic.text = (music * 100).ToString("F2") + "%";
+        txtSound.text = (sound * 100).ToString("F2") + "%";
     }
 }
