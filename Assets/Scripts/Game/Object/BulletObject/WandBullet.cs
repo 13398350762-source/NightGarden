@@ -45,8 +45,8 @@ public class WandBullet : BaseBullet
         {
             enemy.GetRepel(repel, dir);
             enemy.GetDamage(damage);
-            enemy.SlowSpeed(0.8f);
-            Destroy(gameObject);
+            enemy.SlowSpeed(0.65f);
+            PoolManager.Instance.PushObj("WandBullet", this.gameObject);
         }
     }
 

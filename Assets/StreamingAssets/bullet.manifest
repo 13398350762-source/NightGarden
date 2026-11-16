@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 3166664666
+CRC: 514666619
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 18c91015f4054bfec63604de3dc638b1
+    Hash: 6e888fed64ed82336c13e9897d00df41
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 619c1e7135e16ffbd8fa6d1567bcc96e
+    Hash: f210e5d620cb1cd4998ed66d2afc9037
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 18c91015f4054bfec63604de3dc638b1
+    Hash: 6e888fed64ed82336c13e9897d00df41
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -23,9 +23,17 @@ ClassTypes:
 - Class: 61
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: 1c7026da5e5e56b4aab00787e01d36e9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b52f6bbac466ef040b9074a439e68d94, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 30ce1cce68557954c8ceff8d33cdfda9, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: c377f9beb0b0f0a4abd97c7e232669ae, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c9ea623ee88d2dc4b878e96b35db4ff7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eac646e5a31bd5c44af24913cc55db7b, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 6c21aab319c1891419271a1dabfdb794, type: 3}
 - Class: 114
@@ -40,8 +48,12 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Resources/GameObject/Bullet/CannonBullet.prefab
+- Assets/Resources/GameObject/Bullet/StaffBullet.prefab
 - Assets/Resources/GameObject/Bullet/CrystalFog.prefab
 - Assets/Resources/GameObject/Bullet/CrossBowBullet.prefab
+- Assets/Resources/GameObject/Bullet/PeaGunBullet.prefab
 - Assets/Resources/GameObject/Bullet/WandBullet.prefab
 - Assets/Resources/GameObject/Bullet/BowBullet.prefab
+- Assets/Resources/GameObject/Bullet/BombBullet.prefab
 Dependencies: []

@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 3262270148
+CRC: 2218461900
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 33bb36405c310a3229bcf7343342daf8
+    Hash: 82e9a850460bd030f40008b529a5746a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ce1338b9532d29935220d840742b45dd
+    Hash: d454a47b4bf51becb4a98724e6f80132
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 33bb36405c310a3229bcf7343342daf8
+    Hash: 82e9a850460bd030f40008b529a5746a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -22,6 +22,12 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 61
   Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: c651350de3f2b2e4a8bcb78a202bef8d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a8ab1839229d6934bb754f1e56e76686, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a42bec90da66d674e88b9b49d17d08c7, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 6249dcc31510f744ab9e02679f2c41d2, type: 3}
 - Class: 114
@@ -37,7 +43,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: b7b4f402f5e42c64190f1a199af0b706, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 4aeb92cf065669947bd8845a8d441f12, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 140124eaad961d44a8bcf67cf1ac2360, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9b7089a40e3a1c84db8f8213836b2c63, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 4de996f28154d0e4a8fac954696adcb4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a10a8b481969f8b4bb4ebc2d56522922, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
@@ -48,12 +62,20 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Resources/GameObject/Weapon/gun2.prefab
 - Assets/Resources/GameObject/Weapon/dagger.prefab
+- Assets/Resources/GameObject/Weapon/cannon.prefab
+- Assets/Resources/GameObject/Weapon/pistol.prefab
+- Assets/Resources/GameObject/Weapon/chiligun.prefab
 - Assets/Resources/GameObject/Weapon/crossbow.prefab
 - Assets/Resources/GameObject/Weapon/club.prefab
 - Assets/Resources/GameObject/Weapon/whip.prefab
+- Assets/Resources/GameObject/Weapon/staff.prefab
 - Assets/Resources/GameObject/Weapon/bow.prefab
+- Assets/Resources/GameObject/Weapon/wand.prefab
+- Assets/Resources/GameObject/Weapon/sickle.prefab
 - Assets/Resources/GameObject/Weapon/crystal.prefab
 - Assets/Resources/GameObject/Weapon/mallet.prefab
 - Assets/Resources/GameObject/Weapon/fork.prefab
+- Assets/Resources/GameObject/Weapon/bomb.prefab
 Dependencies: []

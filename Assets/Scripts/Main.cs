@@ -15,7 +15,7 @@ public class Main : MonoBehaviour
         //LevelUpManager.Instance.selectCount = 2;
         //UIManager.Instance.ShowPanel<LevelUpPanel>();
         weapon = GameObject.Find("pos").transform.GetChild(0).transform.GetComponent<BaseWeaponObject>();
-        weapon.Init(Resources.Load<WeaponData>("ScriptableObjects/WeaponDatas/crossbow/crossbow_2"));
+        weapon.Init(Resources.Load<WeaponData>("ScriptableObjects/WeaponDatas/gun/gun_3"));
     }
 
     void Update()

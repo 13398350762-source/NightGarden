@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1400973991
+CRC: 3390075993
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -16,4 +16,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_4:
       Name: bullet
+      Dependencies: {}
+    Info_5:
+      Name: eff
       Dependencies: {}
