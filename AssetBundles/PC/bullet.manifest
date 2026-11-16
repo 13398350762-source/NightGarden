@@ -1,0 +1,47 @@
+ManifestFileVersion: 0
+CRC: 3166664666
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 18c91015f4054bfec63604de3dc638b1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 619c1e7135e16ffbd8fa6d1567bcc96e
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 18c91015f4054bfec63604de3dc638b1
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 30ce1cce68557954c8ceff8d33cdfda9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c377f9beb0b0f0a4abd97c7e232669ae, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6c21aab319c1891419271a1dabfdb794, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bd4ba70dbcdbba5459768b0a4639e31e, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/GameObject/Bullet/CrystalFog.prefab
+- Assets/Resources/GameObject/Bullet/CrossBowBullet.prefab
+- Assets/Resources/GameObject/Bullet/WandBullet.prefab
+- Assets/Resources/GameObject/Bullet/BowBullet.prefab
+Dependencies: []

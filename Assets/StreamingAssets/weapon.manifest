@@ -1,0 +1,59 @@
+ManifestFileVersion: 0
+CRC: 3262270148
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 33bb36405c310a3229bcf7343342daf8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: ce1338b9532d29935220d840742b45dd
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 33bb36405c310a3229bcf7343342daf8
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6249dcc31510f744ab9e02679f2c41d2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c7288df64a4310244a5e65feb9baa4c2, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b3d8f4315550cf4b9070b73467b086f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 26fc88b0253996543a1a3263b2815155, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0d447431a41c0f14ea4256eaccc5da73, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f9766f71459222346bdb6e492b12f1fe, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b7b4f402f5e42c64190f1a199af0b706, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4de996f28154d0e4a8fac954696adcb4, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/GameObject/Weapon/dagger.prefab
+- Assets/Resources/GameObject/Weapon/crossbow.prefab
+- Assets/Resources/GameObject/Weapon/club.prefab
+- Assets/Resources/GameObject/Weapon/whip.prefab
+- Assets/Resources/GameObject/Weapon/bow.prefab
+- Assets/Resources/GameObject/Weapon/crystal.prefab
+- Assets/Resources/GameObject/Weapon/mallet.prefab
+- Assets/Resources/GameObject/Weapon/fork.prefab
+Dependencies: []

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3661834819
+CRC: 1400973991
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -10,4 +10,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_2:
       Name: item
+      Dependencies: {}
+    Info_3:
+      Name: weapon
+      Dependencies: {}
+    Info_4:
+      Name: bullet
       Dependencies: {}

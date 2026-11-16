@@ -14,26 +14,38 @@ public class ResManager : MonoAutoSingleton<ResManager>
     private void LoadAB(string abName)
     {
         if(abDic==null)
-            abDic = new Dictionary<string, AssetBundle>();
-        if (MainAB == null)
         {
+            abDic = new Dictionary<string, AssetBundle>();
+        }
+        foreach (AssetBundle bundle in AssetBundle.GetAllLoadedAssetBundles())
+        {
+            if (bundle.name == MainABName.ToLowerInvariant())
+                MainAB = bundle;
+            else
+                abDic[bundle.name] = bundle;
+        }
+        if (MainAB == null)
             MainAB = AssetBundle.LoadFromFile(PathUrl + MainABName);
+        if (manifest == null)
+        {
             manifest = MainAB.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
         }
         AssetBundle ab = null;
         string[] dependecies = manifest.GetAllDependencies(abName);
         for (int i = 0; i < dependecies.Length; i++)
         {
-            if (!abDic.ContainsKey(dependecies[i]))
+            if (!abDic.ContainsKey(dependecies[i]) || abDic[dependecies[i]] == null)
             {
                 ab = AssetBundle.LoadFromFile(PathUrl + dependecies[i]);
-                abDic.Add(dependecies[i], ab);
+                if (ab != null)
+                    abDic[dependecies[i]] = ab;
             }
         }
-        if (!abDic.ContainsKey(abName))
+        if (!abDic.ContainsKey(abName) || abDic[abName] == null)
         {
             ab = AssetBundle.LoadFromFile(PathUrl + abName);
-            abDic.Add(abName, ab);
+            if (ab != null)
+                abDic[abName] = ab;
         }
     }
 
@@ -68,7 +80,6 @@ public class ResManager : MonoAutoSingleton<ResManager>
 
     }
 
-    // 加载原始资源，不实例化；用于缓存商品预制体。
     public T LoadAsset<T>(string abName, string resName) where T : Object
     {
         LoadAB(abName);

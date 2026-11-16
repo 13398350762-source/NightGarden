@@ -217,6 +217,60 @@ public class ScriptableEditor
         AssetDatabase.Refresh();
     }
 
+    [MenuItem("Tools/GenerateEnemyData")]
+    public static void GenerateEnemyData()
+    {
+        JsonData datas = JsonManager.Instance.Load<JsonData>("EnemyData.json");
+        if (!datas.IsArray)
+        {
+            Debug.LogError("EnemyData.json 未找到或不是数组，请先从敌人表导出 JSON。");
+            return;
+        }
+
+        if (!AssetDatabase.IsValidFolder("Assets/Resources"))
+            AssetDatabase.CreateFolder("Assets", "Resources");
+        if (!AssetDatabase.IsValidFolder("Assets/Resources/ScriptableObjects"))
+            AssetDatabase.CreateFolder("Assets/Resources", "ScriptableObjects");
+        string root = "Assets/Resources/ScriptableObjects/Enemy";
+        if (!AssetDatabase.IsValidFolder(root))
+            AssetDatabase.CreateFolder("Assets/Resources/ScriptableObjects", "Enemy");
+        foreach (string type in new[] { "boss", "other" })
+        {
+            if (!AssetDatabase.IsValidFolder($"{root}/{type}"))
+                AssetDatabase.CreateFolder(root, type);
+        }
+
+        foreach (JsonData row in datas)
+        {
+            string enemyID = (string)row["enemyID"];
+            string enemyType = row["enemyType"].ToString().Trim().ToLowerInvariant();
+            if (enemyType != "boss" && enemyType != "other")
+            {
+                Debug.LogError($"敌人 {enemyID} 的 enemyType 必须是 boss 或 other。");
+                continue;
+            }
+            string path = $"{root}/{enemyType}/{enemyID}.asset";
+            EnemyData data = AssetDatabase.LoadAssetAtPath<EnemyData>(path);
+            bool isNew = data == null;
+            if (isNew)
+                data = ScriptableObject.CreateInstance<EnemyData>();
+
+            data.enemyID = enemyID;
+            data.hp = int.Parse(row["hp"].ToString(), CultureInfo.InvariantCulture);
+            data.speed = ReadFloat(row["speed"]);
+            data.damage = int.Parse(row["damage"].ToString(), CultureInfo.InvariantCulture);
+            data.exp = int.Parse(row["exp"].ToString(), CultureInfo.InvariantCulture);
+            data.resName = (string)row["resName"];
+            if (isNew)
+                AssetDatabase.CreateAsset(data, path);
+            else
+                EditorUtility.SetDirty(data);
+        }
+
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+    }
+
     private static float ReadFloat(JsonData value)
     {
         if (value.IsString)

@@ -5,13 +5,17 @@ using UnityEngine.U2D;
 
 public class Main : MonoBehaviour
 {
+    public BaseWeaponObject weapon;
+    public testEnemy testEnemy;
     void Start()
     {
         ResManager.Instance.LoadRes<SpriteAtlas>("atlas", "Components");
         PlayerInfoManager.Instance.SetRole(Resources.Load<RoleData>("ScriptableObjects/RoleDatas/萝卜骑士"));
-        UIManager.Instance.ShowPanel<ShopPanel>();
+        //UIManager.Instance.ShowPanel<ShopPanel>();
         //LevelUpManager.Instance.selectCount = 2;
         //UIManager.Instance.ShowPanel<LevelUpPanel>();
+        weapon = GameObject.Find("pos").transform.GetChild(0).transform.GetComponent<BaseWeaponObject>();
+        weapon.Init(Resources.Load<WeaponData>("ScriptableObjects/WeaponDatas/crossbow/crossbow_2"));
     }
 
     void Update()
