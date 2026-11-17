@@ -12,8 +12,7 @@ public class WeaponItem : MonoBehaviour
     public Image imgIcon;
     public Text txtLevel;
     public int index { get; private set; }
-    private WeaponData data;
-    private static bool isOpening;
+    internal WeaponData data;
     public void Init(WeaponData data, int index)
     {
         this.data = data;
@@ -29,23 +28,8 @@ public class WeaponItem : MonoBehaviour
             imgIcon.sprite = atlas.GetSprite(data.resName);
         });
         txtLevel.text = (level == 4 ? "IV" : new string('I', level));
-        btnItem.onClick.RemoveListener(OpenPanel);
-        btnItem.onClick.AddListener(OpenPanel);
+        EventCallBack.Instance.Bind(btnItem, nameof(EventCallBack.OpenWeapon), this);
     }
 
-    private void OpenPanel()
-    {
-        WeaponData[] weapons = PlayerInfoManager.Instance.weaponList;
-        if (isOpening || index < 0 || index >= weapons.Length || weapons[index] != data) return;
-        isOpening = true;
-        UIManager.Instance.ShowPanel<WeaponItemPanel>((panel) =>{
-            isOpening = false;
-            if (this == null || !gameObject.activeInHierarchy || PlayerInfoManager.Instance.weaponList[index] != data)
-            {
-                UIManager.Instance.HidePanel<WeaponItemPanel>();
-                return;
-            }
-            panel.SetIndex(index, transform as RectTransform);
-        });
-    }
+
 }

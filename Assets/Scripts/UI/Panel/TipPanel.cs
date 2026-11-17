@@ -12,9 +12,7 @@ public class TipPanel : BasePanel
     {
         if (isInit)
             return;
-        btnSure.onClick.AddListener(() =>{
-            UIManager.Instance.HidePanel<TipPanel>();
-        });
+        EventCallBack.Instance.Bind(btnSure, nameof(EventCallBack.CloseTip));
         isInit = true;
     }
 

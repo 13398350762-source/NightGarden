@@ -21,7 +21,7 @@ MonoBehaviour:
   resName: pea_gun
   bullet: bullet1
   level: 4
-  internalTime: 0.74
+  internalTime: 1
   range: 28
-  atk: 12
+  atk: 8
   repel: 1

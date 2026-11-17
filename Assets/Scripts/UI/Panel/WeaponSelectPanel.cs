@@ -21,13 +21,14 @@ public class WeaponSelectPanel : BasePanel
     public Image imgWeapon;
     public ToggleGroup toggleGroup;
     private bool isInit=false;
-    private bool isReady = false;
+    internal bool isReady = false;
     protected override void Init()
     {
         if (isInit)
             return;
         toggleGroup.allowSwitchOff = true;
         ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "weapon", (atlas) =>{
+            if (this == null || atlas == null) return;
             for (int i = 0; i < togWeaponList.Count; i++)
             {
                 Image image = togWeaponList[i].transform .Find("weapon").GetComponent<Image>();
@@ -35,75 +36,18 @@ public class WeaponSelectPanel : BasePanel
                 image.preserveAspect = true;
             }
         });
-        btnBack.onClick.AddListener(() =>{
-            UIManager.Instance.HidePanel<WeaponSelectPanel>();
-            //显示选人界面
-            UIManager.Instance.ShowPanel<RoleSelectPanel>();
-            PlayerInfoManager.Instance.SetWeapon(null);
-        });
+        EventCallBack.Instance.Bind(btnBack, nameof(EventCallBack.BackToRole));
 
-        btnStart.onClick.AddListener(() =>{
-            if (!isReady)
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) => {
-                    panel.ChangeInfo("请选择武器");
-                });
-                return;
-            }
-            ScenesManager.Instance.LoadSceneAsync("GameScene", () =>{
-                UIManager.Instance.HidePanel<WeaponSelectPanel>();
-                //进入游戏场景后需要处理的事件
-                ResManager.Instance.LoadResAsync<GameObject>("player", "Player", (player) =>{
-                    player.GetComponent<PlayerController>().Init();
-                });
-            });
-        });
-        togWeaponList[0].onValueChanged.AddListener((value) =>{
-            if (value)
-            {
-                ChangeSelectWeapon(weaponDatas[0]);
-            }
-        });
-        togWeaponList[1].onValueChanged.AddListener((value) =>
+        EventCallBack.Instance.Bind(btnStart, nameof(EventCallBack.StartGame), this);
+        for (int i = 0; i < togWeaponList.Count; i++)
         {
-            if (value)
-            {
-                ChangeSelectWeapon(weaponDatas[1]);
-            }
-        });
-        togWeaponList[2].onValueChanged.AddListener((value) =>
-        {
-            if (value)
-            {
-                ChangeSelectWeapon(weaponDatas[2]);
-            }
-        });
-        togWeaponList[3].onValueChanged.AddListener((value) =>
-        {
-            if (value)
-            {
-                ChangeSelectWeapon(weaponDatas[3]);
-            }
-        });
-        togWeaponList[4].onValueChanged.AddListener((value) =>
-        {
-            if (value)
-            {
-                ChangeSelectWeapon(weaponDatas[4]);
-            }
-        });
-        togWeaponList[5].onValueChanged.AddListener((value) =>
-        {
-            if (value)
-            {
-                ChangeSelectWeapon(weaponDatas[5]);
-            }
-        });
+            EventCallBack.Instance.BindSelection(togWeaponList[i], nameof(EventCallBack.SelectWeapon), this, i);
+        }
         isInit = true;
         toggleGroup.SetAllTogglesOff();
     }
 
-    private void ChangeSelectWeapon(WeaponData data)
+    internal void ChangeSelectWeapon(WeaponData data)
     {
         isReady = true;
         imgWeapon.enabled = true;
@@ -120,6 +64,7 @@ public class WeaponSelectPanel : BasePanel
                 break;
         }
         ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "weapon", (atlas) =>{
+            if (this == null || atlas == null) return;
             imgWeapon.sprite = atlas.GetSprite(data.resName);
         });
         PlayerInfoManager.Instance.SetInitialWeapon(data);

@@ -53,23 +53,7 @@ public class WeaponShopItem : BaseShopItem<WeaponData>
                     break;
             }
         });
-        btnBuy.onClick.AddListener(() =>{
-            if (!btnBuy.interactable) return;
-            //花钱买商品
-            if (PlayerInfoManager.Instance.GetMoney() >= cost && PlayerInfoManager.Instance.SetWeapon(data))
-            {
-                PlayerInfoManager.Instance.AddMoney(-cost);
-                RemoveFromShop();
-                UIManager.Instance.GetPanel<ShopPanel>((panel) =>{
-                    panel.RefreshWeapons();
-                    panel.updateTXTDic();
-                });
-            }
-            else
-            {
-                //播放购买失败音效
-            }
-        });
+        EventCallBack.Instance.Bind(btnBuy, nameof(EventCallBack.BuyWeapon), this);
         txtMoney.text = "购买 " + money.ToString();
         cost = money;
     }

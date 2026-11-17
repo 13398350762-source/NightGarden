@@ -7,27 +7,66 @@ public class UIManager : BaseManager<UIManager>
 {
     private Dictionary<string, BasePanel> panelDic;
     private Transform targetTrans;
+    private Dictionary<string, List<UnityAction<BasePanel>>> loadingPanels = new Dictionary<string, List<UnityAction<BasePanel>>>();
+    private int loadVersion;
     public UIManager() 
     {
         panelDic = new Dictionary<string, BasePanel>();
-        targetTrans = GameObject.Find("Canvas").transform;
+        GameObject canvas = GameObject.Find("Canvas");
+        if (canvas == null)
+        {
+            canvas = new GameObject("Canvas", typeof(Canvas), typeof(UnityEngine.UI.CanvasScaler), typeof(UnityEngine.UI.GraphicRaycaster));
+            canvas.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+            var scaler = canvas.GetComponent<UnityEngine.UI.CanvasScaler>();
+            scaler.uiScaleMode = UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920, 1080);
+            scaler.matchWidthOrHeight = 0.5f;
+        }
+        if (Object.FindObjectOfType<UnityEngine.EventSystems.EventSystem>() == null)
+        {
+            GameObject events = new GameObject("EventSystem", typeof(UnityEngine.EventSystems.EventSystem));
+            events.transform.SetParent(canvas.transform, false);
+            events.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>().AssignDefaultActions();
+        }
+        targetTrans = canvas.transform;
         GameObject.DontDestroyOnLoad(targetTrans);
     }
     public void ShowPanel<T>(UnityAction<T> callback=null)where T:BasePanel
     {
         string panelName=typeof(T).Name;
-        if (panelDic.ContainsKey(panelName))
+        if (panelDic.TryGetValue(panelName, out BasePanel existing) && existing != null)
         {
-            callback?.Invoke(panelDic[panelName] as T);
+            existing.Show();
+            callback?.Invoke(existing as T);
             return;
         }
-        T panelScript = null;
+        if (loadingPanels.TryGetValue(panelName, out List<UnityAction<BasePanel>> waiting))
+        {
+            if (callback != null) waiting.Add(panel => callback(panel as T));
+            return;
+        }
+        waiting = new List<UnityAction<BasePanel>>();
+        if (callback != null) waiting.Add(panel => callback(panel as T));
+        loadingPanels.Add(panelName, waiting);
+        int version = loadVersion;
         PoolManager.Instance.GetObj(panelName, "panel", (panel) => { 
-            (panel as GameObject).transform.SetParent(targetTrans,false);
-            panelScript = (panel as GameObject).GetComponent<T>();
+            GameObject obj = panel as GameObject;
+            if (obj == null || version != loadVersion || targetTrans == null)
+            {
+                if (obj != null) GameObject.Destroy(obj);
+                if (version == loadVersion) loadingPanels.Remove(panelName);
+                return;
+            }
+            loadingPanels.Remove(panelName);
+            obj.transform.SetParent(targetTrans,false);
+            T panelScript = obj.GetComponent<T>();
+            panelDic[panelName] = panelScript;
             panelScript.Show();
-            panelDic.Add(panelName, panelScript);
-            callback?.Invoke(panelScript as T);
+            foreach (var action in waiting)
+            {
+                if (version != loadVersion || panelScript == null) break;
+                action(panelScript);
+            }
         });
     }
 
@@ -53,9 +92,15 @@ public class UIManager : BaseManager<UIManager>
 
     public void Clear()
     {
+        loadVersion++;
+        loadingPanels.Clear();
         foreach (var item in panelDic.Values)
         {
-            GameObject.Destroy(item.gameObject);
+            if (item != null)
+            {
+                item.gameObject.SetActive(false);
+                GameObject.Destroy(item.gameObject);
+            }
         }
         panelDic.Clear();
     }

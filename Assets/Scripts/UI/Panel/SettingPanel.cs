@@ -24,41 +24,16 @@ public class SettingPanel : BasePanel
     {
         if (isInit)
             return;
-        btnBack.onClick.AddListener(() =>{
-            AudioManager.Instance.LoadAudioData();
-            UIManager.Instance.HidePanel<SettingPanel>();
-        });
-        btnDefault.onClick.AddListener(() =>{
-            AudioManager.Instance.SetDefault();
-            RefreshAudioUI();
-        });
-        btnSure.onClick.AddListener(() =>{
-            AudioManager.Instance.SaveAudioData();
-        });
-        sliderMain.onValueChanged.AddListener((value) =>{
-            AudioManager.Instance.SetMainVolume(value);
-            txtMain.text = (value * 100).ToString("F2") + "%";
-        });
-        sliderMusic.onValueChanged.AddListener((value) => {
-            AudioManager.Instance.SetMusicVolume(value);
-            txtMusic.text = (value * 100).ToString("F2") + "%";
-        });
-        sliderSound.onValueChanged.AddListener((value) => {
-            AudioManager.Instance.SetSoundVolume(value);
-            txtSound.text = (value * 100).ToString("F2") + "%";
-        });
-        togDamage.onValueChanged.AddListener((value) =>{
-
-        });
-        togShake.onValueChanged.AddListener((value) =>{
-
-        });
-        dropWindow.onValueChanged.AddListener((value) =>{ 
-        
-        });
-        dropRate.onValueChanged.AddListener((value) =>{ 
-        
-        });
+        EventCallBack.Instance.Bind(btnBack, nameof(EventCallBack.CancelSettings));
+        EventCallBack.Instance.Bind(btnDefault, nameof(EventCallBack.ResetSettings), this);
+        EventCallBack.Instance.Bind(btnSure, nameof(EventCallBack.SaveSettings));
+        EventCallBack.Instance.Bind(sliderMain, nameof(EventCallBack.ChangeMainVolume), this);
+        EventCallBack.Instance.Bind(sliderMusic, nameof(EventCallBack.ChangeMusicVolume), this);
+        EventCallBack.Instance.Bind(sliderSound, nameof(EventCallBack.ChangeSoundVolume), this);
+        EventCallBack.Instance.Bind(togDamage, nameof(EventCallBack.ChangeDamageDisplay));
+        EventCallBack.Instance.Bind(togShake, nameof(EventCallBack.ChangeCameraShake));
+        EventCallBack.Instance.Bind(dropWindow, nameof(EventCallBack.ChangeWindowMode));
+        EventCallBack.Instance.Bind(dropRate, nameof(EventCallBack.ChangeResolution));
         isInit = true;
     }
 
@@ -68,7 +43,7 @@ public class SettingPanel : BasePanel
         RefreshAudioUI();
     }
 
-    private void RefreshAudioUI()
+    internal void RefreshAudioUI()
     {
         AudioManager audio = AudioManager.Instance;
         float main = audio.GetMainVolume();

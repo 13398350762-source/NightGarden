@@ -15,7 +15,7 @@ MonoBehaviour:
   roleID: "\u8FA3\u6912\u6E38\u4FA0"
   armor: 1
   hp: 6
-  moveSpeed: 5.5
+  moveSpeed: 12
   range: 1.2
   lucky: 10
   STR: 4

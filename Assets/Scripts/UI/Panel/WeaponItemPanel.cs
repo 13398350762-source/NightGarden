@@ -10,40 +10,16 @@ public class WeaponItemPanel : BasePanel
     public Button btnSell;
     public Button btnComposite;
     private bool isInit=false;
-    private int index;
+    internal int index;
     private int showFrame;
-    private bool isClosing;
-    private WeaponData selectedWeapon;
+    internal bool isClosing;
+    internal WeaponData selectedWeapon;
     protected override void Init()
     {
         if (isInit)
             return;
-        btnSell.onClick.AddListener(() =>{
-            if (isClosing || selectedWeapon == null || PlayerInfoManager.Instance.weaponList[index] != selectedWeapon) return;
-            isClosing = true;
-            btnSell.interactable = false;
-            btnComposite.interactable = false;
-            UIManager.Instance.HidePanel<WeaponItemPanel>();
-            PlayerInfoManager.Instance.SellWeapon(index);
-            selectedWeapon = null;
-            UIManager.Instance.GetPanel<ShopPanel>((panel) => {
-                panel.RefreshWeapons();
-                panel.updateTXTDic();
-            });
-        });
-        btnComposite.onClick.AddListener(() =>{
-            if (isClosing || selectedWeapon == null || PlayerInfoManager.Instance.weaponList[index] != selectedWeapon) return;
-            if (!PlayerInfoManager.Instance.CompositeWeapon(index)) return;
-            isClosing = true;
-            btnSell.interactable = false;
-            btnComposite.interactable = false;
-            selectedWeapon = null;
-            UIManager.Instance.HidePanel<WeaponItemPanel>();
-            UIManager.Instance.GetPanel<ShopPanel>((panel) => {
-                panel.RefreshWeapons();
-                panel.updateTXTDic();
-            });
-        });
+        EventCallBack.Instance.Bind(btnSell, nameof(EventCallBack.SellWeapon), this);
+        EventCallBack.Instance.Bind(btnComposite, nameof(EventCallBack.CompositeWeapon), this);
         isInit = true;
     }
 

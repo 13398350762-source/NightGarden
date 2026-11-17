@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hero_pumpkin_Portrait_00
+      name: 南瓜卫士
       rect:
         serializedVersion: 2
         x: 0
@@ -443,7 +443,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hero_pumpkin_Portrait_00: 21300000
+      南瓜卫士: 21300000
       hero_pumpkin_Portrait_01: 21300002
       hero_pumpkin_Portrait_02: 21300004
       hero_pumpkin_Portrait_03: 21300006

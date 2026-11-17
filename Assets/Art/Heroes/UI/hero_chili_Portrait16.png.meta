@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hero_chili_Portrait_00
+      name: 辣椒游侠
       rect:
         serializedVersion: 2
         x: 0
@@ -443,7 +443,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hero_chili_Portrait_00: 21300000
+      辣椒游侠: 21300000
       hero_chili_Portrait_01: 21300002
       hero_chili_Portrait_02: 21300004
       hero_chili_Portrait_03: 21300006

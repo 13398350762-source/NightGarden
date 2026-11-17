@@ -15,30 +15,11 @@ public class MainPanel : BasePanel
     {
         if (isInit)
             return;
-        btnEnter.onClick.AddListener(() =>{
-            //进入选人面板
-            UIManager.Instance.ShowPanel<RoleSelectPanel>();
-            UIManager.Instance.HidePanel<MainPanel>();
-        });
-        btnExit.onClick.AddListener(() =>{
-            Application.Quit();
-        });
-        btnRank.onClick.AddListener(() =>{
-            //进入排行榜面板
-            UIManager.Instance.ShowPanel<RankPanel>();
-            UIManager.Instance.HidePanel<MainPanel>();
-        });
-        btnSetting.onClick.AddListener(() =>{
-            //进入设置面板
-            UIManager.Instance.ShowPanel<SettingPanel>();
-            UIManager.Instance.HidePanel<MainPanel>();
-        });
-        btnReturn.onClick.AddListener(() =>{
-            UIManager.Instance.HidePanel<MainPanel>();
-            ScenesManager.Instance.LoadSceneAsync("LoginScene", () =>{
-                UIManager.Instance.ShowPanel<LoginPanel>();
-            });
-        });
+        EventCallBack.Instance.Bind(btnEnter, nameof(EventCallBack.EnterRoleSelect));
+        EventCallBack.Instance.Bind(btnExit, nameof(EventCallBack.QuitGame));
+        EventCallBack.Instance.Bind(btnRank, nameof(EventCallBack.OpenRank));
+        EventCallBack.Instance.Bind(btnSetting, nameof(EventCallBack.OpenSettings), (BasePanel)this);
+        EventCallBack.Instance.Bind(btnReturn, nameof(EventCallBack.Logout));
         isInit = true;
     }
 

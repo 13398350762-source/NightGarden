@@ -15,39 +15,9 @@ public class LoginPanel : BasePanel
     {
         if (isInit)
             return;
-        btnLogin.onClick.AddListener(() =>{
-            if (inputUN.text == string.Empty)
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) =>{
-                    panel.ChangeInfo("用户名不能为空");
-                });
-            }
-            if (inputPW.text == string.Empty)
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) =>{
-                    panel.ChangeInfo("密码不能为空");
-                });
-            }
-            if (DataManager.Instance.CheckLogin(inputUN.text, inputPW.text))
-            {
-                ScenesManager.Instance.LoadSceneAsync("BeginScene", () => {
-                    UIManager.Instance.ShowPanel<MainPanel>();
-                    UserManager.Instance.SetNowUser(DataManager.Instance.GetUser(inputUN.text));
-                    UIManager.Instance.HidePanel<LoginPanel>();
-                });
-            }
-            else
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) => {
-                    panel.ChangeInfo("密码不正确");
-                });
-            }
-        });
+        EventCallBack.Instance.Bind(btnLogin, nameof(EventCallBack.Login), this);
 
-        btnRe.onClick.AddListener(() =>{
-            UIManager.Instance.HidePanel<LoginPanel>();
-            UIManager.Instance.ShowPanel<RegisterPanel>();
-        });
+        EventCallBack.Instance.Bind(btnRe, nameof(EventCallBack.OpenRegister));
         isInit = true;
     }
 

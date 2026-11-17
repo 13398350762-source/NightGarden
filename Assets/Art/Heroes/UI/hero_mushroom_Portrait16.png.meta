@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hero_mushroom_Portrait_00
+      name: 蘑菇巫师
       rect:
         serializedVersion: 2
         x: 0
@@ -443,7 +443,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hero_mushroom_Portrait_00: 21300000
+      蘑菇巫师: 21300000
       hero_mushroom_Portrait_01: 21300002
       hero_mushroom_Portrait_02: 21300004
       hero_mushroom_Portrait_03: 21300006

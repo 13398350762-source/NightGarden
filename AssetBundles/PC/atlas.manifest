@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2335263148
+CRC: 2449627867
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 27bb13336e0d558dfb584b0ce7ffb8ee
+    Hash: e876782484589cd28a2122c0d7b9d7b7
   TypeTreeHash:
     serializedVersion: 2
     Hash: 033fafe2c9f6c610c3a734393882fd4c
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 27bb13336e0d558dfb584b0ce7ffb8ee
+    Hash: e876782484589cd28a2122c0d7b9d7b7
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -22,7 +22,9 @@ SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Resources/Atlas/Weapon.spriteatlasv2
 - Assets/Resources/Atlas/Components.spriteatlasv2
+- Assets/Resources/Atlas/Enemy.spriteatlasv2
 - Assets/Resources/Atlas/Role.spriteatlasv2
 - Assets/Resources/Atlas/Accessory.spriteatlasv2
 - Assets/Resources/Atlas/Stats.spriteatlasv2
-Dependencies: []
+Dependencies:
+- D:/unity/NightGarden/.codex-artifacts/enemy-collider-fix/PC/enemy

@@ -109,7 +109,7 @@ public class ScriptableEditor
             data.lucky = int.Parse(row["lucky"].ToString(), CultureInfo.InvariantCulture);
             data.STR = int.Parse(row["STR"].ToString(), CultureInfo.InvariantCulture);
             data.AST = int.Parse(row["AST"].ToString(), CultureInfo.InvariantCulture);
-            data.drain = ReadFloat(row["drain"]);
+            data.drain = ReadFloat(row["drain"]) / 100f;
             data.recovery = int.Parse(row["recovery"].ToString(), CultureInfo.InvariantCulture);
             data.atkSpeed = ReadFloat(row["atkSpeed"]);
             data.money = int.Parse(row["money"].ToString(), CultureInfo.InvariantCulture);

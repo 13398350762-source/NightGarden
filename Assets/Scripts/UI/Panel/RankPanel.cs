@@ -12,10 +12,7 @@ public class RankPanel : BasePanel
     {
         if (isInit)
             return;
-        btnReturn.onClick.AddListener(() =>{
-            UIManager.Instance.HidePanel<RankPanel>();
-            UIManager.Instance.ShowPanel<MainPanel>();
-        });
+        EventCallBack.Instance.Bind(btnReturn, nameof(EventCallBack.BackToMain), (BasePanel)this);
         isInit = true;
     }
 

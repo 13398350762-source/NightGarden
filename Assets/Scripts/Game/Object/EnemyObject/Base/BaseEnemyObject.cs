@@ -12,23 +12,110 @@ public abstract class BaseEnemyObject : MonoBehaviour
     protected float speed;
     protected int damage;
     protected int exp;
+    private int money;
     public EnemyData enemyData;
+    public bool isBoss;
     public Image imgEnemy;
-    private bool isDead=false;
+    public Rigidbody2D rb;
+    protected bool isDead=false;
     private Coroutine bleedCoroutine;
     private Dictionary<string, GameObject> effects = new Dictionary<string, GameObject>();
     private HashSet<string> loadingEffects = new HashSet<string>();
     private int effectVersion;
+    private string poolName;
+    protected int maxHp;
     public int LifeVersion => effectVersion;
+    protected virtual void Awake()
+    {
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
+        poolName = gameObject.name.Replace("(Clone)", "").Trim();
+    }
+
+    protected virtual void OnEnable()
+    {
+        Init(1);
+    }
+
     public virtual void Init(int wave)
     {
+        StopAllCoroutines();
+        bleedCoroutine = null;
+        effectVersion++;
         isDead = false;
-        enemyID = enemyData.enemyID;
-        speed = enemyData.speed;
-        //根据波数和基础数据获得hp,damage,exp;
-        //加载敌人图片资源
-        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "", (atlas) => { 
-        
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.velocity = Vector2.zero;
+        if (enemyData != null)
+        {
+            enemyID = enemyData.enemyID;
+            hp = RandomManager.Instance.GetEnemyHp(enemyData.hp, wave, isBoss);
+            speed = enemyData.speed;
+            damage = enemyData.damage;
+            exp = LevelManager.Instance.GetEnemyExp(enemyData.exp, wave);
+            money = RandomManager.Instance.GetEnemyMoney(enemyData.exp, wave, PlayerInfoManager.Instance.GetLucky(), isBoss);
+        }
+        else
+        {
+            speed = 5f;
+            money = 0;
+        }
+        maxHp = Mathf.Max(1, hp);
+    }
+
+    public int GetMoney()
+    {
+        return money;
+    }
+
+    public void AttackPlayer(Collider2D other)
+    {
+        if (isDead) return;
+        if (PlayerController.IsPlayerBody(other))
+            PlayerInfoManager.Instance.DecreaseHp(damage);
+    }
+
+    protected void OnCollisionStay2D(Collision2D collision)
+    {
+        AttackPlayer(collision.collider);
+    }
+
+    protected Vector2 PlayerDirection()
+    {
+        Transform player = PlayerInfoManager.Instance.playerPos;
+        return player == null ? Vector2.zero : ((Vector2)player.position - rb.position).normalized;
+    }
+
+    protected void FireFan(int count, float spread, Vector2 direction)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            float angle = count == 1 ? 0f : -spread * 0.5f + spread * i / (count - 1);
+            FireBullet(Quaternion.Euler(0, 0, angle) * direction);
+        }
+    }
+
+    protected void FireRing(int count, float offset = 0f)
+    {
+        for (int i = 0; i < count; i++)
+            FireBullet(Quaternion.Euler(0, 0, offset + 360f * i / count) * Vector2.right);
+    }
+
+    private void FireBullet(Vector2 direction)
+    {
+        if (direction.sqrMagnitude < 0.001f || isDead) return;
+        Vector3 position = rb.position;
+        int attack = damage;
+        int version = effectVersion;
+        PoolManager.Instance.GetObj("EnemyBullet", "enemy", obj => {
+            GameObject bullet = obj as GameObject;
+            if (bullet == null) return;
+            if (this == null || !isActiveAndEnabled || isDead || version != effectVersion)
+            {
+                PoolManager.Instance.PushObj("EnemyBullet", bullet);
+                return;
+            }
+            bullet.transform.position = position;
+            bullet.SetActive(true);
+            bullet.GetComponent<EnemyBullet>().Init(attack, direction);
         });
     }
 
@@ -47,8 +134,12 @@ public abstract class BaseEnemyObject : MonoBehaviour
     {
         //触发死亡动画
         //玩家获得经验
+        PlayerInfoManager.Instance.AddExp(exp);
         //爆出金币
-        PoolManager.Instance.PushObj(string.IsNullOrEmpty(enemyID) ? gameObject.name : enemyID, this.gameObject);
+        if (rb != null) rb.velocity = Vector2.zero;
+        PoolManager.Instance.PushObj(poolName, this.gameObject);
+        GameManager.Instance.Death++;
+        GameManager.Instance.Score += exp;
     }
     public void GetRepel(int repel, Vector3 dir)
     {
@@ -103,18 +194,6 @@ public abstract class BaseEnemyObject : MonoBehaviour
             Destroy(obj, lastTime);
         });
     }
-
-    private void OnDisable()
-    {
-        effectVersion++;
-        foreach (var effect in effects.Values)
-        {
-            if (effect != null)
-                Destroy(effect);
-        }
-        effects.Clear();
-        loadingEffects.Clear();
-    }
     public void Bleed(int damage, float lastTime, float internalTime)
     {
         if (bleedCoroutine != null)
@@ -151,4 +230,18 @@ public abstract class BaseEnemyObject : MonoBehaviour
     }
     public abstract void Attack();
     public abstract void Move();
+    protected virtual void OnDisable()
+    {
+        StopAllCoroutines();
+        bleedCoroutine = null;
+        if (rb != null) rb.velocity = Vector2.zero;
+        effectVersion++;
+        foreach (var effect in effects.Values)
+        {
+            if (effect != null)
+                Destroy(effect);
+        }
+        effects.Clear();
+        loadingEffects.Clear();
+    }
 }

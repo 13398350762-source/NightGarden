@@ -54,8 +54,7 @@ public class LevelUpItem : MonoBehaviour
             case "recovery": txtTitle.text = "生命恢复"; break;
             case "money": txtTitle.text = "金币"; break;
         }
-        btnSure.onClick.RemoveListener(Choose);
-        btnSure.onClick.AddListener(Choose);
+        EventCallBack.Instance.Bind(btnSure, nameof(EventCallBack.ChooseUpgrade), this);
         btnSure.interactable = true;
         float value = LevelUpData.GetValue(data.statsName, data.num);
         switch (data.statsName)
@@ -82,22 +81,5 @@ public class LevelUpItem : MonoBehaviour
         }
     }
 
-    private void Choose()
-    {
-        if (!LevelUpManager.Instance.Select(this)) return;
 
-        UIManager.Instance.GetPanel<ShopPanel>(panel => panel.updateTXTDic());
-        LevelUpManager.Instance.selectCount--;
-
-        if (LevelUpManager.Instance.selectCount <= 0)
-        {
-            UIManager.Instance.HidePanel<LevelUpPanel>(() =>
-            {
-                UIManager.Instance.ShowPanel<ShopPanel>();
-            });
-            return;
-        }
-
-        UIManager.Instance.GetPanel<LevelUpPanel>(panel => panel.Refresh());
-    }
 }

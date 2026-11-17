@@ -15,7 +15,7 @@ public abstract class BaseShopItem<T> : MonoBehaviour where T:ScriptableObject
     public Text txtMoney;
     public int cost;
 
-    protected void RemoveFromShop()
+    internal void RemoveFromShop()
     {
         int index = System.Array.IndexOf(ShopManager.Instance.items, gameObject);
         if (index >= 0)

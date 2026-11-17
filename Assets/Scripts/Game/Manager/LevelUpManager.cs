@@ -9,7 +9,7 @@ public class LevelUpManager : BaseManager<LevelUpManager>
     private List<LevelUpData>[] statsPools;
     private GameObject itemPrefab;
     private bool canSelect;
-    public int selectCount;
+    public int selectCount=0;
 
     public int GetRefreshPrice()
     {

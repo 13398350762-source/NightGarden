@@ -8,6 +8,11 @@ public interface IEventInfo
     
 }
 
+public class EventInfo : IEventInfo
+{
+    public UnityAction actions;
+}
+
 public class EventInfo<T> : IEventInfo
 {
     public UnityAction<T> actions; 
@@ -15,6 +20,7 @@ public class EventInfo<T> : IEventInfo
 public class EventCenter : BaseManager<EventCenter>
 {
     private Dictionary<string, IEventInfo> eventsDic;
+    public int Version { get; private set; }
     public EventCenter()
     {
         eventsDic = new Dictionary<string, IEventInfo>();
@@ -33,6 +39,24 @@ public class EventCenter : BaseManager<EventCenter>
             (eventsDic[name] as EventInfo<T>).actions += action;
         }
     }
+    public void AddListener(string name, UnityAction action)
+    {
+        if (!eventsDic.ContainsKey(name))
+            eventsDic.Add(name, new EventInfo());
+        (eventsDic[name] as EventInfo).actions += action;
+    }
+
+    public void RemoveListener(string name, UnityAction action)
+    {
+        if (eventsDic.ContainsKey(name))
+            (eventsDic[name] as EventInfo).actions -= action;
+    }
+
+    public void EventTrigger(string name)
+    {
+        if (eventsDic.ContainsKey(name))
+            (eventsDic[name] as EventInfo).actions?.Invoke();
+    }
     public void RemoveListener<T>(string name,UnityAction<T> action)
     {
         if (eventsDic.ContainsKey(name))
@@ -50,5 +74,6 @@ public class EventCenter : BaseManager<EventCenter>
     public void Clear()
     {
         eventsDic.Clear();
+        Version++;
     }
 }

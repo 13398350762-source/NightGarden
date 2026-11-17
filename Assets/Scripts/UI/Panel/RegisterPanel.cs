@@ -16,55 +16,9 @@ public class RegisterPanel : BasePanel
     {
         if (isInit)
             return;
-        btnBack.onClick.AddListener(() =>
-        {
-            UIManager.Instance.HidePanel<RegisterPanel>();
-            UIManager.Instance.ShowPanel<LoginPanel>();
-        });
+        EventCallBack.Instance.Bind(btnBack, nameof(EventCallBack.BackToLogin));
 
-        btnRe.onClick.AddListener(() =>{
-            if (inputUN.text == string.Empty)
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) =>{
-                    panel.ChangeInfo("用户名不能为空");
-                });
-                return;
-            }
-            if (inputPW.text == string.Empty)
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) =>{
-                    panel.ChangeInfo("密码不能为空");
-                });
-                inputSU.text= string.Empty;
-                return;
-            }
-            if (inputSU.text != inputPW.text)
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) =>{
-                    panel.ChangeInfo("第二次输入密码与第一次不同");
-                });
-                inputSU.text = string.Empty;
-                inputPW.text = string.Empty;
-                return;
-            }
-            if (DataManager.Instance.CheckUser(inputUN.text))
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) => {
-                    panel.ChangeInfo("用户名已存在");
-                });
-                inputSU.text = string.Empty;
-                inputPW.text = string.Empty;
-                inputUN.text = string.Empty;
-                return;
-            }
-            //显示提示面板
-            DataManager.Instance.AddUser(new UserInfo(inputUN.text,inputPW.text));
-            UIManager.Instance.HidePanel<RegisterPanel>();
-            UIManager.Instance.ShowPanel<LoginPanel>();
-            UIManager.Instance.ShowPanel<TipPanel>((panel) => {
-                panel.ChangeInfo("注册成功");
-            });
-        });
+        EventCallBack.Instance.Bind(btnRe, nameof(EventCallBack.Register), this);
         isInit = true;
     }
 

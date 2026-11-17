@@ -15,36 +15,12 @@ public class PausePanel : BasePanel
     {
         if (isInit)
             return;
-        btnContinue.onClick.AddListener(() =>{
-            //暂停取消
-            UIManager.Instance.HidePanel<PausePanel>();
-        });
+        EventCallBack.Instance.Bind(btnContinue, nameof(EventCallBack.ContinueGame));
 
-        btnReStart.onClick.AddListener(() =>{
-            RoleData data = PlayerInfoManager.Instance.GetRole();
-            PlayerInfoManager.Instance.Clear();
-            PlayerInfoManager.Instance.SetRole(data);
-            PlayerInfoManager.Instance.SetInitialWeapon(PlayerInfoManager.Instance.initialWeapon);
-            GameManager.Instance.Clear();
-            Time.timeScale = 1.0f;
-            UIManager.Instance.HidePanel<PausePanel>();
-            //重新加载游戏
-            GameObject.Find("Player").GetComponent<PlayerController>().Init();
-        });
+        EventCallBack.Instance.Bind(btnReStart, nameof(EventCallBack.RestartGame));
 
-        btnSetting.onClick.AddListener(() =>{
-            UIManager.Instance.ShowPanel<SettingPanel>();
-        });
-        btnReturn.onClick.AddListener(() =>{
-            //时间恢复正常
-            Time.timeScale = 1.0f;
-            PoolManager.Instance.Clear();
-            UIManager.Instance.Clear();
-            PlayerInfoManager.Instance.Clear();
-            ScenesManager.Instance.LoadSceneAsync("BeginScene", () =>{
-                UIManager.Instance.ShowPanel<MainPanel>();
-            });
-        });
+        EventCallBack.Instance.Bind(btnSetting, nameof(EventCallBack.OpenSettings), (BasePanel)this);
+        EventCallBack.Instance.Bind(btnReturn, nameof(EventCallBack.ReturnToMain));
         isInit = true;
     }
 

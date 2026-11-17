@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 3781038447
+CRC: 1881168253
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fb172ff53987174ceaf48f9602ba99c1
+    Hash: a6bf8aea1ea0acd11f19b9615f7ed51f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 171354be099a863ab4dff4413e4ff25f
+    Hash: 3fe8089a1027d39ecdbf573d639530db
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: fb172ff53987174ceaf48f9602ba99c1
+    Hash: a6bf8aea1ea0acd11f19b9615f7ed51f
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -22,23 +22,21 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
-- Class: 61
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 70
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: c651350de3f2b2e4a8bcb78a202bef8d, type: 3}
+  Script: {fileID: 11500000, guid: 7b941679c0b90d142b18e67cd3b4db60, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 39fa3d8997a24136984ca6e2c99902bc, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 7b941679c0b90d142b18e67cd3b4db60, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 212
   Script: {instanceID: 0}
 - Class: 213
-  Script: {instanceID: 0}
-- Class: 687078895
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: Unity.InputSystem

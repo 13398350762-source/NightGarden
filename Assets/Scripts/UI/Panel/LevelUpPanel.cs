@@ -10,21 +10,11 @@ public class LevelUpPanel : BasePanel
     public ScrollRect svOptions;
     public Text txtMoney;
     private bool isInit;
-    private bool isChoosing;
+    internal bool isChoosing;
     protected override void Init()
     {
         if (isInit) return;
-        btnRefresh.onClick.AddListener(() => {
-            if (!isChoosing) return;
-            int price = LevelUpManager.Instance.GetRefreshPrice();
-            if (PlayerInfoManager.Instance.GetMoney() < price) return;
-            // 先成功生成，再扣费，配置或资源错误时不消耗金币。
-            PlayerInfoManager.Instance.AddMoney(-price);
-            Refresh();
-            LevelUpManager.Instance.refreshCount++;
-            UpdateRefreshInfo();
-            UIManager.Instance.GetPanel<ShopPanel>(panel => panel.updateTXTDic());
-        });
+        EventCallBack.Instance.Bind(btnRefresh, nameof(EventCallBack.RefreshUpgrades), this);
         svOptions.vertical = false;
         svOptions.horizontal = false;
         isInit = true;
@@ -32,9 +22,15 @@ public class LevelUpPanel : BasePanel
 
     public override void Show()
     {
+        if (LevelUpManager.Instance.selectCount == 0)
+        {
+            UIManager.Instance.ShowPanel<ShopPanel>();
+            return;
+        }
         base.Show();
         isChoosing = true;
         LevelUpManager.Instance.refreshCount = 0;
+        LevelUpManager.Instance.selectCount--;
         Refresh();
     }
 
@@ -48,7 +44,7 @@ public class LevelUpPanel : BasePanel
         UpdateRefreshInfo();
     }
 
-    private void UpdateRefreshInfo()
+    internal void UpdateRefreshInfo()
     {
         int price = LevelUpManager.Instance.GetRefreshPrice();
         btnRefresh.GetComponentInChildren<Text>(true).text = "刷新选项 " + price;

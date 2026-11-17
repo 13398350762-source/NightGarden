@@ -15,6 +15,12 @@ public abstract class BasePanel : MonoBehaviour
 
     virtual protected void Start()
     {
+        InitCanvasGroup();
+    }
+
+    private void InitCanvasGroup()
+    {
+        if (canvasGroup != null) return;
         canvasGroup = GetComponent<CanvasGroup>();
         if(canvasGroup==null)
             canvasGroup=this.AddComponent<CanvasGroup>();
@@ -24,7 +30,7 @@ public abstract class BasePanel : MonoBehaviour
     {
         if (isShow)
         {
-            canvasGroup.alpha += speed * Time.deltaTime;
+            canvasGroup.alpha += speed * Time.unscaledDeltaTime;
             if (canvasGroup.alpha >= 1)
             {
                 canvasGroup.alpha = 1;
@@ -32,7 +38,7 @@ public abstract class BasePanel : MonoBehaviour
         }
         else
         {
-            canvasGroup.alpha -= speed * Time.deltaTime;
+            canvasGroup.alpha -= speed * Time.unscaledDeltaTime;
             if (canvasGroup.alpha <= 0)
             {
                 canvasGroup.alpha = 0;
@@ -45,6 +51,9 @@ public abstract class BasePanel : MonoBehaviour
 
     virtual public void Show()
     {
+        InitCanvasGroup();
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
         isShow = true;
         callback = null;
         Init();
@@ -52,6 +61,9 @@ public abstract class BasePanel : MonoBehaviour
 
     virtual public void Hide(UnityAction action)
     {
+        InitCanvasGroup();
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
         isShow=false;
         callback = action;
     }

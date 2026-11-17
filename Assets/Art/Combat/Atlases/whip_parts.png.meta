@@ -105,7 +105,7 @@ TextureImporter:
         width: 1374
         height: 172
       alignment: 9
-      pivot: {x: 0.0, y: 0.5}
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -114,7 +114,7 @@ TextureImporter:
       spriteID: e7cc032595554368bff3cc6ed6101a4e
       internalID: 21300000
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     - serializedVersion: 2
@@ -126,7 +126,7 @@ TextureImporter:
         width: 480
         height: 206
       alignment: 9
-      pivot: {x: 0.0, y: 0.3}
+      pivot: {x: 0, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,7 +135,7 @@ TextureImporter:
       spriteID: c1a16c4b19ad49a997c1635af738b36a
       internalID: 21300002
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     outline: []
@@ -144,13 +144,15 @@ TextureImporter:
     spriteID: 9ae4197b4d7146f5a7073b4fa2d52fc1
     internalID: 0
     vertices: []
-    indices:
+    indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      whip_vine: 21300000
       whip_handle: 21300002
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+      whip_vine: 21300000
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

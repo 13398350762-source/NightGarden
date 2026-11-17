@@ -12,22 +12,22 @@ public class PoolData
     {
         if (objList == null)
             objList = new List<GameObject>();
+        if (objList.Contains(obj)) return;
         obj.transform.SetParent(Parentobj.transform, false);
         objList.Add(obj);
     }
     public void GetObject(string abName,UnityAction<Object> action)
     {
-        if (objList.Count != 0)
+        while (objList.Count != 0)
         {
             GameObject obj= objList[0];
             objList.RemoveAt(0);
+            if (obj == null) continue;
             obj.transform.SetParent(null, false);
             action?.Invoke(obj);
+            return;
         }
-        else
-        {
-            ResManager.Instance.LoadResAsync(abName,Parentobj.name,action);
-        }
+        ResManager.Instance.LoadResAsync(abName,Parentobj.name,action);
     }
     public void Clear()
     {
@@ -53,21 +53,26 @@ public class PoolManager : BaseManager<PoolManager>
 
     public void PushObj(string name, GameObject obj)
     {
+        if (obj == null) return;
         if(poolobj==null)
+        {
             poolobj = new GameObject("pool");
+            GameObject.DontDestroyOnLoad(poolobj);
+        }
         poolobj.SetActive(false);
-        if (!poolDic.ContainsKey(name))
-            poolDic.Add(name, new PoolData(name,poolobj));
+        if (!poolDic.ContainsKey(name) || poolDic[name].Parentobj == null)
+            poolDic[name] = new PoolData(name,poolobj);
         poolDic[name].PushObject(obj);
     }
     public void GetObj(string resName,string abName,UnityAction<Object> action)
     {
-        if (poolDic.ContainsKey(resName))
+        if (poolDic.ContainsKey(resName) && poolDic[resName].Parentobj != null)
         {
             poolDic[resName].GetObject(abName,action);
         }
         else
         {
+            poolDic.Remove(resName);
             ResManager.Instance.LoadResAsync(abName, resName, action);
         }
     }

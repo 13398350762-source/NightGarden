@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3019749990
+CRC: 736853962
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -7,7 +7,8 @@ AssetBundleManifest:
       Dependencies: {}
     Info_1:
       Name: atlas
-      Dependencies: {}
+      Dependencies:
+        Dependency_0: enemy
     Info_2:
       Name: item
       Dependencies: {}
@@ -22,4 +23,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_6:
       Name: player
+      Dependencies: {}
+    Info_7:
+      Name: enemy
       Dependencies: {}

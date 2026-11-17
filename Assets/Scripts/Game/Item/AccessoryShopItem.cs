@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class AccessoryShopItem : BaseShopItem<AccessoryData>
 {
     public Text txtDescripiton;
-    private AccessoryData data;
+    internal AccessoryData data;
     public override void Init(AccessoryData data,int money)
     {
 
@@ -42,27 +42,7 @@ public class AccessoryShopItem : BaseShopItem<AccessoryData>
                     break;
             }
         });
-        btnBuy.onClick.AddListener(() => {
-            if (!btnBuy.interactable) return;
-            //花钱买商品
-            if (PlayerInfoManager.Instance.GetMoney() >= cost)
-            {
-                PlayerInfoManager.Instance.AddMoney(-cost);
-                PlayerInfoManager.Instance.AddAccessory(data);
-                //增加属性或被动
-                AccessoryPassive.Instance.passiveDic[data.accessoryID]();
-                RemoveFromShop();
-                //更新面板
-                UIManager.Instance.GetPanel<ShopPanel>((panel) => {
-                    panel.RefreshAccessory();
-                    panel.updateTXTDic();
-                });
-            }
-            else
-            {
-                //播放购买失败音效
-            }
-        });
+        EventCallBack.Instance.Bind(btnBuy, nameof(EventCallBack.BuyAccessory), this);
         txtMoney.text = "购买 " + money.ToString();
         cost = money;
     }

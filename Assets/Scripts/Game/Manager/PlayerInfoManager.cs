@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,13 +12,27 @@ public partial class PlayerInfoManager : BaseManager<PlayerInfoManager>
     public int nowHp;
     public int nextLevelExp;
     public int nowExp;
-
+    public Transform playerPos;
+    public bool isDead;
+    private float nextDamageTime;
+    public float invincibleTime = 0.2f;
+    public void Init()
+    {
+        nowExp = 0;
+        nextDamageTime = 0f;
+        isDead = false;
+        level = 0;
+        nowHp = hp;
+    }
     public void LevelUp()
     {
-        nowExp -= nextLevelExp;
-        level++;
-        LevelUpManager.Instance.selectCount++;
-        nextLevelExp = LevelManager.Instance.GetNextLevelExp(level);
+        while (nowExp >= nextLevelExp)
+        {
+            nowExp -= nextLevelExp;
+            level++;
+            LevelUpManager.Instance.selectCount++;
+            nextLevelExp = LevelManager.Instance.GetNextLevelExp(level);
+        }
     }
     public void SetInitialWeapon(WeaponData data)
     {
@@ -91,8 +107,38 @@ public partial class PlayerInfoManager : BaseManager<PlayerInfoManager>
         weaponList = newweaponList;
         AddMoney(RandomManager.Instance.RandomSellPrice(level, GameManager.Instance.Wave));
     }
+
+    public void DecreaseHp(int damage)
+    {
+        if (isDead || damage <= 0 || Time.time < nextDamageTime)
+            return;
+
+        nextDamageTime = Time.time + invincibleTime;
+        nowHp = Mathf.Max(0, nowHp - damage);
+
+        if (nowHp <= 0)
+        {
+            isDead = true;
+            Dead();
+            return;
+        }
+    }
+
+    private void Dead()
+    {
+        isDead = true;
+        //播放死亡动画
+        UIManager.Instance.ShowPanel<GameOverPanel>();
+    }
+    public void AddExp(int exp)
+    {
+        nowExp += exp;
+        LevelUp();
+    }
+
     public void Clear()
     {
+        Init();
         System.Array.Clear(weaponList, 0, weaponList.Length);
         accessoryList.Clear();
         SetRole(null);

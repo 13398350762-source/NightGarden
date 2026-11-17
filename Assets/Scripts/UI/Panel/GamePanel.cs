@@ -17,16 +17,18 @@ public class GamePanel : BasePanel
     public Text txtMoney;
     public Button btnStop;
     private bool isInit = false;
+    public override void Show()
+    {
+        base.Show();
+        txtWave.text = "第" + GameManager.Instance.Wave + "波";
+    }
     protected override void Init()
     {
         if (isInit)
             return;
         //读取人物图片
         txtRoleName.text=PlayerInfoManager.Instance.GetRole().roleID;
-        btnStop.onClick.AddListener(() =>{
-            //暂停时间
-            UIManager.Instance.ShowPanel<PausePanel>();
-        });
+        EventCallBack.Instance.Bind(btnStop, nameof(EventCallBack.PauseGame));
         isInit = true;
     }
 

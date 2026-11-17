@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using Unity.VisualScripting;
@@ -22,6 +22,7 @@ public class ShopPanel : BasePanel
     public Text txtLevel;
     private bool isInit = false;
     private int weaponRefreshVersion;
+    private int accessoryRefreshVersion;
     protected override void Init()
     {
         if (isInit)
@@ -32,19 +33,8 @@ public class ShopPanel : BasePanel
             string key = child.name == "txtatkSpeed" ? "atkSpeed" : child.name;
             txtDic.Add(key, child.GetComponent<Text>());
         }
-        btnNext.onClick.AddListener(() =>{
-            UIManager.Instance.HidePanel<ShopPanel>();
-        });
-        btnRefresh.onClick.AddListener(() =>
-        {
-            int price = ShopManager.Instance.GetRefreshPrice();
-            if (PlayerInfoManager.Instance.GetMoney() < price)
-                return;
-
-            PlayerInfoManager.Instance.AddMoney(-price);
-            ShopManager.Instance.refreshCount++;
-            Refresh();
-        });
+        EventCallBack.Instance.Bind(btnNext, nameof(EventCallBack.NextWave));
+        EventCallBack.Instance.Bind(btnRefresh, nameof(EventCallBack.RefreshShop), this);
         svShop.vertical = false;
         svShop.horizontal = false;
         svWeapons.vertical = false;
@@ -58,7 +48,18 @@ public class ShopPanel : BasePanel
         ShopManager.Instance.refreshCount = 0;
         Refresh();
         RefreshAccessory();
-        //角色面板显示（未完成）
+        RoleData data = PlayerInfoManager.Instance.GetRole();
+        txtName.text = data.roleID;
+        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Role", (atlas) => {
+            imgRole.sprite = atlas.GetSprite(data.roleID);
+        });
+        txtLevel.text = "Lv. " + PlayerInfoManager.Instance.GetLevel();
+        btnNext.transform.GetChild(0).GetComponent<Text>().text = "进入第" + GameManager.Instance.Wave.ToString() + "波";
+    }
+    public override void Hide(UnityAction action)
+    {
+        base.Hide(action);
+        Time.timeScale = 1f;
     }
     public void Refresh()
     {
@@ -106,6 +107,7 @@ public class ShopPanel : BasePanel
     }
     public void RefreshAccessory()
     {
+        int version = ++accessoryRefreshVersion;
         Transform trans = svAccessories.content.transform;
         for (int i = trans.childCount - 1; i >= 0; i--)
         {
@@ -116,6 +118,11 @@ public class ShopPanel : BasePanel
             if (data == null)
                 break;
             ResManager.Instance.LoadResAsync<GameObject>("item", "ItemAccessory", (obj) => {
+                if (this == null || trans == null || version != accessoryRefreshVersion)
+                {
+                    if (obj != null) Destroy(obj);
+                    return;
+                }
                 obj.GetComponent<AccessoryItem>().Init(data);
                 obj.transform.SetParent(trans, false);
             });
@@ -142,7 +149,6 @@ public class ShopPanel : BasePanel
 
     private static string FormatMultiplier(float multiplier)
     {
-        // 保留一位小数，先取整以免浮点误差显示成 -0%。
         float percent = Mathf.Round((multiplier - 1f) * 1000f) / 10f;
         return percent.ToString("+0.#;-0.#;0", CultureInfo.InvariantCulture) + "%";
     }

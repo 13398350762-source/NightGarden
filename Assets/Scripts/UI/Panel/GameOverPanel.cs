@@ -21,45 +21,18 @@ public class GameOverPanel : BasePanel
     {
         if (isInit)
             return;
-        btnReStart.onClick.AddListener(() =>{
-            RoleData data = PlayerInfoManager.Instance.GetRole();
-            PlayerInfoManager.Instance.Clear();
-            PlayerInfoManager.Instance.SetRole(data);
-            PlayerInfoManager.Instance.SetInitialWeapon(PlayerInfoManager.Instance.initialWeapon);
-            GameManager.Instance.Clear();
-            UIManager.Instance.HidePanel<GameOverPanel>();
-            Time.timeScale = 1.0f;
-            //重新加载游戏
-            GameObject.Find("Player").GetComponent<PlayerController>().Init();
-        });
-        btnRank.onClick.AddListener(() =>{
-            //时间恢复正常
-            Time.timeScale = 1f;
-            PoolManager.Instance.Clear();
-            UIManager.Instance.Clear();
-            PlayerInfoManager.Instance.Clear();
-            ScenesManager.Instance.LoadSceneAsync("BeginScene", () => {
-                UIManager.Instance.ShowPanel<RankPanel>();
-            });
-        });
-        btnReturn.onClick.AddListener(() => {
-            //时间恢复正常
-            Time.timeScale = 1f;
-            PoolManager.Instance.Clear();
-            UIManager.Instance.Clear();
-            PlayerInfoManager.Instance.Clear();
-            ScenesManager.Instance.LoadSceneAsync("BeginScene", () => {
-                UIManager.Instance.ShowPanel<MainPanel>();
-            });
-        });
+        EventCallBack.Instance.Bind(btnReStart, nameof(EventCallBack.RestartGame));
+        EventCallBack.Instance.Bind(btnRank, nameof(EventCallBack.ReturnToRank));
+        EventCallBack.Instance.Bind(btnReturn, nameof(EventCallBack.ReturnToMain));
         isInit = true;
     }
     public override void Show()
     {
         base.Show();
         //加载游戏人物图片
-
-        //时间暂停
+        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Role", (atlas) => {
+             imgIcon.sprite = atlas.GetSprite(name);
+        });
         Time.timeScale = 0f;
         txtName.text = PlayerInfoManager.Instance.GetRole().roleID;
         txtScore.text = GameManager.Instance.Score.ToString();
@@ -71,4 +44,5 @@ public class GameOverPanel : BasePanel
         int seconds = totalSeconds % 60;
         txtRemain.text = $"{minutes:00}:{seconds:00}";
     }
+
 }

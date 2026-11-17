@@ -24,60 +24,16 @@ public class RoleSelectPanel : BasePanel
         if (isInit)
             return;
         toggleGroup.allowSwitchOff = true;
-        btnBack.onClick.AddListener(() => {
-            UIManager.Instance.HidePanel<RoleSelectPanel>();
-            UIManager.Instance.ShowPanel<MainPanel>();
-        });
-        btnSure.onClick.AddListener(() =>{
-            //如果有角色被选中
-            if (PlayerInfoManager.Instance.GetRole() == null)
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) =>{
-                    panel.ChangeInfo("请选择角色");
-                });
-                return;
-            }
-            if (PlayerInfoManager.Instance.GetRole() == roleList[3] && !UserManager.Instance.IsChiliUnlock())
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) => {
-                    panel.ChangeInfo("角色未解锁");
-                });
-                return;
-            }
-            if (PlayerInfoManager.Instance.GetRole() == roleList[4] && !UserManager.Instance.IsPeaUnlock())
-            {
-                UIManager.Instance.ShowPanel<TipPanel>((panel) => {
-                    panel.ChangeInfo("角色未解锁");
-                });
-                return;
-            }
-            UIManager.Instance.ShowPanel<WeaponSelectPanel>();
-            UIManager.Instance.HidePanel<RoleSelectPanel>();
-        });
-        togList[0].onValueChanged.AddListener((value) => {
-            if(value)
-            ChangeRoleInfo(roleList[0]);
-        });
-        togList[1].onValueChanged.AddListener((value) => {
-            if(value)
-            ChangeRoleInfo(roleList[1]);
-        });
-        togList[2].onValueChanged.AddListener((value) => {
-            if(value)
-            ChangeRoleInfo(roleList[2]);
-        });
-        togList[3].onValueChanged.AddListener((value) => {
-            if(value)
-            ChangeRoleInfo(roleList[3]);
-        });
-        togList[4].onValueChanged.AddListener((value) => {
-            if(value)
-            ChangeRoleInfo(roleList[4]);
-        });
+        EventCallBack.Instance.Bind(btnBack, nameof(EventCallBack.BackToMain), (BasePanel)this);
+        EventCallBack.Instance.Bind(btnSure, nameof(EventCallBack.ConfirmRole), this);
+        for (int i = 0; i < togList.Count; i++)
+        {
+            EventCallBack.Instance.BindSelection(togList[i], nameof(EventCallBack.SelectRole), this, i);
+        }
         toggleGroup.SetAllTogglesOff();
         isInit = true;
     }
-    private void ChangeRoleInfo(RoleData data)
+    internal void ChangeRoleInfo(RoleData data)
     {
         txtName.text = data.roleID;
         txtPassive.text = data.passive;
