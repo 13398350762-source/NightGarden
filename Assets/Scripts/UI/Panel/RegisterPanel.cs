@@ -58,12 +58,12 @@ public class RegisterPanel : BasePanel
                 return;
             }
             //显示提示面板
-            UIManager.Instance.ShowPanel<TipPanel>((panel) =>{
-                panel.ChangeInfo("注册成功");
-            });
             DataManager.Instance.AddUser(new UserInfo(inputUN.text,inputPW.text));
             UIManager.Instance.HidePanel<RegisterPanel>();
             UIManager.Instance.ShowPanel<LoginPanel>();
+            UIManager.Instance.ShowPanel<TipPanel>((panel) => {
+                panel.ChangeInfo("注册成功");
+            });
         });
         isInit = true;
     }

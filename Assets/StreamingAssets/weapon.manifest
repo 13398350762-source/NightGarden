@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2218461900
+CRC: 1159674366
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 82e9a850460bd030f40008b529a5746a
+    Hash: 6e276b1fffa8074cd912634a42ef8bb0
   TypeTreeHash:
     serializedVersion: 2
     Hash: d454a47b4bf51becb4a98724e6f80132
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 82e9a850460bd030f40008b529a5746a
+    Hash: 6e276b1fffa8074cd912634a42ef8bb0
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -66,7 +66,7 @@ Assets:
 - Assets/Resources/GameObject/Weapon/dagger.prefab
 - Assets/Resources/GameObject/Weapon/cannon.prefab
 - Assets/Resources/GameObject/Weapon/pistol.prefab
-- Assets/Resources/GameObject/Weapon/chiligun.prefab
+- Assets/Resources/GameObject/Weapon/gun.prefab
 - Assets/Resources/GameObject/Weapon/crossbow.prefab
 - Assets/Resources/GameObject/Weapon/club.prefab
 - Assets/Resources/GameObject/Weapon/whip.prefab

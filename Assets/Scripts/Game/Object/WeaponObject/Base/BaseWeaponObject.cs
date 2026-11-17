@@ -55,7 +55,7 @@ public abstract class BaseWeaponObject : MonoBehaviour
     {
         Collider2D[] collider2ds = Physics2D.OverlapCircleAll(transform.position, range);
 
-        float minDistance = float.MaxValue;
+       float minDistance = float.MaxValue;
         GameObject result = null;
 
         foreach (var item in collider2ds)

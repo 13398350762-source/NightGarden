@@ -10,15 +10,16 @@ public class Main : MonoBehaviour
     void Start()
     {
         ResManager.Instance.LoadRes<SpriteAtlas>("atlas", "Components");
-        PlayerInfoManager.Instance.SetRole(Resources.Load<RoleData>("ScriptableObjects/RoleDatas/萝卜骑士"));
-        //UIManager.Instance.ShowPanel<ShopPanel>();
-        //LevelUpManager.Instance.selectCount = 2;
-        //UIManager.Instance.ShowPanel<LevelUpPanel>();
-        weapon = GameObject.Find("pos").transform.GetChild(0).transform.GetComponent<BaseWeaponObject>();
-        weapon.Init(Resources.Load<WeaponData>("ScriptableObjects/WeaponDatas/gun/gun_3"));
+        UIManager.Instance.ShowPanel<LoginPanel>();
+        Test();
     }
 
     void Update()
+    {
+        
+    }
+
+    private void Test()
     {
         
     }

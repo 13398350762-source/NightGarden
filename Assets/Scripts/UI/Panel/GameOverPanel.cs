@@ -27,20 +27,27 @@ public class GameOverPanel : BasePanel
             PlayerInfoManager.Instance.SetRole(data);
             PlayerInfoManager.Instance.SetInitialWeapon(PlayerInfoManager.Instance.initialWeapon);
             GameManager.Instance.Clear();
+            UIManager.Instance.HidePanel<GameOverPanel>();
+            Time.timeScale = 1.0f;
             //重新加载游戏
+            GameObject.Find("Player").GetComponent<PlayerController>().Init();
         });
         btnRank.onClick.AddListener(() =>{
             //时间恢复正常
+            Time.timeScale = 1f;
             PoolManager.Instance.Clear();
             UIManager.Instance.Clear();
+            PlayerInfoManager.Instance.Clear();
             ScenesManager.Instance.LoadSceneAsync("BeginScene", () => {
                 UIManager.Instance.ShowPanel<RankPanel>();
             });
         });
         btnReturn.onClick.AddListener(() => {
             //时间恢复正常
+            Time.timeScale = 1f;
             PoolManager.Instance.Clear();
             UIManager.Instance.Clear();
+            PlayerInfoManager.Instance.Clear();
             ScenesManager.Instance.LoadSceneAsync("BeginScene", () => {
                 UIManager.Instance.ShowPanel<MainPanel>();
             });
@@ -51,6 +58,9 @@ public class GameOverPanel : BasePanel
     {
         base.Show();
         //加载游戏人物图片
+
+        //时间暂停
+        Time.timeScale = 0f;
         txtName.text = PlayerInfoManager.Instance.GetRole().roleID;
         txtScore.text = GameManager.Instance.Score.ToString();
         txtWave.text = GameManager.Instance.Wave.ToString();

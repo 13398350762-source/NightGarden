@@ -50,15 +50,17 @@ public class WeaponSelectPanel : BasePanel
                 });
                 return;
             }
-            UIManager.Instance.HidePanel<WeaponSelectPanel>();
             ScenesManager.Instance.LoadSceneAsync("GameScene", () =>{
+                UIManager.Instance.HidePanel<WeaponSelectPanel>();
                 //进入游戏场景后需要处理的事件
+                ResManager.Instance.LoadResAsync<GameObject>("player", "Player", (player) =>{
+                    player.GetComponent<PlayerController>().Init();
+                });
             });
         });
         togWeaponList[0].onValueChanged.AddListener((value) =>{
             if (value)
             {
-
                 ChangeSelectWeapon(weaponDatas[0]);
             }
         });
@@ -133,6 +135,7 @@ public class WeaponSelectPanel : BasePanel
         txtRange.text = string.Empty;
         txtType.text = string.Empty;
         txtWeaponName.text = string.Empty;
+        imgWeapon.enabled = false;
         imgWeapon.sprite = null;
         toggleGroup.SetAllTogglesOff();
     }
