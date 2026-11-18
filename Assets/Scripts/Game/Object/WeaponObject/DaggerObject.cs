@@ -41,6 +41,7 @@ public class DaggerObject : BaseWeaponObject
         if (isAttacking || nearestEnemy == null)
             return;
 
+        AudioManager.Instance.PlaySound(SoundCue.Slash, 0.48f, 0.1f);
         StartCoroutine(AttackCoroutine());
     }
 

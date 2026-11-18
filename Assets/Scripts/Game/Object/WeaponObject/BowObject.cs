@@ -28,6 +28,7 @@ public class BowObject : BaseWeaponObject
             trans.position = position;
             trans.rotation = Quaternion.Euler(0f, 0f, angle);
             trans.GetComponent<BowBullet>().Init(damage, dir, "projectile_04", knockback);
+            AudioManager.Instance.PlaySound(SoundCue.Bow, 0.65f, 0.08f);
         });
     }
 

@@ -33,6 +33,18 @@ public class SettingPanel : BasePanel
         EventCallBack.Instance.Bind(togDamage, nameof(EventCallBack.ChangeDamageDisplay));
         EventCallBack.Instance.Bind(togShake, nameof(EventCallBack.ChangeCameraShake));
         EventCallBack.Instance.Bind(dropWindow, nameof(EventCallBack.ChangeWindowMode));
+        // 旧 panel 包有手摆的选项。隐藏仍会占用下拉框计算索引时的子物体位置。
+        Toggle rateItem = dropRate.itemText.GetComponentInParent<Toggle>(true);
+        Transform rateContent = rateItem.transform.parent;
+        for (int i = rateContent.childCount - 1; i >= 0; i--)
+        {
+            Transform row = rateContent.GetChild(i);
+            if (row == rateItem.transform)
+                continue;
+            row.gameObject.SetActive(false);
+            row.SetParent(dropRate.template, false);
+            Destroy(row.gameObject);
+        }
         EventCallBack.Instance.Bind(dropRate, nameof(EventCallBack.ChangeResolution));
         isInit = true;
     }
@@ -41,6 +53,8 @@ public class SettingPanel : BasePanel
     {
         base.Show();
         RefreshAudioUI();
+        togDamage.SetIsOnWithoutNotify(DamageNumber.Enabled);
+        togShake.SetIsOnWithoutNotify(CameraShake.Enabled);
     }
 
     internal void RefreshAudioUI()

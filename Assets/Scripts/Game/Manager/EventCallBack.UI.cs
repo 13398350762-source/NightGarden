@@ -156,12 +156,13 @@ public partial class EventCallBack
         }
         LoadScene("GameScene", () => {
             UIManager.Instance.HidePanel<WeaponSelectPanel>();
-            InitPlayer();
-            UIManager.Instance.ShowPanel<GamePanel>((panel) => {
-                string name= PlayerInfoManager.Instance.GetRole().roleID;
-                panel.txtRoleName.text = name;
-                ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas","Role",(atlas) =>{
-                    panel.imgRole.sprite=atlas.GetSprite(name);
+            InitPlayer(() => {
+                UIManager.Instance.ShowPanel<GamePanel>((panel) => {
+                    string name= PlayerInfoManager.Instance.GetRole().roleID;
+                    panel.txtRoleName.text = name;
+                    ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas","Role",(atlas) =>{
+                        panel.imgRole.sprite=atlas.GetSprite(name);
+                    });
                 });
             });
         });

@@ -4,6 +4,7 @@ using UnityEngine.U2D;
 
 public partial class EventCallBack
 {
+    private GameObject background;
     public void RestartGame()
     {
         if (isChangingScene) return;
@@ -21,20 +22,48 @@ public partial class EventCallBack
         InitPlayer();
     }
 
-    private void InitPlayer()
+    private void InitPlayer(UnityAction onReady = null)
     {
         PlayerController player = Object.FindObjectOfType<PlayerController>();
         if (player != null)
-            player.Init();
-        else
         {
-            int version = sceneVersion;
-            ResManager.Instance.LoadResAsync<GameObject>("player", "Player", obj => {
-                if (obj == null) return;
-                if (version != sceneVersion) { Object.Destroy(obj); return; }
-                if (obj != null) obj.GetComponent<PlayerController>().Init();
-            });
+            player.Init();
+            onReady?.Invoke();
+            return;
         }
+
+        RoleData role = PlayerInfoManager.Instance.GetRole();
+        if (role == null)
+            return;
+
+        string prefabName;
+        switch (role.roleID)
+        {
+            case "萝卜骑士": prefabName = "radish"; break;
+            case "南瓜卫士": prefabName = "pumpkin"; break;
+            case "蘑菇巫师": prefabName = "mushroom"; break;
+            case "辣椒游侠": prefabName = "chili"; break;
+            case "豌豆射手": prefabName = "pea"; break;
+            default:
+                Debug.LogError("没有对应的玩家预制体：" + role.roleID);
+                return;
+        }
+
+        int version = sceneVersion;
+        ResManager.Instance.LoadResAsync<GameObject>("player", prefabName, obj => {
+            if (obj == null)
+            {
+                Debug.LogError("player 包缺少预制体：" + prefabName);
+                return;
+            }
+            if (version != sceneVersion)
+            {
+                Object.Destroy(obj);
+                return;
+            }
+            obj.GetComponent<PlayerController>().Init();
+            onReady?.Invoke();
+        });
     }
 
     public void ReturnToMain() { ReturnToMenu(false); }
@@ -63,6 +92,17 @@ public partial class EventCallBack
         sceneVersion++;
         ScenesManager.Instance.LoadSceneAsync(scene, () => {
             isChangingScene = false;
+            if (background == null)
+            {
+                // 包含已失活的对象，场景切换后引用失效时重新获取。
+                foreach (Transform item in Object.FindObjectsOfType<Transform>(true))
+                {
+                    if (item.name != "BackGround") continue;
+                    background = item.gameObject;
+                    break;
+                }
+            }
+            if (background != null) background.SetActive(scene != "GameScene");
             callback?.Invoke();
         });
     }
@@ -116,11 +156,42 @@ public partial class EventCallBack
     }
 
     public void SaveSettings() { AudioManager.Instance.SaveAudioData(); }
-    // 原控件回调尚未实现的设置项，保留事件入口。
-    public void ChangeDamageDisplay(bool value) { }
-    public void ChangeCameraShake(bool value) { }
-    public void ChangeWindowMode(int value) { }
-    public void ChangeResolution(int value) { }
+
+    public void ChangeDamageDisplay(bool value)
+    {
+        DamageNumber.Enabled = value;
+    }
+    public void ChangeCameraShake(bool value)
+    {
+        CameraShake.Enabled = value;
+    }
+    public void ChangeWindowMode(int value) 
+    {
+        switch (value)
+        {
+            case 0:
+                Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+                break;
+            case 1:
+                Screen.fullScreenMode = FullScreenMode.Windowed;
+                break;
+        }
+    }
+    public void ChangeResolution(int value)
+    {
+        switch (value)
+        {
+            case 0:
+                Screen.SetResolution(1280, 720, Screen.fullScreenMode);
+                break;
+            case 1:
+                Screen.SetResolution(1600, 900, Screen.fullScreenMode);
+                break;
+            case 2:
+                Screen.SetResolution(1920, 1080, Screen.fullScreenMode);
+                break;
+        }
+    }
 
     public void Logout()
     {

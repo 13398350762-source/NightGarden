@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 3006138853
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d79a257a9c8594b30fc5e5d912208749
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2736f9fb5b9669010182036593bde6f6
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d79a257a9c8594b30fc5e5d912208749
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 70
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 687078895
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/GameObject/Money/MoneyObject2.prefab
+- Assets/Resources/GameObject/Money/MoneyObject1.prefab
+- Assets/Resources/GameObject/Money/MoneyObject3.prefab
+Dependencies: []

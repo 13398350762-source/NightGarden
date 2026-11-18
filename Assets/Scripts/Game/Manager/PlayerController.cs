@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     public SpriteRenderer renderRole;
+    public Animator animator;
     public Transform posParent;
     public Transform target;
     private Transform[] posList;
     internal Vector2 moveDir;
     private int weaponRefreshVersion;
     private Rigidbody2D rb;
+    private event UnityAction damageEvent;
+    private float recoveryTime;
+
 
     public static bool IsPlayerBody(Collider2D other)
     {
@@ -24,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     public void Init()
     {
+        recoveryTime = 0f;
         moveDir = Vector2.zero;
         transform.position = Vector2.zero;
         posList = new Transform[6];
@@ -33,7 +39,6 @@ public class PlayerController : MonoBehaviour
         }
         string name=PlayerInfoManager.Instance.GetRole().roleID;
         PlayerInfoManager.Instance.playerPos = target;
-        //加载人物图片
         RefreshWeapon();
         PlayerInfoManager.Instance.Init();
         PlayerInfoManager.Instance.nowHp = PlayerInfoManager.Instance.GetHp();
@@ -92,6 +97,54 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        rb.velocity = moveDir * PlayerInfoManager.Instance.GetMoveSpeed();
+        PlayerInfoManager player = PlayerInfoManager.Instance;
+        rb.velocity = moveDir * player.GetMoveSpeed();
+        if (animator != null)
+            animator.SetBool("IsMoving", rb.velocity.sqrMagnitude > 0.0001f);
+
+        if (renderRole != null && Mathf.Abs(moveDir.x) > 0.01f)
+            renderRole.flipX = moveDir.x < 0f;
+        if (!GameManager.Instance.IsRunning || player.isDead || player.GetRecovery() <= 0)
+            return;
+        recoveryTime += Time.deltaTime;
+        if (recoveryTime >= 1f)
+        {
+            int seconds = Mathf.FloorToInt(recoveryTime);
+            recoveryTime -= seconds;
+            player.Heal(player.GetRecovery() * seconds);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject coin = collision.gameObject;
+        if (!coin.activeInHierarchy || !coin.CompareTag("Money")) return;
+
+        string poolName = coin.name.Replace("(Clone)", "").Trim();
+        int value;
+        switch (poolName)
+        {
+            case "MoneyObject1": value = 1; break;
+            case "MoneyObject2": value = 5; break;
+            case "MoneyObject3": value = 10; break;
+            default: return;
+        }
+
+        coin.SetActive(false);
+        PlayerInfoManager.Instance.AddMoney(value);
+        GameManager.Instance.Collection += value;
+        AudioManager.Instance.PlaySound(SoundCue.Coin, 0.55f, 0.075f);
+        PoolManager.Instance.PushObj(poolName, coin);
+    }
+    public void AddDamageEvent(UnityAction action)
+    {
+        damageEvent += action;
+    }
+    public void RemoveDamageEvent(UnityAction action)
+    {
+        damageEvent -= action;
+    }
+    public void RunDamageEvent()
+    {
+        damageEvent?.Invoke();
     }
 }

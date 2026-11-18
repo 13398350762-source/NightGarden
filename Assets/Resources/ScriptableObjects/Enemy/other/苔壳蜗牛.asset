@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: "\u82D4\u58F3\u8717\u725B"
   m_EditorClassIdentifier: 
   enemyID: "\u82D4\u58F3\u8717\u725B"
-  hp: 18
-  speed: 6.8
+  hp: 15
+  speed: 7.1
   damage: 2
   exp: 2
   resName: normal_enemies_snail

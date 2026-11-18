@@ -99,9 +99,8 @@ public class BeetleEnemy : BaseEnemyObject
     private IEnumerator ReallyAttack()
     {
         rb.velocity = Vector2.zero;
-        //播放蓄力动画
+        PlayAttackAnimation(PlayerDirection(), "Charge");
         yield return new WaitForSeconds(chargeTime);
-        //播放冲刺动画
         Transform player = PlayerInfoManager.Instance.playerPos;
         if (player == null || isDead)
         {
@@ -113,6 +112,7 @@ public class BeetleEnemy : BaseEnemyObject
         {
             if (player == null || isDead) break;
             Vector2 dir = ((Vector2)player.position - rb.position).normalized;
+            PlayAttackAnimation(dir);
             rb.velocity = dir * sprint;
             Vector2 startPos = rb.position;
             float elapsed = 0f;

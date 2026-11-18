@@ -2,7 +2,6 @@ Library/
 Temp/
 *.sln
 *.csproj
-*.sln
 *.userprefs
 *.unityproj
 *.DS_Store
@@ -11,3 +10,10 @@ Temp/
 Logs/
 UserSettings/
 .codex-artifacts/
+/.vs/
+/obj/
+/UIElementsSchema/
+/AssetBundles/
+/Build/
+/Builds/
+/node.*.log

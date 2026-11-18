@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class UIManager : BaseManager<UIManager>
 {
@@ -13,6 +14,8 @@ public class UIManager : BaseManager<UIManager>
     {
         panelDic = new Dictionary<string, BasePanel>();
         GameObject canvas = GameObject.Find("Canvas");
+        if (canvas == null)
+            canvas = ResManager.Instance.LoadRes<GameObject>("canvas", "Canvas");
         if (canvas == null)
         {
             canvas = new GameObject("Canvas", typeof(Canvas), typeof(UnityEngine.UI.CanvasScaler), typeof(UnityEngine.UI.GraphicRaycaster));
@@ -30,6 +33,18 @@ public class UIManager : BaseManager<UIManager>
         }
         targetTrans = canvas.transform;
         GameObject.DontDestroyOnLoad(targetTrans);
+        SceneManager.sceneLoaded += RemoveDuplicateCanvas;
+    }
+
+    private void RemoveDuplicateCanvas(Scene scene, LoadSceneMode mode)
+    {
+        foreach (GameObject root in scene.GetRootGameObjects())
+        {
+            if (root.transform == targetTrans || root.name != "Canvas" || !root.TryGetComponent<Canvas>(out _))
+                continue;
+            root.SetActive(false);
+            Object.Destroy(root);
+        }
     }
     public void ShowPanel<T>(UnityAction<T> callback=null)where T:BasePanel
     {

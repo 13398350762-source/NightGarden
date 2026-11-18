@@ -19,6 +19,23 @@ public class RankPanel : BasePanel
     public override void Show()
     {
         base.Show();
-        //加载记录
+
+        Transform content = svRank.content;
+        for (int i = content.childCount - 1; i >= 0; i--)
+        {
+            GameObject oldItem = content.GetChild(i).gameObject;
+            oldItem.SetActive(false);
+            Destroy(oldItem);
+        }
+
+        foreach (RankData data in DataManager.Instance.dataList)
+        {
+            GameObject obj = ResManager.Instance.LoadRes<GameObject>("item", "RankItem");
+            if (obj == null)
+                break;
+
+            obj.transform.SetParent(content, false);
+            obj.GetComponent<RankItem>().Init(data);
+        }
     }
 }

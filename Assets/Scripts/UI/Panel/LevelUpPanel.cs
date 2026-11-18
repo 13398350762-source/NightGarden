@@ -30,7 +30,6 @@ public class LevelUpPanel : BasePanel
         base.Show();
         isChoosing = true;
         LevelUpManager.Instance.refreshCount = 0;
-        LevelUpManager.Instance.selectCount--;
         Refresh();
     }
 

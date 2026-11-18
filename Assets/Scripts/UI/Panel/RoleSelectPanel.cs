@@ -28,6 +28,8 @@ public class RoleSelectPanel : BasePanel
         EventCallBack.Instance.Bind(btnSure, nameof(EventCallBack.ConfirmRole), this);
         for (int i = 0; i < togList.Count; i++)
         {
+            RoleData data = Resources.Load<RoleData>("ScriptableObjects/RoleDatas/" + roleList[i].roleID);
+            if (data != null) roleList[i] = data;
             EventCallBack.Instance.BindSelection(togList[i], nameof(EventCallBack.SelectRole), this, i);
         }
         toggleGroup.SetAllTogglesOff();
@@ -56,14 +58,14 @@ public class RoleSelectPanel : BasePanel
         switch (data.roleID)
         {
             case "辣椒游侠":
-                LockCondition.enabled = true;
-                txtLockCondition.enabled = true;
-                txtLockCondition.text = "1";
+                LockCondition.enabled = !UserManager.Instance.IsChiliUnlock();
+                txtLockCondition.enabled = !UserManager.Instance.IsChiliUnlock();
+                txtLockCondition.text = "完成第五波";
                 break;
             case "豌豆射手":
-                LockCondition.enabled = true;
-                txtLockCondition.enabled = true;
-                txtLockCondition.text = "2";
+                LockCondition.enabled = !UserManager.Instance.IsPeaUnlock();
+                txtLockCondition.enabled = !UserManager.Instance.IsPeaUnlock();
+                txtLockCondition.text = "完成第十波";
                 break;
             default:
                 LockCondition.enabled = false;

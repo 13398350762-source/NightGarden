@@ -49,6 +49,7 @@ public class CannonBullet : BaseBullet
         if (enemy != null)
         {
             isExploded = true;
+            AudioManager.Instance.PlaySound(SoundCue.Explosion, 0.7f, 0.1f);
             Vector3 pos = enemy.transform.position;
             Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(pos, 2);
             HashSet<BaseEnemyObject> hitEnemies = new HashSet<BaseEnemyObject>();
@@ -62,7 +63,7 @@ public class CannonBullet : BaseBullet
             {
                 target.GetRepel(repel, dir);
                 target.GetDamage(damage);
-                target.SlowSpeed(0.9f);
+                target.SlowSpeed(0.9f,2);
             }
             //产生爆炸效果
             ResManager.Instance.LoadResAsync<GameObject>("eff", "water", (obj) => {

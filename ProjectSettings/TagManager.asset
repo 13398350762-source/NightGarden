@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Weapon
+  - Money
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Player
   - Enemy
   - EnemyAttack
-  - 
+  - Money
   - 
   - 
   - 
@@ -42,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Map
     uniqueID: 1826111601
+    locked: 0
+  - name: Money
+    uniqueID: 1836979311
     locked: 0
   - name: Bullet
     uniqueID: 1826111602

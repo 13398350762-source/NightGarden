@@ -49,6 +49,7 @@ public class BombBullet : BaseBullet
         if (enemy != null)
         {
             isExploded = true;
+            AudioManager.Instance.PlaySound(SoundCue.Explosion, 0.78f, 0.1f);
             Vector3 pos = enemy.transform.position;
             Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(pos, 2);
             HashSet<BaseEnemyObject> hitEnemies = new HashSet<BaseEnemyObject>();

@@ -6,7 +6,12 @@ public class GrubEnemy : BaseEnemyObject
 {
     public override void Attack()
     {
-        
+        PlayAttackAnimation(PlayerDirection());
+    }
+
+    protected override void OnContactHit()
+    {
+        Attack();
     }
 
     public override void Move()

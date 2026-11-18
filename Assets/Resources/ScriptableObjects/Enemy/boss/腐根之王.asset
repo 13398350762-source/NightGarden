@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u8150\u6839\u4E4B\u738B"
   m_EditorClassIdentifier: 
   enemyID: "\u8150\u6839\u4E4B\u738B"
-  hp: 720
+  hp: 660
   speed: 6.8
   damage: 7
   exp: 80

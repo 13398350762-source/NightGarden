@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roleID: "\u841D\u535C\u9A91\u58EB"
   armor: 4
-  hp: 10
-  moveSpeed: 10
+  hp: 13
+  moveSpeed: 14
   range: 1
   lucky: 25
   STR: 2
@@ -23,7 +23,7 @@ MonoBehaviour:
   drain: 0
   recovery: 0
   atkSpeed: 1
-  money: 50
-  remark: "\u5747\u8861\u578B\uFF1A\u7269\u7406\u4E0E\u9B54\u6CD5\u5404+1\uFF1B\u5E78\u8FD0\u548C\u521D\u59CB\u91D1\u5E01\u6709\u4F18\u52BF\u3002"
+  money: 28
+  remark: "\u5747\u8861\u578b\uff0c\u53cc\u653b+2\uff0c\u5e78\u8fd025\uff0c\u5f00\u5c4028\u91d1\u5e01\u3002"
   damage: 1
   passive: 

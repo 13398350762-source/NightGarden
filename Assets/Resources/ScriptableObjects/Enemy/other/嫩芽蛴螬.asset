@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: "\u5AE9\u82BD\u86F4\u87AC"
   m_EditorClassIdentifier: 
   enemyID: "\u5AE9\u82BD\u86F4\u87AC"
-  hp: 8
-  speed: 7.6
+  hp: 7
+  speed: 8
   damage: 1
   exp: 1
   resName: normal_enemies_grub

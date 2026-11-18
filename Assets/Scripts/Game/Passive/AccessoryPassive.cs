@@ -6,6 +6,15 @@ using UnityEngine.Events;
 public class AccessoryPassive : BaseManager<AccessoryPassive>
 {
     public Dictionary<string, UnityAction> passiveDic = new Dictionary<string, UnityAction>();
+    private PlayerController silkController;
+    private float silkInternalTime = 5f;
+    private bool isBuyFirefly;
+    private float nextFireflyTime;
+    private int thimbleCount;
+    private float clockStartTime = -1f;
+    private int passiveVersion;
+    public bool isBuyChoker=false;
+    public bool isChokerTrigger=false;
     public AccessoryPassive()
     {
         passiveDic.Add("蜜晶戒指", Accessory1);
@@ -74,6 +83,10 @@ public class AccessoryPassive : BaseManager<AccessoryPassive>
     {
         PlayerInfoManager.Instance.AddLucky(8);
         //每回合结束获得8金币
+        GameManager.Instance.AddWaveFinishEvent(()=>{
+            PlayerInfoManager.Instance.AddMoney(8);
+            GameManager.Instance.Collection += 8;
+        });
     }
 
     // 橡心护坠
@@ -142,20 +155,141 @@ public class AccessoryPassive : BaseManager<AccessoryPassive>
     // 蛛绸领结
     private void Accessory16()
     {
-        
+        if (silkController != null)
+            return;
+        Transform playerPos = PlayerInfoManager.Instance.playerPos;
+        if (playerPos == null)
+            return;
+        silkController = playerPos.GetComponentInParent<PlayerController>();
+        if (silkController == null)
+            return;
+        MonoManager.Instance.AddUpdateEvent(UpdateSilkTime);
+        silkController.AddDamageEvent(SilkSlowSpeed);
+    }
+
+    private void UpdateSilkTime()
+    {
+        silkInternalTime = Mathf.Min(5f, silkInternalTime + Time.deltaTime);
+    }
+
+    private void SilkSlowSpeed()
+    {
+        if (silkController == null || silkInternalTime < 5f)
+            return;
+
+        silkInternalTime = 0f;
+        Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(silkController.transform.position, 5f);
+        HashSet<BaseEnemyObject> enemyList = new HashSet<BaseEnemyObject>();
+        foreach (var item in collider2Ds)
+        {
+            BaseEnemyObject enemy = item.GetComponentInParent<BaseEnemyObject>();
+            if (enemy == null || enemy.IsDead() || !enemyList.Add(enemy))
+                continue;
+
+            enemy.SlowSpeed(0.7f, 3f);
+        }
     }
 
     // 星萤灯坠
     private void Accessory17()
     {
-        
+        if (isBuyFirefly)
+            return;
+
+        isBuyFirefly = true;
+        nextFireflyTime = Time.time + 5f;
+        MonoManager.Instance.AddUpdateEvent(FireflyAttack);
+    }
+
+    private void FireflyAttack()
+    {
+        if (!GameManager.Instance.IsRunning || Time.timeScale <= 0f || Time.time < nextFireflyTime)
+            return;
+
+        PlayerInfoManager player = PlayerInfoManager.Instance;
+        if (player.isDead || player.playerPos == null)
+            return;
+
+        Vector2 position = player.playerPos.position;
+        BaseEnemyObject nearestEnemy = null;
+        float nearestDistance = float.MaxValue;
+        foreach (Collider2D item in Physics2D.OverlapCircleAll(position, 6f))
+        {
+            BaseEnemyObject enemy = item.GetComponentInParent<BaseEnemyObject>();
+            if (enemy == null || enemy.IsDead())
+                continue;
+
+            float distance = (item.ClosestPoint(position) - position).sqrMagnitude;
+            if (distance >= nearestDistance)
+                continue;
+            nearestDistance = distance;
+            nearestEnemy = enemy;
+        }
+
+        if (nearestEnemy == null)
+            return;
+
+        nextFireflyTime = Time.time + 5f;
+        int damage = Mathf.Max(0, Mathf.RoundToInt((player.GetAST() + 4) * player.GetDamage()));
+        MonoManager.Instance.StartCoroutine(FlyFirefly(position, nearestEnemy, damage));
+    }
+
+    private IEnumerator FlyFirefly(Vector3 position, BaseEnemyObject enemy, int damage)
+    {
+        int version = passiveVersion;
+        int enemyVersion = enemy.LifeVersion;
+        GameObject prefab = ResManager.Instance.LoadAsset<GameObject>("eff", "magic");
+        GameObject effect = prefab == null ? null : Object.Instantiate(prefab, position, Quaternion.identity);
+        float timer = 0f;
+        while (version == passiveVersion && GameManager.Instance.IsRunning &&
+            enemy != null && !enemy.IsDead() && enemy.LifeVersion == enemyVersion)
+        {
+            timer += Time.deltaTime;
+            float progress = Mathf.Clamp01(timer / 0.2f);
+            if (effect != null)
+                effect.transform.position = Vector3.Lerp(position, enemy.transform.position, progress);
+            if (progress >= 1f)
+            {
+                enemy.GetDamage(damage);
+                break;
+            }
+            yield return null;
+        }
+        if (effect != null)
+            Object.Destroy(effect);
+    }
+
+    public void Clear()
+    {
+        passiveVersion++;
+        MonoManager.Instance.RemoveUpdateEvent(UpdateSilkTime);
+        if (silkController != null)
+            silkController.RemoveDamageEvent(SilkSlowSpeed);
+        silkController = null;
+        silkInternalTime = 5f;
+
+        if (isBuyFirefly)
+            MonoManager.Instance.RemoveUpdateEvent(FireflyAttack);
+        isBuyFirefly = false;
+        nextFireflyTime = 0f;
+        thimbleCount = 0;
+        clockStartTime = -1f;
+        isBuyChoker = false;
+        isChokerTrigger = false;
     }
 
     // 刻时核表
     private void Accessory18()
     {
         PlayerInfoManager.Instance.AddAtkSpeed(0.2f);
-        //
+        if (clockStartTime < 0f)
+            clockStartTime = Time.time;
+    }
+
+    public float GetClockAtkSpeed()
+    {
+        float elapsed = Time.time - clockStartTime;
+        return clockStartTime >= 0f && elapsed >= 30f && elapsed % 30f < 4f ? 0.3f : 0f;
     }
 
     // 翩羽蜓簪
@@ -189,7 +323,12 @@ public class AccessoryPassive : BaseManager<AccessoryPassive>
     // 梦蝶颈环
     private void Accessory23()
     {
-        //
+        if (isBuyChoker)
+            return;
+        isBuyChoker = true;
+        GameManager.Instance.AddWaveFinishEvent(() => {
+            isChokerTrigger = false;
+        });
     }
 
     // 紫莓珠链
@@ -203,7 +342,18 @@ public class AccessoryPassive : BaseManager<AccessoryPassive>
     private void Accessory25()
     {
         PlayerInfoManager.Instance.AddArmor(1);
-        //
+        thimbleCount++;
+    }
+
+    public void ReflectMeleeDamage(BaseEnemyObject attacker)
+    {
+        if (thimbleCount == 0 || attacker == null || attacker.IsDead())
+            return;
+
+        PlayerInfoManager player = PlayerInfoManager.Instance;
+        int damage = Mathf.RoundToInt((player.GetSTR() + 3) * player.GetDamage());
+        if (damage > 0)
+            attacker.GetDamage(damage * thimbleCount);
     }
 
     // 铃兰耳坠

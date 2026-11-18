@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class GamePanel : BasePanel
@@ -20,14 +21,20 @@ public class GamePanel : BasePanel
     public override void Show()
     {
         base.Show();
+        DamageNumber.NumberFont = txtHp.font;
         txtWave.text = "第" + GameManager.Instance.Wave + "波";
+        Camera.main.transform.SetParent(PlayerInfoManager.Instance.playerPos,false);
     }
     protected override void Init()
     {
         if (isInit)
             return;
         //读取人物图片
-        txtRoleName.text=PlayerInfoManager.Instance.GetRole().roleID;
+        RoleData data = PlayerInfoManager.Instance.GetRole();
+        ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Role", (atlas) => {
+            imgRole.sprite = atlas.GetSprite(data.roleID);
+        });
+        txtRoleName.text=data.roleID;
         EventCallBack.Instance.Bind(btnStop, nameof(EventCallBack.PauseGame));
         isInit = true;
     }

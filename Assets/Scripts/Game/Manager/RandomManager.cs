@@ -24,13 +24,13 @@ public class RandomManager : BaseManager<RandomManager>
 
     public int GetEnemyCount(int wave)
     {
-        return Mathf.Clamp(1 + (Mathf.Max(1, wave) - 1) / 3, 1, 10);
+        return Mathf.Clamp(3 + (Mathf.Max(1, wave) - 1) / 2, 3, 14);
     }
 
     public int GetEnemyHp(int baseHp, int wave, bool isBoss = false)
     {
         wave = Mathf.Max(1, wave);
-        float scale = isBoss ? 1f + (Mathf.Max(1, wave / 10) - 1) * 0.6f : 1f + (wave - 1) * 0.12f;
+        float scale = isBoss ? 1f + (Mathf.Max(1, wave / 10) - 1) * 0.6f : 1f + (wave - 1) * 0.10f;
         return Mathf.Max(1, Mathf.RoundToInt(baseHp * scale));
     }
 
@@ -42,17 +42,31 @@ public class RandomManager : BaseManager<RandomManager>
         float value = baseExp * (isBoss ? 0.5f : 1f) * waveScale * luckyScale;
         int min = Mathf.Max(1, Mathf.FloorToInt(value * 0.7f));
         int max = Mathf.Max(min + 1, Mathf.CeilToInt(value * 1.2f));
-        return Random.Range(min, max + 1);
+        float reducedDrop = Random.Range(min, max + 1) * 0.65f;
+        int coins = Mathf.FloorToInt(reducedDrop);
+        // 小额掉落按小数部分补发，长期平均仍是原掉落的 65%。
+        return coins + (Random.value < reducedDrop - coins ? 1 : 0);
     }
 
-    public bool RandomEnemyPosition(Bounds bounds, float radius, out Vector2 position)
+    public bool RandomEnemyPosition(Bounds bounds, float radius, out Vector2 position, Camera camera = null)
     {
         position = Vector2.zero;
-        if (bounds.size.x <= radius * 2f || bounds.size.y <= radius * 2f) return false;
+        Vector2 min = (Vector2)bounds.min + Vector2.one * radius;
+        Vector2 max = (Vector2)bounds.max - Vector2.one * radius;
+        if (camera != null)
+        {
+            const float margin = 0.1f;
+            float depth = camera.WorldToViewportPoint(bounds.center).z;
+            if (depth < camera.nearClipPlane || depth > camera.farClipPlane) return false;
+            min = Vector2.Max(min, camera.ViewportToWorldPoint(new Vector3(margin, margin, depth)));
+            max = Vector2.Min(max, camera.ViewportToWorldPoint(new Vector3(1f - margin, 1f - margin, depth)));
+        }
+        if (min.x >= max.x || min.y >= max.y) return false;
+
         Transform player = PlayerInfoManager.Instance.playerPos;
         for (int i = 0; i < 50; i++)
         {
-            Vector2 point = new Vector2(Random.Range(bounds.min.x + radius, bounds.max.x - radius), Random.Range(bounds.min.y + radius, bounds.max.y - radius));
+            Vector2 point = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
             if (player != null && Vector2.Distance(point, player.position) < radius + 5f) continue;
             if (Physics2D.OverlapCircle(point, radius, LayerMask.GetMask("Wall")) != null) continue;
             position = point;
@@ -71,22 +85,23 @@ public class RandomManager : BaseManager<RandomManager>
         return basePrice + refreshCount * priceIncrease;
     }
 
-    //抽取商品等级
+    // 商店和升级奖励共用等级概率，一级取剩余概率。
     public int RandomLevel(int lucky, int wave)
     {
         float t = Mathf.Clamp01(
             (Mathf.Max(wave, 1) - 1) / 25f
             + Mathf.Max(lucky, 0) / 200f);
 
-        float p1 = Mathf.Lerp(0.70f, 0.15f, t);
-        float p2 = Mathf.Lerp(0.23f, 0.35f, t);
-        float p3 = Mathf.Lerp(0.06f, 0.30f, t);
+        float rare = Mathf.Lerp(0.04f, 0.06f, t);
+        float epic = Mathf.Lerp(0.006f, 0.02f, t);
+        float legendary = Mathf.Lerp(0.001f, 0.004f, t);
+        float common = 1f - rare - epic - legendary;
 
         float value = Random.value;
 
-        if (value < p1) return 1;
-        if (value < p1 + p2) return 2;
-        if (value < p1 + p2 + p3) return 3;
+        if (value < common) return 1;
+        if (value < common + rare) return 2;
+        if (value < common + rare + epic) return 3;
         return 4;
     }
 

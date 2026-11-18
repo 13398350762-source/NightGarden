@@ -42,7 +42,7 @@ public partial class EventCallBack
         }
         else
         {
-            //播放购买失败音效
+            AudioManager.Instance.PlaySound(SoundCue.Denied, 0.75f);
         }
     }
 
@@ -58,13 +58,14 @@ public partial class EventCallBack
         }
         else
         {
-            //播放购买失败音效
+            AudioManager.Instance.PlaySound(SoundCue.Denied, 0.75f);
         }
     }
 
     public void ChooseUpgrade(LevelUpItem view)
     {
         if (!LevelUpManager.Instance.Select(view)) return;
+        AudioManager.Instance.PlaySound(SoundCue.Upgrade, 0.7f);
 
         UIManager.Instance.GetPanel<ShopPanel>(panel => panel.updateTXTDic());
         LevelUpManager.Instance.selectCount--;

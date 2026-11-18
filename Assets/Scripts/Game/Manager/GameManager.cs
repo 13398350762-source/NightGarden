@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class GameManager : BaseManager<GameManager>
@@ -13,9 +15,9 @@ public class GameManager : BaseManager<GameManager>
     public float nowWaveRemainTime;
     public float internalTime = 1f;
     private bool isGenerateBoss=false;
-    public int maxEnemyCount = 50;
-    public float waveTime = 60f;
-    public float generateInterval = 5f;
+    public int maxEnemyCount = 100;
+    public float waveTime = 30f;
+    public float generateInterval = 2.7f;
     private bool isRunning;
     private int spawnVersion;
     private int pendingCount;
@@ -23,6 +25,7 @@ public class GameManager : BaseManager<GameManager>
     private List<Vector2> spawnPositions = new List<Vector2>();
     private List<GameObject> spawnEffects = new List<GameObject>();
     public bool IsRunning => isRunning;
+    private event UnityAction WaveFinishEvent;
     public void Clear()
     {
         MonoManager.Instance.RemoveUpdateEvent(Update);
@@ -33,8 +36,10 @@ public class GameManager : BaseManager<GameManager>
         Death = 0;
         Collection = 0;
         isGenerateBoss = false;
+        waveTime = 30f;
         nowWaveRemainTime = waveTime;
         internalTime = 1f;
+        WaveFinishEvent = null;
     }
 
     public void Init()
@@ -49,6 +54,7 @@ public class GameManager : BaseManager<GameManager>
         }
         mapBounds = renderer.bounds;
         isRunning = true;
+        AudioManager.Instance.PlayMusic(MusicTrack.Battle);
         MonoManager.Instance.AddUpdateEvent(Update);
         UIManager.Instance.ShowPanel<GamePanel>();
         GenerateBoss();
@@ -57,11 +63,13 @@ public class GameManager : BaseManager<GameManager>
     public void StartNextWave()
     {
         if (isRunning || PlayerInfoManager.Instance.isDead) return;
+        waveTime = Mathf.Min(30f + (Mathf.Max(1, Wave) - 1) * 5f, 60f);
         nowWaveRemainTime = waveTime;
         internalTime = 1f;
         isGenerateBoss = false;
         isRunning = true;
         Time.timeScale = 1f;
+        AudioManager.Instance.PlayMusic(MusicTrack.Battle);
         GenerateBoss();
     }
 
@@ -78,6 +86,15 @@ public class GameManager : BaseManager<GameManager>
         if (nowWaveRemainTime <= 0f)
         {
             StopGenerate();
+            foreach (GameObject coin in GameObject.FindGameObjectsWithTag("Money"))
+                Object.Destroy(coin);
+            if (Wave == 5 && !UserManager.Instance.IsChiliUnlock())
+                UserManager.Instance.SetChiliUnLock();
+            if (Wave == 10 && !UserManager.Instance.IsPeaUnlock())
+                UserManager.Instance.SetPeaUnLock();
+            WaveFinishEvent?.Invoke();
+            AudioManager.Instance.PlayMusic(MusicTrack.Shop);
+            AudioManager.Instance.PlaySound(SoundCue.WaveComplete, 0.75f);
             Wave++;
             UIManager.Instance.ShowPanel<LevelUpPanel>();
             UIManager.Instance.HidePanel<GamePanel>();
@@ -90,7 +107,9 @@ public class GameManager : BaseManager<GameManager>
         {
             GenerateBoss();
             GenerateEnemy();
-            internalTime = generateInterval;
+            float waveDifficulty = Mathf.Clamp01((Wave - 1) / 19f);
+            float waveProgress = Mathf.Clamp01(1f - nowWaveRemainTime / waveTime);
+            internalTime = generateInterval * (1f - 0.42f * waveDifficulty) * (1f - 0.4f * waveProgress);
         }
     }
 
@@ -115,9 +134,13 @@ public class GameManager : BaseManager<GameManager>
 
     private bool TrySpawnPosition(float radius, out Vector2 position)
     {
+        Camera camera = Camera.main;
+        RandomManager random = RandomManager.Instance;
         for (int i = 0; i < 20; i++)
         {
-            if (!RandomManager.Instance.RandomEnemyPosition(mapBounds, radius, out position)) break;
+            if (!random.RandomEnemyPosition(mapBounds, radius, out position, camera) &&
+                (camera == null || !random.RandomEnemyPosition(mapBounds, radius, out position)))
+                break;
             bool available = true;
             foreach (Vector2 point in spawnPositions)
                 if (Vector2.Distance(point, position) < radius * 2f) available = false;
@@ -161,8 +184,7 @@ public class GameManager : BaseManager<GameManager>
         if (!isRunning || version != spawnVersion) yield break;
         spawnEffects.Remove(effect);
         PoolManager.Instance.PushObj("EnemySpawn", effect);
-        PoolManager.Instance.GetObj(name, "enemy", obj => {
-            GameObject enemy = obj as GameObject;
+        PoolManager.Instance.GetInactiveObj(name, "enemy", enemy => {
             if (enemy == null)
             {
                 FinishGenerate(position, version);
@@ -174,12 +196,14 @@ public class GameManager : BaseManager<GameManager>
                 PoolManager.Instance.PushObj(name, enemy);
                 return;
             }
-            enemy.transform.position = position;
-            enemy.SetActive(true);
-            BaseEnemyObject data = enemy.GetComponent<BaseEnemyObject>();
-            data.isBoss = boss;
-            data.Init(wave);
+            SceneManager.MoveGameObjectToScene(enemy, SceneManager.GetActiveScene());
+            enemy.GetComponent<BaseEnemyObject>().Spawn(position, wave, boss);
             FinishGenerate(position, version);
+            if (boss)
+            {
+                AudioManager.Instance.PlayMusic(MusicTrack.Boss);
+                AudioManager.Instance.PlaySound(SoundCue.BossArrival, 0.75f);
+            }
         });
     }
 
@@ -201,5 +225,10 @@ public class GameManager : BaseManager<GameManager>
         foreach (var enemy in Object.FindObjectsOfType<BaseEnemyObject>())
             PoolManager.Instance.PushObj(enemy.gameObject.name.Replace("(Clone)", "").Trim(), enemy.gameObject);
         foreach (var bullet in Object.FindObjectsOfType<EnemyBullet>()) PoolManager.Instance.PushObj("EnemyBullet", bullet.gameObject);
+    }
+
+    public void AddWaveFinishEvent(UnityAction action)
+    {
+        WaveFinishEvent += action;
     }
 }

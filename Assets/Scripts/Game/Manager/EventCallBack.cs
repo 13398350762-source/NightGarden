@@ -85,7 +85,11 @@ public partial class EventCallBack : BaseManager<EventCallBack>
     private void BindButton(Button button, UnityAction action)
     {
         UnityEvent click = button.onClick;
-        UnityAction listener = () => { if (button != null && button.isActiveAndEnabled && button.IsInteractable()) action(); };
+        UnityAction listener = () => {
+            if (button == null || !button.isActiveAndEnabled || !button.IsInteractable()) return;
+            AudioManager.Instance.PlaySound(SoundCue.Button, 0.65f);
+            action();
+        };
         Binding(button).Replace(() => click.RemoveListener(listener));
         click.AddListener(listener);
     }

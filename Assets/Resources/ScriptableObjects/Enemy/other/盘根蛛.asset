@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: "\u76D8\u6839\u86DB"
   m_EditorClassIdentifier: 
   enemyID: "\u76D8\u6839\u86DB"
-  hp: 8
-  speed: 10
+  hp: 9
+  speed: 11
   damage: 1
   exp: 2
   resName: normal_enemies_root_spider

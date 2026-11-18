@@ -21,7 +21,7 @@ MonoBehaviour:
   resName: pistol
   bullet: bullet0
   level: 1
-  internalTime: 0.4
-  range: 26
-  atk: 5
+  internalTime: 0.48
+  range: 16
+  atk: 4
   repel: 1

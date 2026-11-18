@@ -27,6 +27,13 @@ public class WeaponSelectPanel : BasePanel
         if (isInit)
             return;
         toggleGroup.allowSwitchOff = true;
+        for (int i = 0; i < weaponDatas.Count; i++)
+        {
+            WeaponData entry = weaponDatas[i];
+            string id = entry.weaponID;
+            WeaponData data = Resources.Load<WeaponData>($"ScriptableObjects/WeaponDatas/{id}/{id}_{entry.level}");
+            if (data != null) weaponDatas[i] = data;
+        }
         ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "weapon", (atlas) =>{
             if (this == null || atlas == null) return;
             for (int i = 0; i < togWeaponList.Count; i++)

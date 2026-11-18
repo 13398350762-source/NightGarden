@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
+using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
@@ -10,30 +11,15 @@ public class Main : MonoBehaviour
     void Start()
     {
         EventCallBack.Instance.Init();
+        AudioManager.Instance.PlaySceneMusic(SceneManager.GetActiveScene().name);
         ResManager.Instance.LoadRes<SpriteAtlas>("atlas", "Components");
         UIManager.Instance.ShowPanel<LoginPanel>();
-        //Test();
+        Screen.SetResolution(1920, 1080, Screen.fullScreenMode);
+        Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
     }
 
     void Update()
     {
         
-    }
-
-    private void Test()
-    {
-        enemy = FindObjectOfType<BaseEnemyObject>();
-        player = FindObjectOfType<PlayerController>();
-        if (player == null)
-        {
-            // 正常流程会异步加载玩家，由 PlayerController.Init 开始波次。
-            return;
-        }
-        PlayerInfoManager.Instance.Init();
-        if (PlayerInfoManager.Instance.GetRole() == null)
-            PlayerInfoManager.Instance.SetRole(Resources.Load<RoleData>("ScriptableObjects/RoleDatas/萝卜骑士"));
-        PlayerInfoManager.Instance.nowHp = Mathf.Max(1, PlayerInfoManager.Instance.GetHp());
-        PlayerInfoManager.Instance.playerPos = player.target != null ? player.target : player.transform;
-        GameManager.Instance.Init();
     }
 }

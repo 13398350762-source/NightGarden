@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 736853962
+CRC: 3063537895
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -26,4 +26,10 @@ AssetBundleManifest:
       Dependencies: {}
     Info_7:
       Name: enemy
+      Dependencies: {}
+    Info_8:
+      Name: money
+      Dependencies: {}
+    Info_9:
+      Name: canvas
       Dependencies: {}

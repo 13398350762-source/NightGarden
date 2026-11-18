@@ -22,6 +22,6 @@ MonoBehaviour:
   bullet: bullet1
   level: 2
   internalTime: 1.35
-  range: 25
+  range: 16
   atk: 3
   repel: 1

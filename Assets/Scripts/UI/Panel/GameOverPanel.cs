@@ -29,9 +29,8 @@ public class GameOverPanel : BasePanel
     public override void Show()
     {
         base.Show();
-        //加载游戏人物图片
         ResManager.Instance.LoadResAsync<SpriteAtlas>("atlas", "Role", (atlas) => {
-             imgIcon.sprite = atlas.GetSprite(name);
+             imgIcon.sprite = atlas.GetSprite(PlayerInfoManager.Instance.GetRole().roleID);
         });
         Time.timeScale = 0f;
         txtName.text = PlayerInfoManager.Instance.GetRole().roleID;
@@ -43,6 +42,17 @@ public class GameOverPanel : BasePanel
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
         txtRemain.text = $"{minutes:00}:{seconds:00}";
+        SaveRankData();
     }
-
+    private void SaveRankData()
+    {
+        RankData data = new RankData();
+        data.playerName=UserManager.Instance.GetNowUser().name;
+        data.roleName = PlayerInfoManager.Instance.GetRole().roleID;
+        data.score=GameManager.Instance.Score;
+        data.wave=GameManager.Instance.Wave;
+        data.remain=GameManager.Instance.Remain;
+        data.resName= PlayerInfoManager.Instance.GetRole().roleID;
+        DataManager.Instance.AddRankData(data);
+    }
 }

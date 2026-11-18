@@ -15,13 +15,16 @@ public partial class PlayerInfoManager : BaseManager<PlayerInfoManager>
     public Transform playerPos;
     public bool isDead;
     private float nextDamageTime;
-    public float invincibleTime = 0.2f;
+    public float invincibleTime = 0.5f;
     public void Init()
     {
+        AccessoryPassive.Instance.Clear();
         nowExp = 0;
         nextDamageTime = 0f;
         isDead = false;
-        level = 0;
+        level = 1;
+        nextLevelExp = LevelManager.Instance.GetNextLevelExp(level);
+        LevelUpManager.Instance.selectCount = 0;
         nowHp = hp;
     }
     public void LevelUp()
@@ -108,32 +111,56 @@ public partial class PlayerInfoManager : BaseManager<PlayerInfoManager>
         AddMoney(RandomManager.Instance.RandomSellPrice(level, GameManager.Instance.Wave));
     }
 
-    public void DecreaseHp(int damage)
+    public bool DecreaseHp(int damage, BaseEnemyObject meleeAttacker = null)
     {
         if (isDead || damage <= 0 || Time.time < nextDamageTime)
-            return;
+            return false;
 
         nextDamageTime = Time.time + invincibleTime;
-        nowHp = Mathf.Max(0, nowHp - damage);
-
+        int armor = Mathf.Max(0, GetArmor());
+        float damageTakenMultiplier = 10f / (armor + 10f);
+        int actualDamage = Mathf.Max(1, Mathf.CeilToInt(damage * damageTakenMultiplier));
+        nowHp = Mathf.Max(0, nowHp - actualDamage);
+        AudioManager.Instance.PlaySound(SoundCue.PlayerHurt, 0.9f);
+        CameraShake.ShakeMainCamera();
+        playerPos.GetComponent<PlayerController>().animator.SetTrigger("Hurt");
+        PlayerController controller = playerPos == null ? null : playerPos.GetComponentInParent<PlayerController>();
+        if (controller != null)
+            controller.RunDamageEvent();
+        if (meleeAttacker != null)
+            AccessoryPassive.Instance.ReflectMeleeDamage(meleeAttacker);
         if (nowHp <= 0)
-        {
-            isDead = true;
             Dead();
-            return;
-        }
+        return true;
     }
 
     private void Dead()
     {
+        if (AccessoryPassive.Instance.isBuyChoker && !AccessoryPassive.Instance.isChokerTrigger)
+        {
+            nextDamageTime = Time.time + 1f;
+            nowHp = 1;
+            AccessoryPassive.Instance.isChokerTrigger = true;
+            return;
+        }
         isDead = true;
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlaySound(SoundCue.GameOver, 0.8f);
         //播放死亡动画
+        playerPos.GetComponent<PlayerController>().animator.SetTrigger("Death");
+        GameObject.Destroy(playerPos.gameObject, 2f);
         UIManager.Instance.ShowPanel<GameOverPanel>();
     }
     public void AddExp(int exp)
     {
         nowExp += exp;
         LevelUp();
+    }
+
+    public void Heal(int amount)
+    {
+        if (!isDead && nowHp > 0 && amount > 0)
+            nowHp = Mathf.Min(nowHp + amount, hp);
     }
 
     public void Clear()

@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: "\u8611\u83C7\u5DEB\u5E08"
   m_EditorClassIdentifier: 
   roleID: "\u8611\u83C7\u5DEB\u5E08"
-  armor: 3
-  hp: 6
-  moveSpeed: 10
+  armor: 2
+  hp: 8
+  moveSpeed: 14.2
   range: 1
   lucky: 10
-  STR: 1
-  AST: 3
-  drain: 0.02
+  STR: 0
+  AST: 4
+  drain: 0.06
   recovery: 0
   atkSpeed: 1
   money: 0
-  remark: "\u9B54\u6CD5\u578B\uFF1A\u7269\u7406+0\u3001\u9B54\u6CD5+3\uFF1BHP\u8F83\u4F4E\u3002"
+  remark: "\u9b54\u6cd5\u578b\uff0c\u9b54\u6cd5\u4f24\u5bb3+4\uff0c\u5438\u88406%\uff0c\u751f\u547d\u504f\u4f4e\u3002"
   damage: 1
   passive: 

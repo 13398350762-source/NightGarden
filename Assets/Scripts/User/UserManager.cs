@@ -10,6 +10,16 @@ public class UserManager : BaseManager<UserManager>
     {
         nowUser = info;
     }
+    public void SetChiliUnLock()
+    {
+        nowUser.SetChiliUnLock();
+        DataManager.Instance.SaveUserData();
+    }
+    public void SetPeaUnLock()
+    {
+        nowUser.SetPeaUnLock();
+        DataManager.Instance.SaveUserData();
+    }
 
     public bool IsChiliUnlock()
     {
@@ -20,4 +30,9 @@ public class UserManager : BaseManager<UserManager>
     {
         return nowUser.isUnLockPea;
     }
+    public UserInfo GetNowUser()
+    {
+        return nowUser;
+    }
+
 }

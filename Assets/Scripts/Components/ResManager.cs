@@ -121,14 +121,20 @@ public class ResManager : MonoAutoSingleton<ResManager>
 
     public void LoadResAsync<T>(string abName, string resName, UnityAction<T> callback=null)where T:Object
     {
-        StartCoroutine(ReallyLoadResAsync<T>(abName, resName, callback));
+        StartCoroutine(ReallyLoadResAsync<T>(abName, resName, callback, true));
     }
-    private IEnumerator ReallyLoadResAsync<T>(string abName, string resName,UnityAction<T> callback)where T:Object
+
+    public void LoadAssetAsync<T>(string abName, string resName, UnityAction<T> callback) where T : Object
+    {
+        StartCoroutine(ReallyLoadResAsync<T>(abName, resName, callback, false));
+    }
+
+    private IEnumerator ReallyLoadResAsync<T>(string abName, string resName,UnityAction<T> callback, bool instantiate)where T:Object
     {
         LoadAB(abName);
         AssetBundleRequest request = abDic[abName].LoadAssetAsync<T>(resName);
         yield return request;
         T obj = request.asset as T;
-        callback?.Invoke(obj is GameObject ? Instantiate(obj) : obj);
+        callback?.Invoke(instantiate && obj is GameObject ? Instantiate(obj) : obj);
     }
 }

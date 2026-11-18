@@ -18,16 +18,25 @@ public class PoolData
     }
     public void GetObject(string abName,UnityAction<Object> action)
     {
+        GameObject obj = TakeObject(false);
+        if (obj != null)
+            action?.Invoke(obj);
+        else
+            ResManager.Instance.LoadResAsync(abName, Parentobj.name, action);
+    }
+
+    public GameObject TakeObject(bool keepInactive)
+    {
         while (objList.Count != 0)
         {
             GameObject obj= objList[0];
             objList.RemoveAt(0);
             if (obj == null) continue;
+            if (keepInactive) obj.SetActive(false);
             obj.transform.SetParent(null, false);
-            action?.Invoke(obj);
-            return;
+            return obj;
         }
-        ResManager.Instance.LoadResAsync(abName,Parentobj.name,action);
+        return null;
     }
     public void Clear()
     {
@@ -54,15 +63,21 @@ public class PoolManager : BaseManager<PoolManager>
     public void PushObj(string name, GameObject obj)
     {
         if (obj == null) return;
+        GameObject root = GetPoolRoot();
+        if (!poolDic.ContainsKey(name) || poolDic[name].Parentobj == null)
+            poolDic[name] = new PoolData(name, root);
+        poolDic[name].PushObject(obj);
+    }
+
+    private GameObject GetPoolRoot()
+    {
         if(poolobj==null)
         {
             poolobj = new GameObject("pool");
             GameObject.DontDestroyOnLoad(poolobj);
         }
         poolobj.SetActive(false);
-        if (!poolDic.ContainsKey(name) || poolDic[name].Parentobj == null)
-            poolDic[name] = new PoolData(name,poolobj);
-        poolDic[name].PushObject(obj);
+        return poolobj;
     }
     public void GetObj(string resName,string abName,UnityAction<Object> action)
     {
@@ -75,6 +90,32 @@ public class PoolManager : BaseManager<PoolManager>
             poolDic.Remove(resName);
             ResManager.Instance.LoadResAsync(abName, resName, action);
         }
+    }
+
+    public void GetInactiveObj(string resName, string abName, UnityAction<GameObject> action)
+    {
+        if (poolDic.TryGetValue(resName, out PoolData pool) && pool.Parentobj != null)
+        {
+            GameObject existing = pool.TakeObject(true);
+            if (existing != null)
+            {
+                action(existing);
+                return;
+            }
+        }
+
+        ResManager.Instance.LoadAssetAsync<GameObject>(abName, resName, prefab => {
+            if (prefab == null)
+            {
+                action(null);
+                return;
+            }
+
+            GameObject obj = Object.Instantiate(prefab, GetPoolRoot().transform, false);
+            obj.SetActive(false);
+            obj.transform.SetParent(null, false);
+            action(obj);
+        });
     }
     public void Clear()
     {

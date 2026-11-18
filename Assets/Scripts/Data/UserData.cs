@@ -22,7 +22,7 @@ public class UserData
         if(userDic==null)
             userDic = new Dictionary<string, UserInfo>();
     }
-    private void SaveUserData()
+    public void SaveUserData()
     {
         JsonManager.Instance.Save(userDic, "UserData");
     }
@@ -39,6 +39,13 @@ public class UserInfo
         this.name = name;
         this.password = password;
     }
-
+    public void SetChiliUnLock()
+    {
+        isUnLockChili=true;
+    }
+    public void SetPeaUnLock()
+    {
+        isUnLockPea=true;
+    }
     public UserInfo() { }
 }

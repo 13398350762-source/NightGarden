@@ -15,7 +15,8 @@ public abstract class BaseWeaponObject : MonoBehaviour
     protected string resEff;
     protected string resName;
     protected string bullet;
-    protected float internalTime;
+    private float baseInternalTime;
+    protected float internalTime => baseInternalTime / Mathf.Max(0.01f, PlayerInfoManager.Instance.GetAtkSpeed());
     protected float range;
     protected int atk;
     protected int repel;
@@ -35,7 +36,7 @@ public abstract class BaseWeaponObject : MonoBehaviour
         resEff = data.resEff;
         resName = data.resName;
         bullet = data.bullet;
-        internalTime = data.internalTime / PlayerInfoManager.Instance.GetAtkSpeed();
+        baseInternalTime = data.internalTime;
         range = data.range * PlayerInfoManager.Instance.GetRange();
         repel = data.repel;
         atk=data.atk;

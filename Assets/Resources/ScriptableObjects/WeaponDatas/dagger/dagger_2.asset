@@ -21,7 +21,7 @@ MonoBehaviour:
   resName: dagger
   bullet: 
   level: 2
-  internalTime: 0.52
-  range: 5
-  atk: 7
-  repel: 1
+  internalTime: 0.44
+  range: 4
+  atk: 8
+  repel: 2

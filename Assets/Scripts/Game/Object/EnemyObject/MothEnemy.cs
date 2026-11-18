@@ -37,6 +37,7 @@ public class MothEnemy : BaseEnemyObject
     private IEnumerator ReallyAttack()
     {
         rb.velocity = Vector2.zero;
+        PlayAttackAnimation(PlayerDirection());
         yield return new WaitForSeconds(warningTime);
         if (!isDead && PlayerInfoManager.Instance.playerPos != null)
         {

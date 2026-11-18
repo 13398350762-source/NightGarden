@@ -20,7 +20,7 @@ public partial class PlayerInfoManager
     private float rangeMultiplier = 1f;
     private float atkSpeedMultiplier = 1f;
     private float damageMultiplier = 1f;
-    private int level=0;
+    private int level=1;
 
     public void SetRole(RoleData data)
     {
@@ -54,7 +54,8 @@ public partial class PlayerInfoManager
 
     public void AddHp(int hp)
     {
-        this.hp += hp;
+        this.hp = Mathf.Max(1, this.hp + hp);
+        nowHp = Mathf.Min(nowHp, this.hp);
     }
 
     public void AddMoveSpeed(float bonus)
@@ -127,13 +128,11 @@ public partial class PlayerInfoManager
         return baseMoveSpeed * moveSpeedMultiplier;
     }
 
-    // 面板使用倍率显示百分比；移动逻辑使用上面的最终速度。
     public float GetMoveSpeedMultiplier()
     {
         return moveSpeedMultiplier;
     }
 
-    // 以下返回最终倍率，已包含角色初始加成，使用时不要再乘 RoleData。
     public float GetRange()
     {
         return rangeMultiplier;
@@ -166,7 +165,7 @@ public partial class PlayerInfoManager
 
     public float GetAtkSpeed()
     {
-        return atkSpeedMultiplier;
+        return atkSpeedMultiplier + AccessoryPassive.Instance.GetClockAtkSpeed();
     }
 
     public int GetMoney()
